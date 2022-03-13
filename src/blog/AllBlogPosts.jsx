@@ -251,7 +251,7 @@ const AllBlogPosts = ()=>
                         <div className="row">
                             <div className="col-lg-12">
                                 <div className="ads">
-                                    <img src="../assets/img/ads/ads.jpg" alt="" />
+                                    <img src="https://res.cloudinary.com/diallo/image/upload/v1647154113/ads2_ucgjmg.jpg" alt="" />
                                 </div>
                             </div>
                         </div>

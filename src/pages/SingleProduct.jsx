@@ -1,5 +1,5 @@
-import Crumb from "../comps/Crumb";
-import Futured from "./Futured";
+import Crumb from "../little/Crumb";
+import Featured from "../components/Featured";
 import {Link} from "react-router-dom";
 import ReactStars from 'react-stars'
 
@@ -165,10 +165,10 @@ const SingleProduct = () =>
                   <div className="share-product mt-20">
                     <ul>
                       <li><Link to="/" className="title">Share this product</Link></li>
-                      <li><Link to="/" data-toggle="tooltip" data-placement="top" title="facebook"><i className="fab fa-facebook-f" /></Link></li>
-                      <li><Link to="/" data-toggle="tooltip" data-placement="top" title="twitter"><i className="fab fa-twitter" /></Link></li>
-                      <li><Link to="/" data-toggle="tooltip" data-placement="top" title="pinterest"><i className="fab fa-pinterest" /></Link></li>
-                      <li><Link to="/" data-toggle="tooltip" data-placement="top" title="Linkdin"><i className="fab fa-linkedin-in" /></Link></li>
+                      <li><Link to="/" data-toggle="tooltip" data-placement="top" title="facebook"><i className="bi bi-facebook" /></Link></li>
+                      <li><Link to="/" data-toggle="tooltip" data-placement="top" title="twitter"><i className="bi bi-twitter" /></Link></li>
+                      <li><Link to="/" data-toggle="tooltip" data-placement="top" title="pinterest"><i className="bi bi-pinterest" /></Link></li>
+                      <li><Link to="/" data-toggle="tooltip" data-placement="top" title="Linkdin"><i className="bi bi-linkedin" /></Link></li>
                     </ul>
                   </div>
                 </div>
@@ -343,7 +343,7 @@ const SingleProduct = () =>
       <div className="generic-title text-center">
         <h2 className="mb-20">You May Also Like</h2>
         {/*The featured products*/}
-        <Futured/>
+        <Featured/>
       </div>
       <div className="main-product-carousel owl-carousel red-nav mt-50">
         <div className="carousel-single-item">
@@ -614,7 +614,7 @@ const SingleProduct = () =>
       <div className="generic-title text-center">
         <h2 className="mb-20">Related Product</h2>
       </div>
-      <Futured/>
+      <Featured/>
     </div>
   </section>
   {/* related product end */}

@@ -24,7 +24,7 @@ const RelatedProduct = ()=>
         {
             className: "center",
             infinite: true,
-            slidesToShow: 5,
+            slidesToShow: 6,
             swipeToSlide: true,
             autoplay: true,
             autoplaySpeed: 5000,

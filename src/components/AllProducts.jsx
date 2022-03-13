@@ -1,5 +1,5 @@
 import {useState} from "react";
-import Crumb from "../comps/Crumb";
+import Crumb from "../little/Crumb";
 import {Link} from "react-router-dom";
 import ReactStars from "react-stars";
 const AllProducts = ()=>
@@ -62,7 +62,7 @@ const AllProducts = ()=>
                     </select>
                   </div>
                   <div className="filter">
-                    <h6 className="d-inline-block filter-widget-toggle" onClick={togglePopup}>Filter</h6>
+                    <h6 className="d-inline-block filter-widget-toggle" onClick={togglePopup}>Filter <i className="bi bi-chevron-down"/></h6>
                     {isOpen && <div className="filter-popup">
                       <div className="row">
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">

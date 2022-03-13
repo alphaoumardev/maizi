@@ -12,7 +12,7 @@ const ProductsCategory = () =>
         <div className="col-12">
           <h2 className="bread-crumb-title">shop</h2>
           <ol className="breadcrumb bg-transparent m-0 p-0 justify-content-center align-items-center">
-            <li className="breadcrumb-item"><Link to="/">Home</Link></li>
+            <li className="breadcrumb-item"><Link to="/">Home</Link></li><i className="bi bi-chevron-right"/>
             <li className="breadcrumb-item active" aria-current="page">Shop grid left sidebar</li>
           </ol>
         </div>
@@ -30,10 +30,10 @@ const ProductsCategory = () =>
               <nav className="shop-grid-nav">
                 <ul className="nav nav-tabs justify-content-center justify-content-md-start align-items-center" id="myTab" role="tablist">
                   <li className="nav-item" role="presentation">
-                    <Link className="nav-link grid active" id="home-tab" data-bs-toggle="tab" to="#home" role="tab" />
+                    <Link className="nav-link active text-black-50  bi bi-grid justify-content-center align-items-center d-flex" id="home-tab" data-bs-toggle="tab" to="#home" role="tab" />
                   </li>
                   <li className="nav-item" role="presentation">
-                    <Link className="nav-link list" id="profile-tab" data-bs-toggle="tab" to="#profile" role="tab" />
+                    <Link className="nav-link text-black-50   bi bi-list-ul justify-content-center align-items-center d-flex" id="profile-tab" data-bs-toggle="tab" to="#profile" role="tab" />
                   </li>
                   <li>
                     <span className="total-products text-capitalize">Showing 1–12 of 19 results</span>
@@ -708,8 +708,8 @@ const ProductsCategory = () =>
               <h3 className="widget-title">Categories</h3>
               <nav id="shop-dropdown" className="offcanvas-menu offcanvas-menu-sm">
                 <ul>
-                  <li><Link to="#">Acrylic Dining <span>(1)</span></Link></li>
-                  <li><Link to="#">Floor Décor <span>(3)</span></Link>
+                  <li><Link to="#">Acrylic Dining <span>(1) <i className="bi bi-chevron-right float-right"/></span></Link> </li>
+                  <li><Link to="#">Floor Décor <span>(3) <i className="bi bi-chevron-right float-right"/></span></Link>
                     <ul>
                       <li><Link to="#">Accessories <span>(1)</span></Link></li>
                       <li><Link to="#">Chalkboards <span>(1)</span></Link></li>
@@ -722,7 +722,7 @@ const ProductsCategory = () =>
                       <li><Link to="#">Vases <span>(1)</span></Link></li>
                     </ul>
                   </li>
-                  <li><Link to="#">Home Accents <span>(5)</span></Link>
+                  <li><Link to="#">Home Accents <span>(5)<i className="bi bi-chevron-right float-right"/></span></Link>
                     <ul>
                       <li><Link to="#">Bookends <span>(2)</span></Link></li>
                       <li><Link to="#">Boxes Trunks <span>(2)</span></Link></li>
@@ -733,7 +733,7 @@ const ProductsCategory = () =>
                       <li><Link to="#">Spheres <span>(2)</span></Link></li>
                     </ul>
                   </li>
-                  <li><Link to="#">Kitchen Dining<span>(3)</span></Link>
+                  <li><Link to="#">Kitchen Dining<span>(3) <i className="bi bi-chevron-right float-right"/></span></Link>
                     <ul>
                       <li><Link to="#">Bar Wine <span>(1)</span></Link></li>
                       <li><Link to="#">Bowls, Gadgets Utensils <span>(1)</span></Link></li>
@@ -746,8 +746,8 @@ const ProductsCategory = () =>
                       <li><Link to="#">Trash Cans <span>(1)</span></Link></li>
                     </ul>
                   </li>
-                  <li><Link to="#">Kitchen Cleaning <span>(1)</span></Link></li>
-                  <li><Link to="#">Lamps <span>(6)</span></Link>
+                  <li><Link to="#">Kitchen Cleaning <span>(1) <i className="bi bi-chevron-right float-right"/></span></Link></li>
+                  <li><Link to="#">Lamps <span>(6) <i className="bi bi-chevron-right float-right"/></span></Link>
                     <ul>
                       <li><Link to="#">Accent Lamps <span>(2)</span></Link></li>
                       <li><Link to="#">Buffet Lamps <span>(2)</span></Link></li>
@@ -760,12 +760,12 @@ const ProductsCategory = () =>
                       <li><Link to="#">Task Lamps <span>(2)</span></Link></li>
                     </ul>
                   </li>
-                  <li><Link to="#">Melamine <span>(1)</span></Link> </li>
-                  <li><Link to="#">Party Supplies <span>(1)</span></Link> </li>
-                  <li><Link to="#">Serveware <span>(2)</span></Link>
+                  <li><Link to="#">Melamine <span>(1)<i className="bi bi-chevron-right float-right"/></span></Link> </li>
+                  <li><Link to="#">Party Supplies <span>(1)<i className="bi bi-chevron-right float-right"/></span></Link> </li>
+                  <li><Link to="#">Serveware <span>(2)<i className="bi bi-chevron-right float-right"/></span></Link>
                   </li>
-                  <li><Link to="#">Uncategorized <span>(2)</span></Link> </li>
-                  <li><Link to="#">Wall Décor <span>(6)</span></Link>
+                  <li><Link to="#">Uncategorized <span>(2)<i className="bi bi-chevron-right float-right"/></span></Link> </li>
+                  <li><Link to="#">Wall Décor <span>(6)<i className="bi bi-chevron-right float-right"/></span></Link>
                     <ul>
                       <li><Link to="#">Clocks <span>(1)</span></Link> </li>
                       <li><Link to="#">Frames <span>(1)</span></Link> </li>

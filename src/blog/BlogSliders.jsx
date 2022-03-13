@@ -49,7 +49,7 @@ const BlogSliders = () =>
                                     </div>
                                     <div className="image m-auto">
                                         <Link to="post">
-                                            <img src="../assets/img/blog/27.jpg" alt="" />
+                                            <img src="https://res.cloudinary.com/diallo/image/upload/v1647154136/4_uuaspf.jpg" alt="" />
                                         </Link>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@ const BlogSliders = () =>
                                     </div>
                                     <div className="image m-auto">
                                         <Link to="post">
-                                            <img src="../assets/img/blog/4.jpg" alt="" />
+                                            <img src="https://res.cloudinary.com/diallo/image/upload/v1647154128/30_ao3pkf.jpg" alt="" />
                                         </Link>
                                     </div>
                                 </div>
@@ -107,7 +107,7 @@ const BlogSliders = () =>
                                     </div>
                                     <div className="image m-auto">
                                         <Link to="post">
-                                            <img src="../assets/img/blog/32.jpg" alt="" />
+                                            <img src="https://res.cloudinary.com/diallo/image/upload/v1647154133/3_pppuib.jpg" alt="" />
                                         </Link>
                                     </div>
                                 </div>

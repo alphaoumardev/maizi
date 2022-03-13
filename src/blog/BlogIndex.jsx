@@ -7,7 +7,7 @@ const BlogIndex =()=>
     return (
         <div>
           <BlogSliders/>
-          <div>
+          <div >
             {/* Navigation*/}
                {/*categories*/}
             <div className="categorie-section bg-light">

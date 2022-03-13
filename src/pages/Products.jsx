@@ -1,9 +1,10 @@
-import Futured from "./Futured";
-import Owl from "./Owl";
+import Featured from "../components/Featured";
+import Owl from "../components/Owl";
 import React from "react";
-import AllProducts from "./AllProducts";
+import AllProducts from "../components/AllProducts";
 import {Link} from "react-router-dom";
-import NewArrivals from "../comps/NewArrivals";
+import NewArrivals from "../little/NewArrivals";
+import RelatedProduct from "../little/RelatedProduct";
 
 const Products = () =>
 {
@@ -56,7 +57,7 @@ const Products = () =>
     </section>
   </div>
 
-  <Futured/>
+  <Featured/>
   {/* featured product end */}
 
   {/* Banner section Start */}
@@ -133,42 +134,10 @@ const Products = () =>
   {/* product tab section end */}
   <NewArrivals/>
 
-  {/* large banner section start */}
-  <section className="large-banner-section section-padding-bottom">
-    <div className="container">
-      <div className="row mb-n4">
-        <div className="col-lg-8 mb-4">
-          <Link to="single" className="thumb-nail">
-            <img src="../assets/images/banner/banner12.jpg" alt="image_not_found" />
-          </Link>
-          {/* thumb-nail end*/}
-        </div>
-        <div className="col-lg-4 mb-4">
-          <div className="large-banner-content large-banner-content-wrap text-center text-lg-start">
-            <h3 className="large-banner-title">Palafittle 83</h3>
-            <h4 className="large-banner-title">Coffee Table</h4>
-            <p>We design your home more beautiful</p>
-            <ul>
-              <li><span>Origin</span>
-                <em>Japan</em>
-              </li>
-              <li><span>Material</span>
-                <em>Oak</em>
-              </li>
-              <li><span>Designer</span>
-                <em>hastheme</em>
-              </li>
-            </ul>
-            <Link to="single" className="btn btn-dark">discover now</Link>
-          </div>
-          {/* large-banner-content end */}
-        </div>
-      </div>
-    </div>
-  </section>
-  {/* large banner section end */}
+
 
   <AllProducts/>
+  <RelatedProduct/>
 </div>
 
     )

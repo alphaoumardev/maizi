@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Link} from "react-router-dom";
 
-const Futured = () =>
+const Featured = () =>
 {
   function NextArrow(props)
   {
@@ -68,13 +68,13 @@ const Futured = () =>
                           {/* actions  */}
                           <ul className="actions actions-verticale">
                             <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="ion-ios-heart-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
                             </li>
                             <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="ion-ios-eye-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
                             </li>
                             <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="ion-android-sync" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
                             </li>
                           </ul>
                         </div>
@@ -102,13 +102,13 @@ const Futured = () =>
                           {/* actions  */}
                           <ul className="actions actions-verticale">
                             <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="ion-ios-heart-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
                             </li>
                             <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="ion-ios-eye-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
                             </li>
                             <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="ion-android-sync" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
                             </li>
                           </ul>
                         </div>
@@ -136,13 +136,13 @@ const Futured = () =>
                           {/* actions  */}
                           <ul className="actions actions-verticale">
                             <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="ion-ios-heart-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
                             </li>
                             <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="ion-ios-eye-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
                             </li>
                             <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="ion-android-sync" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
                             </li>
                           </ul>
                         </div>
@@ -170,13 +170,13 @@ const Futured = () =>
                           {/* actions  */}
                           <ul className="actions actions-verticale">
                             <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="ion-ios-heart-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
                             </li>
                             <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="ion-ios-eye-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
                             </li>
                             <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="ion-android-sync" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
                             </li>
                           </ul>
                         </div>
@@ -204,13 +204,13 @@ const Futured = () =>
                           {/* actions  */}
                           <ul className="actions actions-verticale">
                             <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="ion-ios-heart-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
                             </li>
                             <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="ion-ios-eye-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
                             </li>
                             <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="ion-android-sync" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
                             </li>
                           </ul>
                         </div>
@@ -239,13 +239,13 @@ const Futured = () =>
                           {/* actions  */}
                           <ul className="actions actions-verticale">
                             <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="ion-ios-heart-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
                             </li>
                             <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="ion-ios-eye-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
                             </li>
                             <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="ion-android-sync" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
                             </li>
                           </ul>
                         </div>
@@ -273,13 +273,13 @@ const Futured = () =>
                           {/* actions  */}
                           <ul className="actions actions-verticale">
                             <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="ion-ios-heart-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
                             </li>
                             <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="ion-ios-eye-outline" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
                             </li>
                             <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="ion-android-sync" /></button>
+                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
                             </li>
                           </ul>
                         </div>
@@ -422,16 +422,16 @@ const Futured = () =>
                     </div>
                   </div>
                   <div className="product-add-to-card">
-                    <Link className="product-add-to-card-item" to="#"><i className="ion-ios-heart-outline" /> Add to wishlist</Link>
-                    <Link className="product-add-to-card-item" to="#"><i className="ion-android-sync" /> My wishlist</Link>
+                    <Link className="product-add-to-card-item" to="#"><i className="bi bi-heart" /> Add to wishlist</Link>
+                    <Link className="product-add-to-card-item" to="#"><i className="bi bi-arrow-repeat" /> My wishlist</Link>
                   </div>
                   <div className="product-social-sharing">
                     <span>Share</span>
                     <ul>
-                      <li className="facebook"><Link to="#" target="_blank"><i className="ion-social-facebook" /></Link></li>
-                      <li className="twitter"><Link to="#" target="_blank"><i className="ion-social-twitter" /></Link></li>
-                      <li className="pinterest"><Link to="#" target="_blank"><i className="ion-social-pinterest" /></Link></li>
-                      <li className="google"><Link to="#" target="_blank"><i className="ion-social-google" /></Link></li>
+                      <li className="facebook"><Link to="#" target="_blank"><i className="bi bi-facebook" /></Link></li>
+                      <li className="twitter"><Link to="#" target="_blank"><i className="bi bi-twitter" /></Link></li>
+                      <li className="pinterest"><Link to="#" target="_blank"><i className="bi bi-pinterest" /></Link></li>
+                      <li className="google"><Link to="#" target="_blank"><i className="bi bi-google" /></Link></li>
                     </ul>
                   </div>
                 </div>
@@ -520,5 +520,5 @@ const Futured = () =>
     );
 }
 
-export default Futured;
+export default Featured;
 

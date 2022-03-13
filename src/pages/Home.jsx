@@ -3,6 +3,7 @@ import LargeBanner from "../components/LargeBanner";
 import Category from "../components/Category";
 import AllProducts from "../components/AllProducts";
 import Owl from "../components/Owl";
+import Featured from "../components/Featured";
 const Home = ()=>
 {
     return(
@@ -12,6 +13,7 @@ const Home = ()=>
         <Banners/>
         <AllProducts/>
         <LargeBanner/>
+        <Featured/>
     </div>
 
 )

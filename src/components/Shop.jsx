@@ -1,4 +1,4 @@
-import Crumb from "../comps/Crumb";
+import Crumb from "../little/Crumb";
 import {useState} from "react";
 import {Link} from "react-router-dom";
 import ReactStars from "react-stars";
@@ -15,7 +15,7 @@ const Shop = ()=>
     return(
   <div>
   <Crumb/>
-  <div className="shop-body mb-90 ">
+  <div className="shop-body mb-90 ml-3">
     <div className="container-fluid">
       <div className="shop-wrapper">
         <div className="row">
@@ -216,7 +216,7 @@ const Shop = ()=>
                     </select>
                   </div>
                   <div className="filter">
-                    <h6 className="d-inline-block filter-widget-toggle" onClick={togglePopup}>Filter</h6>
+                    <h6 className="d-inline-block filter-widget-toggle" onClick={togglePopup}>Filter <i className="bi bi-chevron-down"/></h6>
                     {isOpen && <div className="filter-popup">
                       <div className="row">
                         <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-12">

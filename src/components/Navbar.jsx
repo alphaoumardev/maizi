@@ -44,7 +44,7 @@ const Navbar =()=>
                                                             <li><Link to="category">Category</Link></li>
                                                             <li><Link to="products">Products</Link></li>
                                                             <li><Link to="shop">Shop</Link></li>
-                                                            <li><Link to="singlepro">SinglePro</Link></li>
+                                                            <li><Link to="allproducts">All Products</Link></li>
                                                         </ul>
                                                         <ul>
                                                             <li><Link to="big">Big Product</Link></li>
@@ -67,20 +67,14 @@ const Navbar =()=>
                                                     <li><Link to="author">Author</Link></li>
                                                     <li><Link to="blogrid">Sidebar</Link></li>
                                                     <li><Link to="bloglist">Blog list</Link></li>
+                                                    <li><Link to="allblogposts">All Blogs</Link></li>
+                                                    <li><Link to="post">Post Details</Link></li>
+                                                    <li><Link to="blogcategory">Posts Category</Link></li>
                                                 </ul>
                                             </li>
                                             <li><Link to=""><span>Portfolio <i className="bi bi-chevron-down" /></span> </Link>
                                                 <ul className="submenu">
-                                                    <li><Link to="portfolio">Single project</Link></li>
-                                                    <li><Link to="portfolio2">Two Columns</Link></li>
-                                                    <li><Link to="portfolio3">Three Columns</Link></li>
-                                                </ul>
-                                            </li>
-                                            <li><Link to=""><span>Page</span> <i className="bi bi-chevron-down" /></Link>
-                                                <ul className="submenu">
-                                                    <li><Link to="about">About</Link></li>
-                                                    <li><Link to="question">Frequently Questions</Link></li>
-                                                    <li><Link to="contact">Contact</Link></li>
+                                                    <li><a href="https://followdiallo.netlify.app/">My Work</a></li>
                                                 </ul>
                                             </li>
                                             <li><Link to="contact"><span>Contact</span></Link></li>
@@ -89,7 +83,7 @@ const Navbar =()=>
                                 </div>
                             </div>
 
-                            <div className="col-xl-4 col-lg-3 col-6 col-md-6 col-sm-6 col-9">
+                            <div className="col-xl-4 col-lg-4 col-6 col-md-6 col-sm-6 col-9">
                                 <div className="header-right">
                                     <ul className="text-right">
                                         <li>
@@ -97,7 +91,7 @@ const Navbar =()=>
                                                 <i onClick={toggleSearchButton} className="bi bi-search" title="Looking for something?" />
                                                 {searchButton && <TextField  id="standard-size-small" defaultValue="" placeholder="Search" size="small" variant="standard" style={{paddingLeft:10}}/>}
                                             </span>
-                                            <li><Link to="login" className="account"><i className="bi bi-person-fill" /> <article className="account-registar d-inline-block">Login</article></Link></li>
+                                            <li><Link to="login" className="account"><i className="bi bi-person-fill" /> <article className="account-registar d-inline-block"></article></Link></li>
                                             <li><Link to="/" className="account"><i  className="bi bi-translate"/> </Link></li>
 
                                             {/* search popup */}
@@ -182,53 +176,26 @@ const Navbar =()=>
                             <ul>
                                 <li><Link className="pl-3" to="">Home</Link>
                                     <ul className="pl-4">
-                                        <li><Link to="index">Home Fashion 1</Link></li>
-                                        <li><Link to="index2">Home Fashion 2</Link></li>
-                                        <li><Link to="index3">Home Fashion 3</Link></li>
-                                        <li><Link to="index4">Home Fashion 4</Link></li>
-                                        <li><Link to="index5">Home Fashion 5</Link></li>
-                                        <li><Link to="index6">Home Fashion 6</Link></li>
-                                        <li><Link to="index7">Home Fashion 7</Link></li>
+                                        <li><Link to="index">Products</Link></li>
+                                        <li><Link to="index2">Fashion</Link></li>
                                     </ul>
                                 </li>
                                 <li><Link className="pl-3" to="">Shop</Link>
                                     <ul>
                                         <li><Link to="shop">Shop Layout</Link></li>
                                         <li><Link to="shop4">Masonry – Grid</Link></li>
-                                        <li><Link to="shop3">Pagination</Link></li>
-                                        <li><Link to="shop2">Ajax Load More</Link></li>
-                                        <li><Link to="shop2">Infinite Scroll</Link></li>
-                                        <li><Link to="shop2">Sidebar Right</Link></li>
-                                        <li><Link to="shop">Sidebar Left</Link></li>
-                                        <li><Link to="shop">Shop Pages</Link></li>
-                                        <li><Link to="shop2">List View</Link></li>
-                                        <li><Link to="shop3">Small Products</Link></li>
-                                        <li><Link to="shop2">Large Products</Link></li>
-                                        <li><Link to="shop3">Shop — 3 Items</Link></li>
-                                        <li><Link to="shop3">Shop — 4 Items</Link></li>
-                                        <li><Link to="shop4">Shop — 5 Items</Link></li>
-                                        <li><Link to="single-product-2">Product Layout</Link></li>
-                                        <li><Link to="single-product">Description Sticky</Link></li>
-                                        <li><Link to="single-product-2">Product Carousels</Link></li>
-                                        <li><Link to="single-product-3">Gallery Modern</Link></li>
-                                        <li><Link to="single-product-4">Thumbnail Left</Link></li>
-                                        <li><Link to="single-product-5">Thumbnail Right</Link></li>
-                                        <li><Link to="single-product-6">Thumbnail Botttom</Link></li>
                                     </ul>
                                 </li>
                                 <li><Link to="">Blog</Link>
                                     <ul>
                                         <li><Link to="blog">Grid layout</Link></li>
                                         <li><Link to="blog2">Large image</Link></li>
-                                        <li><Link to="blog3">Left Sidebar</Link></li>
-                                        <li><Link to="blog4">Right Sidebar</Link></li>
-                                        <li><Link to="blog5">No sidebar</Link></li>
+
                                     </ul>
                                 </li>
                                 <li><Link to="">Portfolio</Link>
                                     <ul>
                                         <li><Link to="portfolio">Single project</Link></li>
-                                        <li><Link to="portfolio2">Two Columns</Link></li>
                                         <li><Link to="portfolio3">Three Columns</Link></li>
                                     </ul>
                                 </li>

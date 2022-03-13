@@ -6,7 +6,7 @@ const Footer = ()=>
         <div>
             {/* footer section start */}
             <section className="footer">
-                <div className="footer-top  pb-120 pt-0" style={{backgroundColor: '#f5f5f5'}}>
+                <div className="footer-top  pb-120 pt-30" style={{backgroundColor: '#f5f5f5'}}>
                     <div className="footer-top-wrapper">
                         <div className="newsletter ">
                             <div className="row">
@@ -31,7 +31,7 @@ const Footer = ()=>
                                 <div className="col-xl-4 col-md-6 service-item">
                                     <div className="service-box service-box-2">
                                         <div className="service-box-content">
-                                            <h4 className="">Worldwide Shipping</h4>
+                                            <h4> Worldwide Shipping</h4>
                                             <p className="service-desc">Duis autem vel eum iriure dolor in hendrerit velit esse
                                                 molestie consequat.</p>
                                         </div>
@@ -130,124 +130,7 @@ const Footer = ()=>
                     </div>
                 </div>
             </section>
-            {/* footer section end */}
-            {/* product popup start */}
-            <section id="product-popup">
-                <div className="product-popup-overlay" />
-                <div className="product-popup-container">
-                    <div className="product-inner w-100">
-                        <div className="product-inner-content">
-                            <div className="quick-close-action"><i className="bi bi-x" /></div>
-                            <div className="row">
-                                <div className="col-xl-5 col-lg-5 col-md-5 col-sm-6">
-                                    <div className="tab-content">
-                                        <div className="tab-pane fade show active" id="product-popup-1">
-                                            <div className="product-popup-img">
-                                                <img src="../assets/img/product/10.jpg" className="w-100" alt="" />
-                                            </div>
-                                        </div>
-                                        <div className="tab-pane fade" id="product-popup-2">
-                                            <div className="product-popup-img">
-                                                <img src="../assets/img/product/11.jpg" className="w-100" alt="" />
-                                            </div>
-                                        </div>
-                                        <div className="tab-pane fade" id="product-popup-3">
-                                            <div className="product-popup-img">
-                                                <img src="../assets/img/product/12.jpg" className="w-100" alt="" />
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <ul className="nav nav-pills justify-content-center mt-10">
-                                        <li className="nav-item">
-                                            <Link className="active" data-toggle="pill" to="#product-popup-1">
-                                                <img src="../assets/img/product/10.jpg" className="w-100" alt="" />
-                                            </Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link  data-toggle="pill" to="#product-popup-2">
-                                                <img src="../assets/img/product/11.jpg" className="w-100" alt="" />
-                                            </Link>
-                                        </li>
-                                        <li className="nav-item">
-                                            <Link  data-toggle="pill" to="#product-popup-3">
-                                                <img src="../assets/img/product/12.jpg" className="w-100" alt="" />
-                                            </Link>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div className="col-xl-7 col-lg-7 col-md-7 col-sm-6">
-                                    <div className="product-content">
-                                        <div className="product-title">
-                                            <h2>Nari Narwhal Usb...</h2>
-                                        </div>
-                                        <div className="price">$<span>44.00</span>–<span>$250.00</span></div>
-                                        <Link to="single-product-4" className="all-feature">See all feature</Link>
-                                        <div className="quick-quantity mt-30">
-                                            <form action="#" method="POST">
-                                                <input type="number" defaultValue={1} />
-                                                <button type="submit" className="generic-btn red-hover-btn text-capitalize">add to
-                                                    cart</button>
-                                            </form>
-                                        </div>
-                                        <div className="product-desc pb-20 mt-25 gray-border-top">
-                                            <p className="mb-0">Typi non habent claritatem insitam, est usus legentis in iis qui
-                                                facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius
-                                                quod ii legunt saepius. Claritas est etiam processus A Capitalize on low hanging
-                                                fruit to identify a ballpark value added activity to beta test. Override the
-                                                digital...ditional clickthroughs from DevOps. Nanotechnology immersion along the
-                                                information highway will close the […]</p>
-                                        </div>
-                                        <div className="product-list mt-25">
-                                            <ul>
-                                                <li>– Light green crewnec...t.</li>
-                                                <li>– Hand pockets.</li>
-                                                <li>– Relaxed fit.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* product popup end */}
-            {/* startup popup start */}
-            <section id="startup-popup">
-                <div className="product-popup-overlay has-startup" style={{opacity: 1, visibility: 'visible'}} />
-                <div className="startup-popup-body">
-                    <div className="startup-body-content h-100">
-                        <div className="row justify-content-end h-100">
-                            <div className="col-6 h-100">
-                                <div className="startup-popup-inner h-100">
-                                    <div className="close-search-popup">
-                                        <i className="bi bi-x" />
-                                    </div>
-                                    <div className="startup-popup-main-content">
-                                        <h2>Get Our Email Letter</h2>
-                                        <p className="mb-0">Subscribe to the Mazia store mailing list to receive updates on new
-                                            arrivals, special offers
-                                            and other discount information.</p>
-                                        <div className="startup-subscribe-form">
-                                            <form action="#" method="POST">
-                                                <input type="text" placeholder="Subscribe to our newsletter" className="mb-30" />
-                                                <button className="generic-btn red-hover-btn text-uppercase">Subscribe now</button>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div className="startup-popup-sub-content">
-                                        <div className="popup-warning">
-                                            <input type="checkbox" id="startup-popup-hidden" />
-                                            <label htmlFor="startup-popup-hidden">Do not show the popup again</label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            {/* startup popup end */}
+
         </div>
     )
 }

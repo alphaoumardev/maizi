@@ -1,7 +1,7 @@
 import {useState} from "react";
-import Crumb from "../comps/Crumb";
+import Crumb from "../little/Crumb";
 import {Link} from "react-router-dom";
-import RelatedProduct from "../comps/RelatedProduct";
+import RelatedProduct from "../little/RelatedProduct";
 import ReactStars from "react-stars";
 
 const BigProducts = ()=>

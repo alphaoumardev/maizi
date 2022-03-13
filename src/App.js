@@ -3,18 +3,18 @@ import Home from "./pages/Home";
 import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
-import Products from "./components/Products";
+import Products from "./pages/Products";
 import Shop from "./components/Shop";
 import AllProducts from "./components/AllProducts";
 import BigProducts from "./components/BigProducts";
-import SingleProduct from "./components/SingleProduct";
-import Cart from "./components/Cart";
-import Checkout from "./components/Checkout";
-import ProductsCategory from "./components/ProductsCategory";
+import SingleProduct from "./pages/SingleProduct";
+import Cart from "./pages/Cart";
+import Checkout from "./pages/Checkout";
+import ProductsCategory from "./pages/ProductsCategory";
 import { Route, Routes } from 'react-router-dom';
-import Login from "./components/Login";
-import RelatedProduct from "./comps/RelatedProduct";
-import ScrollUp from "./comps/ScrollUp";
+import Login from "./pages/Login";
+import RelatedProduct from "./little/RelatedProduct";
+import ScrollUp from "./little/ScrollUp";
 import BlogIndex from "./blog/BlogIndex";
 import BlogAbout from "./blog/BlogAbout";
 import Author from "./blog/Author";
@@ -30,9 +30,9 @@ function App()
     return (
         <div className="App">
              {/*preloader*/}
-            {/*<div id="loader-wrapper">*/}
-            {/*    <div id="loader" />*/}
-            {/*</div>*/}
+            <div id="loader-wrapper">
+                <div id="loader" />
+            </div>
             {user &&<Navbar/>}
 
             {user?

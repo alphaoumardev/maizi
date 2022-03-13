@@ -38,7 +38,7 @@ const Category = ()=>
                                                 </div>
                                             </div>
                                         </div>
-                                        <div className="col-12">
+                                        <div className="col-12 mt-4">
                                             <div className="category-box">
                                                 <div className="category-wrapper">
                                                     <div className="category-img">
