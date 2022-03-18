@@ -1,24 +1,13 @@
 import {Link} from "react-router-dom";
 import ReactStars from "react-stars";
+import Crumb from "../little/Crumb";
 const ProductsCategory = () =>
 {
     return(
     <div>
 
   {/* bread crumb section start */}
-  <nav className="breadcrumb-section breadcrumb-bg1">
-    <div className="container">
-      <div className="row">
-        <div className="col-12">
-          <h2 className="bread-crumb-title">shop</h2>
-          <ol className="breadcrumb bg-transparent m-0 p-0 justify-content-center align-items-center">
-            <li className="breadcrumb-item"><Link to="/">Home</Link></li><i className="bi bi-chevron-right"/>
-            <li className="breadcrumb-item active" aria-current="page">Shop grid left sidebar</li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </nav>
+  <Crumb/>
   {/* bread crumb section end */}
   {/* shop page layout start */}
   <div className="shop-page-layout section-padding-bottom">
@@ -58,7 +47,9 @@ const ProductsCategory = () =>
           </div>
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="home" role="tabpanel">
+
               <div className="row grid-view mb-n5">
+
                 <div className="col-sm-6 col-md-4 mb-5">
                   <div className="product-card">
                     <Link to="single" className="product-thumb">
@@ -312,26 +303,7 @@ const ProductsCategory = () =>
                     </ul>
                   </div>
                 </div>
-                {/* pagination */}
-                <div className="col-12 mb-5">
-                  <nav aria-label="Page navigation">
-                    <ul className="pagination justify-content-center">
-                      <li className="page-item active">
-                        <Link className="page-link" to="#">
-                          <span className="bi bi-caret-left-fill" title="Back" />
-                        </Link>
-                      </li>
-                      <li className="page-item"><Link className="page-link" to="#">1</Link></li>
-                      <li className="page-item"><Link className="page-link" to="#">2</Link></li>
-                      <li className="page-item"><Link className="page-link" to="#">3</Link></li>
-                      <li className="page-item">
-                        <Link className="page-link" to="#">
-                          <span className="bi bi-caret-right-fill" title="Next" />
-                        </Link>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+
               </div>
             </div>
             <div className="tab-pane fade" id="profile" role="tabpanel">
@@ -678,27 +650,28 @@ const ProductsCategory = () =>
                   {/* product card list end */}
                 </div>
                 {/* col-12 mb-5 end */}
-                {/* pagination */}
-                <div className="col-12 mb-5">
-                  <nav aria-label="Page navigation">
-                    <ul className="pagination justify-content-center">
-                      <li className="page-item active">
-                        <Link className="page-link" to="#">
-                          <span className="bi bi-caret-left-fill" title="Back" />
-                        </Link>
-                      </li>
-                      <li className="page-item"><Link className="page-link" to="#">1</Link></li>
-                      <li className="page-item"><Link className="page-link" to="#">2</Link></li>
-                      <li className="page-item"><Link className="page-link" to="#">3</Link></li>
-                      <li className="page-item">
-                        <Link className="page-link" to="#">
-                          <span className="bi bi-caret-right-fill" title="Next" />
-                        </Link>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
+
               </div>
+            </div>
+            {/* pagination */}
+            <div className="col-12 mb-5 mt-60">
+              <nav aria-label="Page navigation">
+                <ul className="pagination justify-content-center">
+                  <li className="page-item active">
+                    <Link className="page-link" to="#">
+                      <span className="bi bi-caret-left-fill" title="Back" />
+                    </Link>
+                  </li>
+                  <li className="page-item"><Link className="page-link" to="#">1</Link></li>
+                  <li className="page-item"><Link className="page-link" to="#">2</Link></li>
+                  <li className="page-item"><Link className="page-link" to="#">3</Link></li>
+                  <li className="page-item">
+                    <Link className="page-link" to="#">
+                      <span className="bi bi-caret-right-fill" title="Next" />
+                    </Link>
+                  </li>
+                </ul>
+              </nav>
             </div>
           </div>
         </div>
