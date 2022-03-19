@@ -30,9 +30,9 @@ function App()
     return (
         <div className="App">
              {/*preloader*/}
-            <div id="loader-wrapper">
-                <div id="loader" />
-            </div>
+            {/*<div id="loader-wrapper">*/}
+            {/*    <div id="loader" />*/}
+            {/*</div>*/}
             {user &&<Navbar/>}
 
             {user?

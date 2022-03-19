@@ -1,7 +1,8 @@
 import Crumb from "../little/Crumb";
 import Featured from "../components/Featured";
 import {Link} from "react-router-dom";
-import ReactStars from 'react-stars'
+import StarRating from "react-star-rate";
+
 
 const SingleProduct = () =>
 {
@@ -23,22 +24,22 @@ const SingleProduct = () =>
                     <div className="tab-content" id="v-pills-tabContent">
                       <div className="tab-pane fade show active" id="tab-1">
                         <div className="product-img">
-                          <a href="../assets/img/product/farniture-7.jpg" className="popup-image"><img src="../assets/img/product/farniture-7.jpg" className="w-100" alt /></a>
+                          <a href="../assets/img/product/farniture-7.jpg" className="popup-image"><img src="../assets/img/product/farniture-7.jpg" className="w-100" alt=" " /></a>
                         </div>
                       </div>
                       <div className="tab-pane fade" id="tab-2">
                         <div className="product-img">
-                          <a href="../assets/img/product/farniture-8.jpg" className="popup-image"><img src="../assets/img/product/farniture-8.jpg" className="w-100" alt /></a>
+                          <a href="../assets/img/product/farniture-8.jpg" className="popup-image"><img src="../assets/img/product/farniture-8.jpg" className="w-100" alt=" " /></a>
                         </div>
                       </div>
                       <div className="tab-pane fade" id="tab-3">
                         <div className="product-img">
-                          <a href="../assets/img/product/farniture-9.jpg" className="popup-image"><img src="../assets/img/product/farniture-9.jpg" className="w-100" alt /></a>
+                          <a href="../assets/img/product/farniture-9.jpg" className="popup-image"><img src="../assets/img/product/farniture-9.jpg" className="w-100" alt=" " /></a>
                         </div>
                       </div>
                       <div className="tab-pane fade" id="tab-4">
                         <div className="product-img">
-                          <a href="../assets/img/product/farniture-10.jpg" className="popup-image"><img src="../assets/img/product/farniture-10.jpg" className="w-100" alt /></a>
+                          <a href="../assets/img/product/farniture-10.jpg" className="popup-image"><img src="../assets/img/product/farniture-10.jpg" className="w-100" alt=" " /></a>
                         </div>
                       </div>
                     </div>
@@ -46,16 +47,16 @@ const SingleProduct = () =>
                   <div className="col-2 ">
                     <div className="nav nav-pills has-border-img" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                       <a className="active" data-toggle="pill" href="#tab-1">
-                        <img src="../assets/img/product/farniture-7.jpg" className="w-100 mt-5-px" alt />
+                        <img src="../assets/img/product/farniture-7.jpg" className="w-100 mt-5-px" alt=" " />
                       </a>
                       <a data-toggle="pill" href="#tab-2">
-                        <img src="../assets/img/product/farniture-8.jpg" className="w-100 mt-5-px" alt />
+                        <img src="../assets/img/product/farniture-8.jpg" className="w-100 mt-5-px" alt=" " />
                       </a>
                       <a data-toggle="pill" href="#tab-3">
-                        <img src="../assets/img/product/farniture-9.jpg" className="w-100 mt-5-px" alt />
+                        <img src="../assets/img/product/farniture-9.jpg" className="w-100 mt-5-px" alt=" " />
                       </a>
                       <a data-toggle="pill" href="#tab-4">
-                        <img src="../assets/img/product/farniture-10.jpg" className="w-100 mt-5-px" alt />
+                        <img src="../assets/img/product/farniture-10.jpg" className="w-100 mt-5-px" alt=" " />
                       </a>
                     </div>
                   </div>
@@ -186,7 +187,7 @@ const SingleProduct = () =>
               <a data-toggle="pill" href="#desc-tab-3">Additional information</a>
             </li>
             <li className="nav-item">
-              <a className data-toggle="pill" href="#desc-tab-2">Reviews (0)</a>
+              <a  data-toggle="pill" href="#desc-tab-2">Reviews (0)</a>
             </li>
           </ul>
           <div className="container container-1200">
@@ -242,7 +243,7 @@ const SingleProduct = () =>
                       <div className="review-wrapper">
                         <div className="single-review">
                           <div className="review-img">
-                            <img src="assets/images/testimonial/1.png" alt />
+                            <img src="assets/images/testimonial/1.png" alt=" " />
                           </div>
                           <div className="review-content">
                             <div className="review-top-wrap">
@@ -250,7 +251,7 @@ const SingleProduct = () =>
                                 <div className="review-name">
                                   <h4>White Lewis</h4>
                                 </div>
-                                <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                <StarRating count={5} symbol="★" color2={'#ffd700'} />
 
                               </div>
                               <div className="review-left">
@@ -269,14 +270,14 @@ const SingleProduct = () =>
                         </div>
                         <div className="single-review child-review">
                           <div className="review-img">
-                            <img src="assets/images/testimonial/2.png" alt />
+                            <img src="assets/images/testimonial/2.png" alt=" " />
                           </div>
                           <div className="review-content">
                             <div className="review-top-wrap">
                               <div className="review-left">
                                 <div className="review-name">
                                   <h4>White Lewis</h4>
-                                </div>  <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                </div>  <StarRating count={5} symbol="★" color2={'#ffd700'} />
 
                               </div>
                               <div className="review-left">
@@ -302,7 +303,7 @@ const SingleProduct = () =>
                           <form action="#">
                             <div className="star-box">
                               <span>Your rating:</span>
-                              <ReactStars count={5} size={20} color2={'#ffd700'} />
+                              <StarRating count={5} symbol="★" color2={'#ffd700'} />
                             </div>
                             <div className="row">
                               <div className="col-md-6">
@@ -351,10 +352,10 @@ const SingleProduct = () =>
             <div className="product-box">
               <div className="product-box-wrapper">
                 <div className="product-img">
-                  <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt />
+                  <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt=" " />
                   <Link to="/single" className="d-block">
                     <div className="second-img">
-                      <img src="../assets/img/product/farniture-1-hover.jpg" alt className="w-100" />
+                      <img src="../assets/img/product/farniture-1-hover.jpg" alt=" " className="w-100" />
                     </div>
                   </Link>
                   <Link to="/" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>
@@ -383,10 +384,10 @@ const SingleProduct = () =>
             <div className="product-box">
               <div className="product-box-wrapper">
                 <div className="product-img">
-                  <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt />
+                  <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt=" " />
                   <Link to="/single" className="d-block">
                     <div className="second-img">
-                      <img src="../assets/img/product/farniture-2-hover.jpg" alt className="w-100" />
+                      <img src="../assets/img/product/farniture-2-hover.jpg" alt=" " className="w-100" />
                     </div>
                   </Link>
                   <Link to="/" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>
@@ -415,10 +416,10 @@ const SingleProduct = () =>
             <div className="product-box">
               <div className="product-box-wrapper">
                 <div className="product-img">
-                  <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt />
+                  <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt=" " />
                   <Link to="/single" className="d-block">
                     <div className="second-img">
-                      <img src="../assets/img/product/farniture-4-hover.jpg" alt className="w-100" />
+                      <img src="../assets/img/product/farniture-4-hover.jpg" alt=" " className="w-100" />
                     </div>
                   </Link>
                   <Link to="/" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>
@@ -446,10 +447,10 @@ const SingleProduct = () =>
             <div className="product-box mb-40">
               <div className="product-box-wrapper">
                 <div className="product-img">
-                  <img src="../assets/img/product/farniture-5.jpg" className="w-100" alt />
+                  <img src="../assets/img/product/farniture-5.jpg" className="w-100" alt=" " />
                   <Link to="/single" className="d-block">
                     <div className="second-img">
-                      <img src="../assets/img/product/farniture-5-hover.jpg" alt className="w-100" />
+                      <img src="../assets/img/product/farniture-5-hover.jpg" alt=" " className="w-100" />
                     </div>
                   </Link>
                   <Link to="/" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>
@@ -480,10 +481,10 @@ const SingleProduct = () =>
             <div className="product-box mb-40">
               <div className="product-box-wrapper">
                 <div className="product-img">
-                  <img src="../assets/img/product/farniture-6.jpg" className="w-100" alt />
+                  <img src="../assets/img/product/farniture-6.jpg" className="w-100" alt=" " />
                   <Link to="/single" className="d-block">
                     <div className="second-img">
-                      <img src="../assets/img/product/farniture-6-hover.jpg" alt className="w-100" />
+                      <img src="../assets/img/product/farniture-6-hover.jpg" alt=" " className="w-100" />
                     </div>
                   </Link>
                   <Link to="/" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>
@@ -513,10 +514,10 @@ const SingleProduct = () =>
             <div className="product-box mb-40">
               <div className="product-box-wrapper">
                 <div className="product-img">
-                  <img src="../assets/img/product/farniture-7.jpg" className="w-100" alt />
+                  <img src="../assets/img/product/farniture-7.jpg" className="w-100" alt=" " />
                   <Link to="/single" className="d-block">
                     <div className="second-img">
-                      <img src="../assets/img/product/farniture-7-hover.jpg" alt className="w-100" />
+                      <img src="../assets/img/product/farniture-7-hover.jpg" alt=" " className="w-100" />
                     </div>
                   </Link>
                   <Link to="/" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>
@@ -546,10 +547,10 @@ const SingleProduct = () =>
             <div className="product-box mb-40">
               <div className="product-box-wrapper">
                 <div className="product-img">
-                  <img src="../assets/img/product/farniture-8.jpg" className="w-100" alt />
+                  <img src="../assets/img/product/farniture-8.jpg" className="w-100" alt=" " />
                   <Link to="/single" className="d-block">
                     <div className="second-img">
-                      <img src="../assets/img/product/farniture-8-hover.jpg" alt className="w-100" />
+                      <img src="../assets/img/product/farniture-8-hover.jpg" alt=" " className="w-100" />
                     </div>
                   </Link>
                   <Link to="/" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>
@@ -578,10 +579,10 @@ const SingleProduct = () =>
             <div className="product-box mb-40">
               <div className="product-box-wrapper">
                 <div className="product-img">
-                  <img src="../assets/img/product/farniture-9.jpg" className="w-100" alt />
+                  <img src="../assets/img/product/farniture-9.jpg" className="w-100" alt=" " />
                   <Link to="/single" className="d-block">
                     <div className="second-img">
-                      <img src="../assets/img/product/farniture-9-hover.jpg" alt className="w-100" />
+                      <img src="../assets/img/product/farniture-9-hover.jpg" alt=" " className="w-100" />
                     </div>
                   </Link>
                   <Link to="/" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>
@@ -631,34 +632,34 @@ const SingleProduct = () =>
               <div className="tab-content">
                 <div className="tab-pane fade show active" id="product-popup-1">
                   <div className="product-popup-img">
-                    <img src="../assets/img/product/10.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/10.jpg" className="w-100" alt=" " />
                   </div>
                 </div>
                 <div className="tab-pane fade" id="product-popup-2">
                   <div className="product-popup-img">
-                    <img src="../assets/img/product/11.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/11.jpg" className="w-100" alt=" " />
                   </div>
                 </div>
                 <div className="tab-pane fade" id="product-popup-3">
                   <div className="product-popup-img">
-                    <img src="../assets/img/product/12.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/12.jpg" className="w-100" alt=" " />
                   </div>
                 </div>
               </div>
               <ul className="nav nav-pills justify-content-center mt-10">
                 <li className="nav-item">
                   <Link className="active" data-toggle="pill" to="#product-popup-1">
-                    <img src="../assets/img/product/10.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/10.jpg" className="w-100" alt=" " />
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className data-toggle="pill" to="#product-popup-2">
-                    <img src="../assets/img/product/11.jpg" className="w-100" alt />
+                  <Link  data-toggle="pill" to="#product-popup-2">
+                    <img src="../assets/img/product/11.jpg" className="w-100" alt=" " />
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className data-toggle="pill" to="#product-popup-3">
-                    <img src="../assets/img/product/12.jpg" className="w-100" alt />
+                  <Link  data-toggle="pill" to="#product-popup-3">
+                    <img src="../assets/img/product/12.jpg" className="w-100" alt=" " />
                   </Link>
                 </li>
               </ul>

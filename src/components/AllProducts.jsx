@@ -1,7 +1,7 @@
 import {useState} from "react";
 import Crumb from "../little/Crumb";
 import {Link} from "react-router-dom";
-import ReactStars from "react-stars";
+import StarRating from "react-star-rate";
 const AllProducts = ()=>
 {
   const [isOpen, setIsOpen] = useState(false);
@@ -1145,7 +1145,7 @@ const AllProducts = ()=>
                               <div className="col-xl-8 col-lg-8 col-md-8">
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blandit vel eros condimentum ulla</Link></h3>
-                                    <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                    <StarRating count={5} symbol="★" color2={'#ffd700'} />
                                   <div className="price"><span>$90.00</span></div>
                                   <div className="desc">
                                     <p>Typi non habent claritatem insitam, est usus
@@ -1198,7 +1198,7 @@ const AllProducts = ()=>
                               <div className="col-xl-8 col-lg-8 col-md-8">
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blossom Porcelain Side Plates</Link></h3>
-                                    <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                    <StarRating count={5} symbol="★" color2={'#ffd700'} />
                                   <div className="price"><span className="red-color">$399</span><del>$499</del></div>
                                   <div className="desc">
                                     <p>Typi non habent claritatem insitam, est usus
@@ -1245,13 +1245,14 @@ const AllProducts = ()=>
                                     <Link to="" className="product-img-link quick-view-1 text-capitalize">Quick
                                       view</Link>
                                     <span className="sale bg-red text-white">sale!</span>
+
                                   </div>
                                 </div>
                               </div>
                               <div className="col-xl-8 col-lg-8 col-md-8">
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blossom Porcelain Side Platess</Link></h3>
-                                    <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                    <StarRating count={5} symbol="★" color2={'#ffd700'} />
                                   <div className="price"><span className="red-color">$399</span><del>$499</del></div>
                                   <div className="desc">
                                     <p>Typi non habent claritatem insitam, est usus
@@ -1304,7 +1305,7 @@ const AllProducts = ()=>
                               <div className="col-xl-8 col-lg-8 col-md-8">
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blandit vel eros condimentum ulla</Link></h3>
-                                    <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                    <StarRating count={5} symbol="★" color2={'#ffd700'} />
                                   <div className="price"><span>$90.00</span></div>
                                   <div className="desc">
                                     <p>Typi non habent claritatem insitam, est usus

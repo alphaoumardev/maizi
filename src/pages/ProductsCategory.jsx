@@ -1,14 +1,26 @@
 import {Link} from "react-router-dom";
-import ReactStars from "react-stars";
+import StarRating from "react-star-rate";
+
 import Crumb from "../little/Crumb";
+import {useState} from "react";
+import axios from 'axios'
 const ProductsCategory = () =>
 {
+  const [articles, setArticles] = useState([])
+
+  // const getArticles = async ()=>
+  // {
+  //   const response = await axios.get("http://127.0.0.1:8000/")
+  //   const data = await response.json()
+  //   console.log(data)
+  //   setArticles(data)
+  // }
+
     return(
     <div>
-
-  {/* bread crumb section start */}
+  {/* crumb start*/}
   <Crumb/>
-  {/* bread crumb section end */}
+  {/* crumb end */}
   {/* shop page layout start */}
   <div className="shop-page-layout section-padding-bottom">
     <div className="container">
@@ -865,7 +877,7 @@ const ProductsCategory = () =>
             <div className="col-md-7 mb-7">
               <div className="modal-product-des">
                 <h3 className="modal-product-title"><Link to="#">Tropical Juice Drink</Link></h3>
-                <ReactStars count={5} size={20} color2={'#ffd700'} />
+                <StarRating count={5} symbol="★" color2={'#ffd700'} />
 
                 <div className="product-price-wrapp-lg">
                   <span className="product-regular-price-lg">€43.80</span>

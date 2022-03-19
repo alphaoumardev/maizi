@@ -37,7 +37,7 @@ const Cart = ()=>
                           </td>
                           <td>
                             <div className="table-data">
-                              <img src="../assets/img/product/1.jpg" width={80} alt />
+                              <img src="../assets/img/product/1.jpg" width={80} alt="" />
                             </div>
                           </td>
                           <td>
@@ -69,7 +69,7 @@ const Cart = ()=>
                           </td>
                           <td>
                             <div className="table-data">
-                              <img src="../assets/img/product/2.jpg" width={80} alt />
+                              <img src="../assets/img/product/2.jpg" width={80} alt="" />
                             </div>
                           </td>
                           <td>
@@ -171,34 +171,34 @@ const Cart = ()=>
               <div className="tab-content" id="pills-tabContent">
                 <div className="tab-pane fade show active" id="product-popup-1">
                   <div className="product-popup-img">
-                    <img src="../assets/img/product/10.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/10.jpg" className="w-100" alt="" />
                   </div>
                 </div>
                 <div className="tab-pane fade" id="product-popup-2">
                   <div className="product-popup-img">
-                    <img src="../assets/img/product/11.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/11.jpg" className="w-100" alt="" />
                   </div>
                 </div>
                 <div className="tab-pane fade" id="product-popup-3">
                   <div className="product-popup-img">
-                    <img src="../assets/img/product/12.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/12.jpg" className="w-100" alt="" />
                   </div>
                 </div>
               </div>
               <ul className="nav nav-pills justify-content-center mt-10" id="pills-tab" role="tablist">
                 <li className="nav-item">
                   <Link className="active" data-toggle="pill" to="#product-popup-1">
-                    <img src="../assets/img/product/10.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/10.jpg" className="w-100" alt="" />
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className data-toggle="pill" to="#product-popup-2">
-                    <img src="../assets/img/product/11.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/11.jpg" className="w-100" alt="" />
                   </Link>
                 </li>
                 <li className="nav-item">
                   <Link className data-toggle="pill" to="#product-popup-3">
-                    <img src="../assets/img/product/12.jpg" className="w-100" alt />
+                    <img src="../assets/img/product/12.jpg" className="w-100" alt="" />
                   </Link>
                 </li>
               </ul>

@@ -2,7 +2,7 @@ import {useState} from "react";
 import Crumb from "../little/Crumb";
 import {Link} from "react-router-dom";
 import RelatedProduct from "../little/RelatedProduct";
-import ReactStars from "react-stars";
+import StarRating from "react-star-rate";
 
 const BigProducts = ()=>
 {
@@ -138,10 +138,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-1-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-1-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -168,10 +168,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-2-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-2-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -199,10 +199,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/7.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/7.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/7-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/7-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -232,10 +232,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-4-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-4-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -265,10 +265,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-5.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-5.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-5-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-5-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -296,10 +296,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-6.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-6.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-6-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-6-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -337,10 +337,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-1-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-1-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -367,10 +367,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-2-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-2-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -398,10 +398,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-3.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-3.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-3-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-3-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -431,10 +431,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-14-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-14-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -464,10 +464,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-5.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-5.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-5-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-5-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -495,10 +495,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-6.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-6.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-6-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-6-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -527,10 +527,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-7.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-7.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-7-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-7-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -558,10 +558,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-8.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-8.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-8-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-8-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -591,10 +591,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-9.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-9.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-9-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-9-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -623,10 +623,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-10.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-10.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-10.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-10.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -652,10 +652,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-11.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-11.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-11-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-11-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -685,10 +685,10 @@ const BigProducts = ()=>
                         <div className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="product-img">
-                              <img src="../assets/img/product/farniture-12.jpg" className="w-100" alt />
+                              <img src="../assets/img/product/farniture-12.jpg" className="w-100" alt=" " />
                               <Link to="single" className="d-block">
                                 <div className="second-img">
-                                  <img src="../assets/img/product/farniture-12-hover.jpg" alt className="w-100" />
+                                  <img src="../assets/img/product/farniture-12-hover.jpg" alt=" " className="w-100" />
                                 </div>
                               </Link>
                               <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -731,9 +731,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-1-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-1-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -758,9 +758,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-2-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-2-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -785,9 +785,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-3.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-3.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-3-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-3-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -812,9 +812,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-4-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-4-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -839,9 +839,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-5.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-5.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-5-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-5-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -866,9 +866,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-6.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-6.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-6-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-6-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -893,9 +893,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-2-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-2-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -920,9 +920,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-10.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-10.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-10-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-10-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -954,9 +954,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-11.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-11.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-11-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-11-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -981,9 +981,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-12.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-12.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-12-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-12-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -1008,9 +1008,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-13.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-13.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-13-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-13-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -1035,9 +1035,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-14.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-14.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-14-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-14-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -1062,9 +1062,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-15.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-15.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-15-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-15-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -1089,9 +1089,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-16.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-16.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-16-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-16-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -1116,9 +1116,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-1-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-1-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -1143,9 +1143,9 @@ const BigProducts = ()=>
                                 <div className="product-box position-relative mb-40 middle-view">
                                   <div className="product-box-wrapper">
                                     <div className="product-img">
-                                      <img src="../assets/img/product/farniture-3.jpg" className="w-100" alt />
+                                      <img src="../assets/img/product/farniture-3.jpg" className="w-100" alt=" " />
                                       <Link to="single" className="d-block"><div className="second-img">
-                                          <img src="../assets/img/product/farniture-3-hover.jpg" alt className="w-100" />
+                                          <img src="../assets/img/product/farniture-3-hover.jpg" alt=" " className="w-100" />
                                         </div></Link>
                                       <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize eright-turquoise-color-hover">Quick view</Link>
                                     </div>
@@ -1184,10 +1184,10 @@ const BigProducts = ()=>
                               <div className="col-xl-4 col-lg-4 col-md-4">
                                 <div className="list-product-img">
                                   <div className="product-img">
-                                    <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt />
+                                    <img src="../assets/img/product/farniture-1.jpg" className="w-100" alt=" " />
                                     <Link to="single" className="d-block">
                                       <div className="second-img">
-                                        <img src="../assets/img/product/farniture-2-hover.jpg" alt className="w-100" />
+                                        <img src="../assets/img/product/farniture-2-hover.jpg" alt=" " className="w-100" />
                                       </div>
                                     </Link>
                                     <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -1199,7 +1199,7 @@ const BigProducts = ()=>
                               <div className="col-xl-8 col-lg-8 col-md-8">
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blandit vel eros condimentum ulla</Link></h3>
-                                    <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                    <StarRating count={5} symbol="★" color2={'#ffd700'} />
                                   <div className="price"><span>$90.00</span></div>
                                   <div className="desc">
                                     <p>Typi non habent claritatem insitam, est usus
@@ -1237,10 +1237,10 @@ const BigProducts = ()=>
                               <div className="col-xl-4 col-lg-4 col-md-4">
                                 <div className="list-product-img">
                                   <div className="product-img">
-                                    <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt />
+                                    <img src="../assets/img/product/farniture-2.jpg" className="w-100" alt=" " />
                                     <Link to="single" className="d-block">
                                       <div className="second-img">
-                                        <img src="../assets/img/product/farniture-2-hover.jpg" alt className="w-100" />
+                                        <img src="../assets/img/product/farniture-2-hover.jpg" alt=" " className="w-100" />
                                       </div>
                                     </Link>
                                     <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -1252,7 +1252,7 @@ const BigProducts = ()=>
                               <div className="col-xl-8 col-lg-8 col-md-8">
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blossom Porcelain Side Plates</Link></h3>
-                                    <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                    <StarRating count={5} symbol="★" color2={'#ffd700'} />
                                   <div className="price"><span className="red-color">$399</span><del>$499</del></div>
                                   <div className="desc">
                                     <p>Typi non habent claritatem insitam, est usus
@@ -1290,10 +1290,10 @@ const BigProducts = ()=>
                               <div className="col-xl-4 col-lg-4 col-md-4">
                                 <div className="list-product-img">
                                   <div className="product-img">
-                                    <img src="../assets/img/product/farniture-3.jpg" className="w-100" alt />
+                                    <img src="../assets/img/product/farniture-3.jpg" className="w-100" alt=" " />
                                     <Link to="single" className="d-block">
                                       <div className="second-img">
-                                        <img src="../assets/img/product/farniture-3-hover.jpg" alt className="w-100" />
+                                        <img src="../assets/img/product/farniture-3-hover.jpg" alt=" " className="w-100" />
                                       </div>
                                     </Link>
                                     <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -1305,7 +1305,7 @@ const BigProducts = ()=>
                               <div className="col-xl-8 col-lg-8 col-md-8">
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blossom Porcelain Side Platess</Link></h3>
-                                    <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                    <StarRating count={5} symbol="★" color2={'#ffd700'} />
 
                                   <div className="price"><span className="red-color">$399</span><del>$499</del></div>
                                   <div className="desc">
@@ -1344,10 +1344,10 @@ const BigProducts = ()=>
                               <div className="col-xl-4 col-lg-4 col-md-4">
                                 <div className="list-product-img">
                                   <div className="product-img">
-                                    <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt />
+                                    <img src="../assets/img/product/farniture-4.jpg" className="w-100" alt=" " />
                                     <Link to="single" className="d-block">
                                       <div className="second-img">
-                                        <img src="../assets/img/product/farniture-4-hover.jpg" alt className="w-100" />
+                                        <img src="../assets/img/product/farniture-4-hover.jpg" alt=" " className="w-100" />
                                       </div>
                                     </Link>
                                     <Link to="javascript:void(0)" className="product-img-link quick-view-1 text-capitalize">Quick
@@ -1359,7 +1359,7 @@ const BigProducts = ()=>
                               <div className="col-xl-8 col-lg-8 col-md-8">
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blandit vel eros condimentum ulla</Link></h3>
-                                    <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                    <StarRating count={5} symbol="★" color2={'#ffd700'} />
                                   <div className="price"><span>$90.00</span></div>
                                   <div className="desc">
                                     <p>Typi non habent claritatem insitam, est usus

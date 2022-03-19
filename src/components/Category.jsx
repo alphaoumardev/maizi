@@ -1,5 +1,7 @@
 import {Link} from "react-router-dom";
-import ReactStars from "react-stars";
+// import StarRating from "react-star-rate";
+
+
 const Category = ()=>
 {
     return(

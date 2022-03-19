@@ -48,10 +48,10 @@ const NewArrivals = ()=>
                         <div className="product-box">
                             <div className="product-box-wrapper">
                                 <div className="product-img">
-                                    <img src="../assets/img/product/farniture-1.jpg" className="w-80" alt />
+                                    <img src="../assets/img/product/farniture-1.jpg" className="w-80" alt="" />
                                     <a href="single" className="d-block">
                                         <div className="second-img">
-                                            <img src="../assets/img/product/farniture-1-hover.jpg" alt className="w-80" />
+                                            <img src="../assets/img/product/farniture-1-hover.jpg" alt="" className="w-80" />
                                         </div></a>
                                     <a href="/" className="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
@@ -75,9 +75,9 @@ const NewArrivals = ()=>
                         <div className="product-box">
                             <div className="product-box-wrapper">
                                 <div className="product-img">
-                                    <img src="../assets/img/product/farniture-2.jpg" className="w-80" alt />
+                                    <img src="../assets/img/product/farniture-2.jpg" className="w-80" alt="" />
                                     <a href="single" className="d-block"><div className="second-img">
-                                        <img src="../assets/img/product/farniture-2-hover.jpg" alt className="w-80" />
+                                        <img src="../assets/img/product/farniture-2-hover.jpg" alt="" className="w-80" />
                                     </div></a>
                                     <a href="/" className="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
@@ -101,9 +101,9 @@ const NewArrivals = ()=>
                         <div className="product-box">
                             <div className="product-box-wrapper">
                                 <div className="product-img">
-                                    <img src="../assets/img/product/farniture-4.jpg" className="w-80" alt />
+                                    <img src="../assets/img/product/farniture-4.jpg" className="w-80" alt="" />
                                     <a href="single" className="d-block"><div className="second-img">
-                                        <img src="../assets/img/product/farniture-4-hover.jpg" alt className="w-80" />
+                                        <img src="../assets/img/product/farniture-4-hover.jpg" alt="" className="w-80" />
                                     </div></a>
                                     <a href="/" className="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
@@ -127,9 +127,9 @@ const NewArrivals = ()=>
                         <div className="product-box ">
                             <div className="product-box-wrapper">
                                 <div className="product-img">
-                                    <img src="../assets/img/product/farniture-5.jpg" className="w-80" alt />
+                                    <img src="../assets/img/product/farniture-5.jpg" className="w-80" alt="" />
                                     <a href="single" className="d-block"><div className="second-img">
-                                        <img src="../assets/img/product/farniture-5-hover.jpg" alt className="w-80" />
+                                        <img src="../assets/img/product/farniture-5-hover.jpg" alt="" className="w-80" />
                                     </div></a>
                                     <a href="/" className="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
@@ -155,9 +155,9 @@ const NewArrivals = ()=>
                         <div className="product-box ">
                             <div className="product-box-wrapper">
                                 <div className="product-img">
-                                    <img src="../assets/img/product/farniture-6.jpg" className="w-80" alt />
+                                    <img src="../assets/img/product/farniture-6.jpg" className="w-80" alt="" />
                                     <a href="single" className="d-block"><div className="second-img">
-                                        <img src="../assets/img/product/farniture-6-hover.jpg" alt className="w-80" />
+                                        <img src="../assets/img/product/farniture-6-hover.jpg" alt="" className="w-80" />
                                     </div></a>
                                     <a href="/" className="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                     <span className="sale bg-red text-white">sale!</span>
@@ -183,9 +183,9 @@ const NewArrivals = ()=>
                         <div className="product-box ">
                             <div className="product-box-wrapper">
                                 <div className="product-img">
-                                    <img src="../assets/img/product/farniture-7.jpg" className="w-80" alt />
+                                    <img src="../assets/img/product/farniture-7.jpg" className="w-80" alt="" />
                                     <a href="single" className="d-block"><div className="second-img">
-                                        <img src="../assets/img/product/farniture-7-hover.jpg" alt className="w-80" />
+                                        <img src="../assets/img/product/farniture-7-hover.jpg" alt="" className="w-80" />
                                     </div></a>
                                     <a href="/" className="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                     <span className="sale bg-red text-white">sale!</span>
@@ -210,9 +210,9 @@ const NewArrivals = ()=>
                         <div className="product-box ">
                             <div className="product-box-wrapper">
                                 <div className="product-img">
-                                    <img src="../assets/img/product/farniture-8.jpg" className="w-80" alt />
+                                    <img src="../assets/img/product/farniture-8.jpg" className="w-80" alt="" />
                                     <a href="single" className="d-block"><div className="second-img">
-                                        <img src="../assets/img/product/farniture-8-hover.jpg" alt className="w-80" />
+                                        <img src="../assets/img/product/farniture-8-hover.jpg" alt="" className="w-80" />
                                     </div></a>
                                     <a href="/" className="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>
@@ -236,9 +236,9 @@ const NewArrivals = ()=>
                         <div className="product-box ">
                             <div className="product-box-wrapper">
                                 <div className="product-img">
-                                    <img src="../assets/img/product/farniture-9.jpg" className="w-80" alt />
+                                    <img src="../assets/img/product/farniture-9.jpg" className="w-80" alt="" />
                                     <a href="single" className="d-block"><div className="second-img">
-                                        <img src="../assets/img/product/farniture-9-hover.jpg" alt className="w-80" />
+                                        <img src="../assets/img/product/farniture-9-hover.jpg" alt="" className="w-80" />
                                     </div></a>
                                     <a href="/" className="product-img-link quick-view-1 text-capitalize">Quick view</a>
                                 </div>

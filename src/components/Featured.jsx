@@ -376,11 +376,11 @@ const Featured = () =>
                 <div className="product-variants">
                   <div className="product-variants-item">
                     <span className="control-label">Size</span>
-                    <select className="form-control form-control-select">
-                      <option value={1} title="S" selected="selected">S</option>
-                      <option value={2} title="M">M</option>
-                      <option value={3} title="L">L</option>
-                      <option value={4} title="XL">XL</option>
+                    <select className="form-control form-control-select" defaultValue={true}>
+                      <option defaultValue={1} title="S" >S</option>
+                      <option defaultValue={2} title="M">M</option>
+                      <option defaultValue={3} title="L">L</option>
+                      <option defaultValue={4} title="XL">XL</option>
                     </select>
                   </div>
                   <div className="product-variants-item">

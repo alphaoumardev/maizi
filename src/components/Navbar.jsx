@@ -91,8 +91,8 @@ const Navbar =()=>
                                                 <i onClick={toggleSearchButton} className="bi bi-search" title="Looking for something?" />
                                                 {searchButton && <TextField  id="standard-size-small" defaultValue="" placeholder="Search" size="small" variant="standard" style={{paddingLeft:10}}/>}
                                             </span>
-                                            <li><Link to="login" className="account"><i className="bi bi-person-fill" /> <article className="account-registar d-inline-block"></article></Link></li>
-                                            <li><Link to="/" className="account"><i  className="bi bi-translate"/> </Link></li>
+                                            <><Link to="login" className="account"><i className="bi bi-person-fill" /> <article className="account-registar d-inline-block"></article></Link></>
+                                            <><Link to="/" className="account"><i  className="bi bi-translate"/> </Link></>
 
                                             {/* search popup */}
 

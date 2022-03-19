@@ -1,7 +1,8 @@
 import Crumb from "../little/Crumb";
 import {useState} from "react";
 import {Link} from "react-router-dom";
-import ReactStars from "react-stars";
+import StarRating from "react-star-rate";
+
 const Shop = ()=>
 {
   const [isOpen, setIsOpen] = useState(false);
@@ -1304,7 +1305,7 @@ const Shop = ()=>
                                   <h3><Link to="single" className="title mb-15">Blandit vel eros
                                       condimentum ulla</Link></h3>
 
-                                      <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                      <StarRating count={5} symbol="★" color2={'#ffd700'} />
 
 
                                   <div className="price"><span>$90.00</span></div>
@@ -1363,7 +1364,7 @@ const Shop = ()=>
                                   <h3><Link to="single" className="title mb-15">Blossom
                                       Porcelain Side Plates</Link></h3>
 
-                                      <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                      <StarRating count={5} symbol="★" color2={'#ffd700'} />
 
 
                                   <div className="price"><span className="red-color">$399</span><del>$499</del>
@@ -1423,7 +1424,7 @@ const Shop = ()=>
                                   <h3><Link to="single" className="title mb-15">Blossom
                                       Porcelain Side Platess</Link></h3>
 
-                                      <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                      <StarRating count={5} symbol="★" color2={'#ffd700'} />
 
                                   <div className="price"><span className="red-color">$399</span><del>$499</del>
                                   </div>
@@ -1481,7 +1482,7 @@ const Shop = ()=>
                                 <div className="list-product-desc">
                                   <h3><Link to="single" className="title mb-15">Blandit vel eros
                                       condimentum ulla</Link></h3>
-                                      <ReactStars count={5} size={20} color2={'#ffd700'} />
+                                      <StarRating count={5} symbol="★" color2={'#ffd700'} />
 
                                   <div className="price"><span>$90.00</span></div>
                                   <div className="desc">
