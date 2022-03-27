@@ -24,6 +24,8 @@ import BlogCategory from "./blog/BlogCategory";
 import AllBlogPosts from "./blog/AllBlogPosts";
 import PostDetail from "./blog/PostDetail";
 import Contact from "./blog/Contact";
+import AllProCrumb from "./pages/AllProCrumb";
+import NavIds from "./items/SubCates/NavIds";
 function App()
 {
     const user = true
@@ -33,19 +35,23 @@ function App()
             {/*<div id="loader-wrapper">*/}
             {/*    <div id="loader" />*/}
             {/*</div>*/}
-            {user &&<Navbar/>}
+            {user &&<Navbar />}
 
             {user?
                 <Routes>
                 <Route exact path="/"   element={<Home/>}/>
+                    <Route exact path="/:id"   element={<Home/>}/>
+
                 <Route path="/category"   element={<ProductsCategory/>}/>
                 <Route path="/products" element={<Products/>}/>
                 <Route path="/shop"    element={<Shop/>}/>
                 <Route path="/big" element={<BigProducts/>}/>
-                <Route path="/single" element={<SingleProduct/>}/>
+                <Route path="/single/:id" element={<SingleProduct/>}/>
+                    <Route path="/:id/single/:id" element={<SingleProduct/>}/>
+
                 <Route path="/cart" element={<Cart/>}/>
                 <Route path="/checkout" element={<Checkout/>}/>
-                <Route path="/allproducts" element={<AllProducts/>}/>
+                <Route path="/allproducts" element={<AllProCrumb/>}/>
 
                 {/*    The blog post */}
                 <Route path="/blog" exact element={<BlogIndex/>}/>
@@ -63,7 +69,7 @@ function App()
             </Routes>
             }
             <ScrollUp/>
-            {user &&<Footer/>}
+            {/*{user &&<Footer/>}*/}
         </div>
     );
 }

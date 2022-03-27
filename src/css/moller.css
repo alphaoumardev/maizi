@@ -496,7 +496,7 @@ svg {
     margin-left: 30px;
 }
 
-.main-menu-item:hover .mega-menu,
+.main-menu-item:hover ,
 .main-menu-item:hover .sub-menu {
     opacity: 1;
     -webkit-transform: perspective(600px) rotateX(0deg);
@@ -581,8 +581,8 @@ svg {
     left: 0;
     z-index: 11;
     opacity: 0;
-    -webkit-transform: perspective(600px) rotateX(-90deg);
-            transform: perspective(600px) rotateX(-90deg);
+    -webkit-transform: perspective(200px) rotateX(-90deg);
+            transform: perspective(200px) rotateX(-90deg);
     -webkit-transform-origin: 0 0;
         -ms-transform-origin: 0 0;
             transform-origin: 0 0;
@@ -594,7 +594,7 @@ svg {
 }
 
 .mega-menu-item {
-    width: 33.333%;
+    width: 10%;
     font-weight: 500;
     color: #222;
     font-size: 16px;
@@ -2692,7 +2692,7 @@ svg {
 
 .product-description-short {
     padding: 0 0 30px 0;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
     border-bottom: 1px solid #ebebeb;
 }
 
@@ -2786,7 +2786,9 @@ svg {
 }
 
 .product-modal-dialog {
-    min-width: 64rem;
+    min-width: 50rem;
+    /*height: 20%;*/
+
 }
 
 .product-modal-dialog .modal-header {
@@ -2794,7 +2796,7 @@ svg {
 }
 
 .product-price-wrapp-lg {
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 }
 
 .product-regular-price-lg {

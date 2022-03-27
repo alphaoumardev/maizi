@@ -1,9 +1,15 @@
-import {useState} from "react";
+import {useState, useEffect} from "react";
 import {TextField} from "@mui/material";
-import {Link} from "react-router-dom";
+import {Link, useLocation} from "react-router-dom";
+import axios from "axios";
+import AllProductItem from "../items/AllProductItem";
+import NavbarItem from "../items/NavbarItem";
+import SubCategories from "../items/SubCates/SubCategories";
 
 const Navbar =()=>
 {
+    const [input, setInput] = useState(null)
+    const [urls, setUrls] = useState([])
     const [isOpen, setIsOpen] = useState(false);
     const [isOp, setIsOp] = useState(false);
     const [searchButton, setSearchButton] = useState(false);
@@ -18,7 +24,66 @@ const Navbar =()=>
     if(!isOpen || !isOp || !searchButton){setTimeout(close, 5000)}
     if(!searchButton){setInterval(closing, 20000)}
 
+    const getUrls = async ()=>
+    {
+        await axios.get('/catename/')
+            .then((res)=>
+            {
+                // console.log(res.data)
+                setUrls(res.data)
+            }, error =>{console.log(error)})
+    }
+    useEffect(() =>
+    {
+        getUrls()
+    }, []);
 
+
+    const location = useLocation();
+    const id = location.pathname.split("/")[1];
+    const [subcates, setSubcates] = useState([])
+    // const [genre, setGenre] = useState('')
+    // const getGenre = (e)=>
+    // {
+    //     // e.preventDefault()
+    //     const id = e.target.value
+    //     setGenre(id)
+    //     // console.log(id)
+    // }
+    // useEffect(()=>
+    // {
+    //     const getSubcateries = async ()=>
+    //     {
+    //         const res = await axios.get(`/bygenre/2`)
+    //         setSubcates(res.data)
+    //         console.log(res.data)
+    //     }
+    //     getSubcateries(id).then(()=>{})
+    // },[])
+
+    useEffect(()=>
+    {
+        const getSubcatery = async (id)=>
+        {
+            const res = await axios.get(`/catename/${id}`)
+            setSubcates(res.data)
+            // console.log(res.data)
+        }
+        getSubcatery(id).then(()=>{})
+        // console.log(genre)
+    },[id])
+
+    const [genre, setGenre] = useState([])
+    // useEffect(()=>
+    // {
+    //     const getsubs = async (id)=>
+    //     {
+    //         const res = await axios.get(`/bygenre/${id}`)
+    //         setGenre(res.data)
+    //         console.log(res.data)
+    //     }
+    //     getsubs(id).then(()=>{})
+    // },[id])
     return(
         <div >
             {/* header section start */}
@@ -34,48 +99,75 @@ const Navbar =()=>
                             </div>
                             <div className="col-xl-5 col-lg-6 hidden-md position-static">
                                 <div className="header-nav">
-                                    <nav>
+                                    <nav className="d-flex justify-content-around">
+
+                                            {/*{urls.map((no, index)=>*/}
+                                            {/*    <NavbarItem key={index} urls={no}/>*/}
+                                            {/*)}*/}
+
                                         <ul>
-                                            {/*<li><Link  to="/"><b className="active">Home</b></a></li>*/}
-                                            <li className="position-static"><Link to=""><span>Shop  <i className="bi bi-chevron-down" /></span></Link>
-                                                <div className="mega-menu">
-                                                    <div className="col-xl-7 pl-0 position-static">
-                                                        <ul>
-                                                            <li><Link to="category">Category</Link></li>
-                                                            <li><Link to="products">Products</Link></li>
-                                                            <li><Link to="shop">Shop</Link></li>
-                                                            <li><Link to="allproducts">All Products</Link></li>
-                                                        </ul>
-                                                        <ul>
-                                                            <li><Link to="big">Big Product</Link></li>
-                                                            <li><Link to="single">Single</Link></li>
-                                                            <li><Link to="cart">Cart</Link></li>
-                                                            <li><Link to="checkout">Checkout</Link></li>
-                                                        </ul>
-                                                        <ul>
-                                                            <li><Link to="">Product Layout</Link></li>
-                                                            <li><Link to="">Description Sticky</Link></li>
-                                                            <li><Link to="">Product Carousels</Link></li>
-                                                        </ul>
+                                            <li>
+                                                <Link to={`/men`}><span >Men<i className="bi bi-chevron-down" /></span></Link>
+                                                <div className="submenu">
+                                                    <div >
+                                                        {subcates.map((no, index)=>
+                                                            <SubCategories key={index} subcates={no}/>
+                                                        )}
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li><Link to=""><span>Blog <i className="bi bi-chevron-down" /></span> </Link>
-                                                <ul className="submenu">
-                                                    <li><Link to="blog">Blogs</Link></li>
-                                                    <li><Link to="about">About</Link></li>
-                                                    <li><Link to="author">Author</Link></li>
-                                                    <li><Link to="blogrid">Sidebar</Link></li>
-                                                    <li><Link to="bloglist">Blog list</Link></li>
-                                                    <li><Link to="allblogposts">All Blogs</Link></li>
-                                                    <li><Link to="post">Post Details</Link></li>
-                                                    <li><Link to="blogcategory">Posts Category</Link></li>
-                                                </ul>
+                                            <li><Link to={`/women`}><span>Women<i className="bi bi-chevron-down" /></span></Link>
+                                                <div className="submenu">
+                                                    <div>
+                                                        {subcates.map((no, index)=>
+                                                            <SubCategories key={index} subcates={no}/>
+                                                        )}
+                                                    </div>
+                                                </div>
                                             </li>
-                                            <li><Link to=""><span>Portfolio <i className="bi bi-chevron-down" /></span> </Link>
-                                                <ul className="submenu">
-                                                    <li><a href="https://followdiallo.netlify.app/">My Work</a></li>
-                                                </ul>
+                                            <li><Link to={`/home kits`}><span>Home Kits<i className="bi bi-chevron-down" /></span></Link>
+                                                <div className="submenu">
+                                                    <div>
+                                                        {subcates.map((no, index)=>
+                                                            <SubCategories key={index} subcates={no}/>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li><Link to={`/gifts`}><span>Gifts<i className="bi bi-chevron-down" /></span></Link>
+                                                <div className="submenu">
+                                                    <div>
+                                                        {subcates.map((no, index)=>
+                                                            <SubCategories key={index} subcates={no}/>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li ><Link to={`/kids`}><span>Kids<i className="bi bi-chevron-down" /></span></Link>
+                                                <div className="submenu">
+                                                    <div>
+                                                        {subcates.map((no, index)=>
+                                                            <SubCategories key={index} subcates={no}/>
+                                                        )}
+                                                    </div>
+                                                </div>
+                                            </li>
+
+                                            <li><Link to={``}><span>Blog<i className="bi bi-chevron-down" /></span> </Link>
+                                                <div className="submenu">
+                                                    <div>
+                                                        <ul>
+                                                            <li><Link to="blog">Blogs</Link></li>
+                                                            <li><Link to="about">About</Link></li>
+                                                            <li><Link to="author">Author</Link></li>
+                                                            <li><Link to="blogrid">Sidebar</Link></li>
+                                                            <li><Link to="bloglist">Blog list</Link></li>
+                                                            <li><Link to="allblogposts">All Blogs</Link></li>
+                                                            <li><Link to="post">Post Details</Link></li>
+                                                            <li><Link to="blogcategory">Posts Category</Link></li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
                                             </li>
                                             <li><Link to="contact"><span>Contact</span></Link></li>
                                         </ul>
@@ -83,13 +175,13 @@ const Navbar =()=>
                                 </div>
                             </div>
 
-                            <div className="col-xl-4 col-lg-4 col-6 col-md-6 col-sm-6 col-9">
+                            <div className="col-xl-4  col-lg-4 col-6 col-md-6 col-sm-6 col-9">
                                 <div className="header-right">
                                     <ul className="text-right">
                                         <li>
                                             <span>
                                                 <i onClick={toggleSearchButton} className="bi bi-search" title="Looking for something?" />
-                                                {searchButton && <TextField  id="standard-size-small" defaultValue="" placeholder="Search" size="small" variant="standard" style={{paddingLeft:10}}/>}
+                                                {searchButton && <TextField onChange={(e)=>setInput(e.target.value)}  id="standard-size-small" defaultValue="" placeholder="Search" size="small" variant="standard" style={{paddingLeft:10}}/>}
                                             </span>
                                             <><Link to="login" className="account"><i className="bi bi-person-fill" /> <article className="account-registar d-inline-block"></article></Link></>
                                             <><Link to="/" className="account"><i  className="bi bi-translate"/> </Link></>
@@ -156,7 +248,7 @@ const Navbar =()=>
                                                 </div>
                                             </div>
                                         </li>
-                                        <li><Link to=""><i className="bi bi-text-right" /></Link>
+                                        <li><Link to={``}><i className="bi bi-text-right" /></Link>
                                             <ul className="submenu bold-content text-right">
                                                 <li><Link to="login">My Account</Link></li>
                                                 <li><Link to="checkout">Checkout</Link></li>

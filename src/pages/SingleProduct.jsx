@@ -3,9 +3,48 @@ import Featured from "../components/Featured";
 import {Link} from "react-router-dom";
 import StarRating from "react-star-rate";
 
+import {useEffect, useState} from "react";
+import {useLocation} from "react-router-dom";
+import axios from "axios";
+import Colors from "../items/variants/Colors";
+import Sizes from "../items/variants/Sizes";
 
 const SingleProduct = () =>
 {
+
+  const location = useLocation();
+  const [one, setArticle] = useState();
+  const [variant, setVariant] = useState()
+  // let [path, setPath] = useState('')
+  // let id = path
+  let id = location.pathname.split("/")[2];
+  // let id = window.location.href.split('/')[4];
+
+  // if(location.pathname === `/single/1`)
+  // {
+  //   id = location.pathname.split("/")[2];
+  // }
+  // else
+  //   id = location.pathname.split("/")[3];
+
+
+  useEffect(()=>
+  {
+    const getOne = async ()=>
+    {
+      const res = await axios.get(`/one/`+id)
+          setArticle(res.data)
+    }
+    const getVariant = async ()=>
+    {
+      const res = await axios.get(`/byvariant/`+id)
+      setVariant(res.data)
+      console.log(res.data)
+    }
+    getOne(id).then(()=>{})
+    getVariant(id).then(()=>{})
+
+  },[id])
     return(
    <div>
 
@@ -24,7 +63,7 @@ const SingleProduct = () =>
                     <div className="tab-content" id="v-pills-tabContent">
                       <div className="tab-pane fade show active" id="tab-1">
                         <div className="product-img">
-                          <a href="../assets/img/product/farniture-7.jpg" className="popup-image"><img src="../assets/img/product/farniture-7.jpg" className="w-100" alt=" " /></a>
+                          <a href={one?.image} className="popup-image"><img src={one?.image_hover} className="w-100" alt=" " /></a>
                         </div>
                       </div>
                       <div className="tab-pane fade" id="tab-2">
@@ -47,10 +86,10 @@ const SingleProduct = () =>
                   <div className="col-2 ">
                     <div className="nav nav-pills has-border-img" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                       <a className="active" data-toggle="pill" href="#tab-1">
-                        <img src="../assets/img/product/farniture-7.jpg" className="w-100 mt-5-px" alt=" " />
+                        <img src={one?.image_hover} className="w-100 mt-5-px" alt=" " />
                       </a>
                       <a data-toggle="pill" href="#tab-2">
-                        <img src="../assets/img/product/farniture-8.jpg" className="w-100 mt-5-px" alt=" " />
+                        <img src={one?.image} className="w-100 mt-5-px" alt=" " />
                       </a>
                       <a data-toggle="pill" href="#tab-3">
                         <img src="../assets/img/product/farniture-9.jpg" className="w-100 mt-5-px" alt=" " />
@@ -68,61 +107,24 @@ const SingleProduct = () =>
                 <div className="product-content">
 
                   <div className="single-product-title">
-                    <h2>Elegant wooden</h2>
+                    <h2>{one?.name}</h2>
                   </div>
-                  <div className="single-product-price">$<span>44.00</span>–<span>$250.00</span></div>
+                  <div className="single-product-price">$<span>{one?.price}</span></div>
                   <div className="single-product-component">
-                    <h6>Color: <span className="color-value">Red</span></h6>
+                    <h6>Color</h6>
                     <form action="#" style={{overflow: 'hidden'}} className="mt-15">
-                      <div className="color-input">
-                        <label htmlFor="red" style={{backgroundColor: 'red'}} />
-                        <input type="radio" className="d-none" id="red" />
-                        <span>Red</span>
-                      </div>
-                      <div className="color-input">
-                        <label htmlFor="yellow" style={{backgroundColor: '#FFFF00'}} />
-                        <input type="radio" className="d-none" id="yellow" />
-                        <span>Yellow</span>
-                      </div>
-                      <div className="color-input">
-                        <label htmlFor="green" style={{backgroundColor: '#008000'}} />
-                        <input type="radio" className="d-none" id="green" />
-                        <span>green</span>
-                      </div>
-                      <div className="color-input">
-                        <label htmlFor="blue" style={{backgroundColor: 'blue'}} />
-                        <input type="radio" className="d-none" id="blue" />
-                        <span>Blue</span>
-                      </div>
-
-                      <div className="color-input">
-                        <label htmlFor="black" style={{backgroundColor: 'black'}} />
-                        <input type="radio" className="d-none" id="black" />
-                        <span>Black</span>
-                      </div>
-                      <div className="color-input">
-                        <label htmlFor="white" style={{backgroundColor: '#fff'}} />
-                        <input type="radio" className="d-none" id="white" />
-                        <span>white</span>
-                      </div>
+                      {variant?.map((no, index)=>(
+                          <Colors key={index} variant={no}/>
+                      ))}
                     </form>
                   </div>
                   <div className="single-product-component mt-15">
                     <div className="size">
-                      <h6>Size: <span>XL</span></h6>
+                      <h6>Size</h6>
                       <form action="#">
-                        <label htmlFor="l">L</label>
-                        <input type="radio" className="d-none" id="l" />
-                        <label htmlFor="m">M</label>
-                        <input type="radio" className="d-none" id="m" />
-                        <label htmlFor="s">S</label>
-                        <input type="radio" className="d-none" id="s" />
-                        <label htmlFor="xl" className="active">XL</label>
-                        <input type="radio" className="d-none" id="xl" />
-                        <label htmlFor="xxl">XXL</label>
-                        <input type="radio" className="d-none" id="xxl" />
-                        <label htmlFor="tr-xl">3XXL</label>
-                        <input type="radio" className="d-none" id="tr-xl" />
+                        {variant?.map((no, index)=>(
+                            <Sizes key={index} variant={no}/>
+                        ))}
                       </form>
                     </div>
                   </div>
@@ -138,10 +140,8 @@ const SingleProduct = () =>
             </div>
             <div className="col-xl-4 ">
               <div className="single-product-desc mb-12 bold-submenu">
-                <h4><strong> Article Description</strong></h4>
-                <p>Typi non habent claritatem insitam,<br/> est usus legentis in iis qui
-                  facit eorum claritatem.<br/>demonstraverunt lectores legere me lius
-                </p>
+                <h4><strong> Single Description</strong></h4>
+                <p>{one?.description}</p>
                 <div className="product-list single-product-list">
                   <ul>
                     <li>– Light green crewneck sweatshirt.</li>
@@ -683,7 +683,7 @@ const SingleProduct = () =>
                     facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius
                     quod ii legunt saepius. Claritas est etiam processus A Capitalize on low hanging
                     fruit to identify a ballpark value added activity to beta test. Override the
-                    digital...ditional clickthroughs from DevOps. Nanotechnology immersion along the
+                    digital...ditional clickthroughs from DevOps. Nasinglechnology immersion along the
                     information highway will close the […]</p>
                 </div>
                 <div className="product-list mt-25">

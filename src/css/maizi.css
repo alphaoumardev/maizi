@@ -181,9 +181,9 @@ button.close-btn {
     overflow: hidden;
 }
 
-.position-static {
-    position: static !important;
-}
+/*.position-static {*/
+/*    position: static !important;*/
+/*}*/
 
 a,
 .button {
@@ -917,7 +917,7 @@ header.header .header-right ul li a span::after {
 
 header.header .header-right ul li a span {
     position: absolute;
-    left: 24px;
+    /*left: 24px;*/
     top: 0;
     font-size: 12px;
     line-height: 12px;
@@ -933,15 +933,20 @@ header.header .submenu {
     top: 100%;
     z-index: 9;
     padding-left: 25px;
+    padding-right : 25px;
     opacity: 0;
     visibility: hidden;
-    transform-origin: top;
+    transform-origin: left;
     transform: scaleY(0);
-    /*padding-right : 25px;*/
-    min-width: 270px;
+    min-width: 200px;
     transition: all 0.5s;
     background-color: #fff;
     border: 1px solid #ddd;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 header.header .submenu li {
@@ -981,8 +986,8 @@ header.header .submenu li:last-child a {
 /* mega menu */
 
 .mega-menu {
-    /*background-repeat: no-repeat;*/
-    /*background-position: right;*/
+    background-repeat: no-repeat;
+    background-position: right;
     position: absolute;
     padding: 30px;
     left: 0;
@@ -998,33 +1003,33 @@ header.header .submenu li:last-child a {
     /*width         : auto;*/
     top: 100%;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.04);
-    max-width: 1200px;
+    /*max-width: 1200px;*/
 }
 
 header.header ul li:hover .mega-menu {
     opacity: 1;
     visibility: visible;
     transform: scaleY(1);
+    width: 500px;
 }
 
 .mega-menu ul {
     width: 200px;
     float: left;
-    /*min-height: 335px;*/
     border-right: 1px solid #ddd;
 }
 
-.mega-menu ul:not(:first-child) {
-    padding-left: 20px;
-}
+/*.mega-menu ul:not(:first-child) {*/
+/*    padding-left: 20px;*/
+/*}*/
 
-header.header ul li .mega-menu ul li {
-    display: block !important;
-}
+/*header.header ul li .mega-menu ul li {*/
+/*    display: flex ;*/
+/*}*/
 
-header.header ul li .mega-menu ul:last-child {
-    border-right: 0;
-}
+/*header.header ul li .mega-menu ul:last-child {*/
+/*    border-right: 0;*/
+/*}*/
 
 header.header ul li .mega-menu ul li a {
     padding-left: 0;
@@ -2423,13 +2428,13 @@ span.ui-slider-handle.ui-corner-all.ui-state-default::after {
 
 ul.color-list li {
     position: relative;
-    width: 30px;
-    height: 30px;
+    width: 20px;
+    height: 20px;
     border-radius: 30px;
     display: inline-block;
     transition: all 0.3s;
     cursor: pointer;
-    border: 1px solid #ddd;
+    border: 2px solid #a4a1a1;
 }
 
 ul.color-list li:not(:last-child) {

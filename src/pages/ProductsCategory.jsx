@@ -2,19 +2,26 @@ import {Link} from "react-router-dom";
 import StarRating from "react-star-rate";
 
 import Crumb from "../little/Crumb";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import axios from 'axios'
+import ProductGrid from "../items/ProductGrid";
+import ProductList from "../items/ProductList";
 const ProductsCategory = () =>
 {
-  const [articles, setArticles] = useState([])
+  const [article, setArticle] = useState([])
 
-  // const getArticles = async ()=>
-  // {
-  //   const response = await axios.get("http://127.0.0.1:8000/")
-  //   const data = await response.json()
-  //   console.log(data)
-  //   setArticles(data)
-  // }
+  const getArticles = async ()=>
+  {
+    const response = await fetch("/all")
+    const data = await response.json()
+    setArticle(data)
+    // console.log(data)
+  }
+  useEffect(()=>
+  {
+    getArticles().then(()=>{})
+
+  },[])
 
     return(
     <div>
@@ -57,614 +64,35 @@ const ProductsCategory = () =>
               </div>
             </div>
           </div>
+
           <div className="tab-content" id="myTabContent">
             <div className="tab-pane fade show active" id="home" role="tabpanel">
 
               <div className="row grid-view mb-n5">
-
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product1.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">3 Tier Wood With Metal Shelf</Link></h4>
-                      <div className="product-group">
-                        <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-success">new</span>
-                      <img src="../assets/images/products/product2.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">63in. White Stucco Floor Lamp</Link></h4>
-                      <div className="product-group">
-                        <h5 className="product-price">$85.00</h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product3.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">68in. Bronze Metal Coat Rack</Link></h4>
-                      <div className="product-group">
-                        <h5 className="product-price">$85.00 - $60.00</h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-success">new</span>
-                      <img src="../assets/images/products/product4.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">Emmy Green Floral Wood Leg</Link></h4>
-                      <div className="product-group">
-                        <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-warning">hot!</span>
-                      <img src="../assets/images/products/product5.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">Gold Circle Mirrored Shelf Bar Cart</Link></h4>
-                      <div className="product-group">
-                        <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-success">new</span>
-                      <img src="../assets/images/products/product6.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">Gold Metal Clothing Rack With</Link></h4>
-                      <div className="product-group">
-                        <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-warning">hot</span>
-                      <img src="../assets/images/products/product7.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">Gold Metal Fox Design Trinket Tray</Link></h4>
-                      <div className="product-group">
-                        <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product8.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">Heirloom Gold Metal Folding Shelf</Link></h4>
-                      <div className="product-group">
-                        <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-sm-6 col-md-4 mb-5">
-                  <div className="product-card">
-                    <Link to="single" className="product-thumb">
-                      <span className="onsale bg-success">new</span>
-                      <img src="../assets/images/products/product9.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content">
-                      <h4><Link to="single" className="product-title">Parkview 5 Tier Metal &amp; Wood</Link>
-                      </h4>
-                      <div className="product-group">
-                        <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                        <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                      </div>
-                    </div>
-                    {/* actions  */}
-                    <ul className="actions actions-verticale">
-                      <li className="action whish-list">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                      </li>
-                      <li className="action quick-view">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                      </li>
-                      <li className="action compare">
-                        <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-
+                {/********************/}
+                  {article.map((no, index)=>
+                      <ProductGrid key={index} article={no}/>
+                  )}
+                {/********************/}
               </div>
+
             </div>
             <div className="tab-pane fade" id="profile" role="tabpanel">
               <div className="row mb-n5 grid-view-list overflow-hidden">
+
                 <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product1.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">3 Tier Wood With Metal Shelf</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
+                  {/********************/}
+                  {article.map((no, index)=>
+                      <ProductList key={index} article={no}/>
+                  )}
+                  {/********************/}
                 </div>
-                {/* col-12 mb-5 end */}
-                <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product2.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">63in. White Stucco Floor Lamp</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
-                </div>
-                {/* col-12 mb-5 end */}
-                <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product3.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">68in. Bronze Metal Coat Rack</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
-                </div>
-                {/* col-12 mb-5 end */}
-                <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product4.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">Emmy Green Floral Wood Leg</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
-                </div>
-                {/* col-12 mb-5 end */}
-                <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product5.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">Gold Circle Mirrored Shelf Bar Cart</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
-                </div>
-                {/* col-12 mb-5 end */}
-                <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product6.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">Gold Metal Clothing Rack With</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
-                </div>
-                {/* col-12 mb-5 end */}
-                <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product7.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">Gold Metal Fox Design Trinket Tray</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
-                </div>
-                {/* col-12 mb-5 end */}
-                <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product8.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">Heirloom Gold Metal Folding Shelf</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
-                </div>
-                {/* col-12 mb-5 end */}
-                <div className="col-12 mb-5">
-                  {/* product card list start */}
-                  <div className="product-card-list row mb-n5">
-                    <Link to="single" className="product-thumb-list col-md-4 mb-5">
-                      <span className="onsale bg-danger">sale!</span>
-                      <img src="../assets/images/products/product9.jpg" alt="image_not_found" />
-                    </Link>
-                    {/* thumb end */}
-                    <div className="product-content-list col-md-8 mb-5">
-                      <div className="product-category-links">
-                        <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
-                      </div>
-                      <h4><Link to="single" className="product-title">Parkview 5 Tier Metal &amp; Wood</Link></h4>
-                      <h5 className="product-price-list"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span>
-                      </h5>
-                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum,
-                        gravida et mattis vulputate, tristique ut lectus</p>
-                      {/* actions  */}
-                      <ul className="actions actions-horizontal">
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal"><i className="bi bi-bag-plus" /></button>
-                        </li>
-                        <li className="action whish-list">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                        </li>
-                        <li className="action quick-view">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                        </li>
-                        <li className="action compare">
-                          <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                        </li>
-                      </ul>
-                    </div>
-                  </div>
-                  {/* product card list end */}
-                </div>
+
                 {/* col-12 mb-5 end */}
 
               </div>
             </div>
+
             {/* pagination */}
             <div className="col-12 mb-5 mt-60">
               <nav aria-label="Page navigation">
@@ -956,7 +384,7 @@ const ProductsCategory = () =>
       </div>
     </div>
   </div>
-  {/* Modal */}
+  {/* Modal compare */}
   <div className="modal fade" id="product-modal-compare">
     <div className="modal-dialog modal-dialog-centered compare-modal-dialog">
       <div className="modal-content">
