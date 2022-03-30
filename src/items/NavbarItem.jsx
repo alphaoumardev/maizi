@@ -2,7 +2,6 @@ import {Link, useLocation} from "react-router-dom";
 import {useEffect, useRef, useState} from "react";
 import axios from "axios";
 import {map} from "react-bootstrap/ElementChildren";
-import SubCategories from "./SubCates/SubCategories";
 
 const NavbarItem = ({urls})=>
 {

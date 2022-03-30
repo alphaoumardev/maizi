@@ -25,51 +25,55 @@ import AllBlogPosts from "./blog/AllBlogPosts";
 import PostDetail from "./blog/PostDetail";
 import Contact from "./blog/Contact";
 import AllProCrumb from "./pages/AllProCrumb";
-import NavIds from "./items/SubCates/NavIds";
+import Singles from "./items/SubCates/Singles";
 function App()
 {
     const user = true
     return (
         <div className="App">
-             {/*preloader*/}
-            {/*<div id="loader-wrapper">*/}
-            {/*    <div id="loader" />*/}
-            {/*</div>*/}
-            {user &&<Navbar />}
+         {/*preloader*/}
+        {/*<div id="loader-wrapper">*/}
+        {/*    <div id="loader" />*/}
+        {/*</div>*/}
+        {user &&<Navbar />}
 
-            {user?
-                <Routes>
-                <Route exact path="/"   element={<Home/>}/>
-                    <Route exact path="/:id"   element={<Home/>}/>
+        {user?
+        <Routes>
+            <Route exact path="/"   element={<Home/>}/>
+                <Route exact path="/:id"   element={<Home/>}/>
+                {/*<Route exact path="/aa"   element={<Singles/>}/>*/}
+
 
                 <Route path="/category"   element={<ProductsCategory/>}/>
-                <Route path="/products" element={<Products/>}/>
-                <Route path="/shop"    element={<Shop/>}/>
-                <Route path="/big" element={<BigProducts/>}/>
+            <Route path="/products" element={<Products/>}/>
+            <Route path="/shop"    element={<Shop/>}/>
+            <Route path="/big" element={<BigProducts/>}/>
                 <Route path="/single/:id" element={<SingleProduct/>}/>
-                    <Route path="/:id/single/:id" element={<SingleProduct/>}/>
+                <Route path="/:id/single/:id" element={<SingleProduct/>}/>
+
 
                 <Route path="/cart" element={<Cart/>}/>
-                <Route path="/checkout" element={<Checkout/>}/>
-                <Route path="/allproducts" element={<AllProCrumb/>}/>
+            <Route path="/checkout" element={<Checkout/>}/>
+            <Route path="/allproducts" element={<AllProCrumb/>}/>
 
-                {/*    The blog post */}
-                <Route path="/blog" exact element={<BlogIndex/>}/>
-                <Route path="/about" element={<BlogAbout/>}/>
-                <Route path="/author" element={<Author/>}/>
-                <Route path="/blogrid" element={<BlogGrid/>}/>
-                <Route path="/bloglist" element={<BlogList/>}/>
-                <Route path="/blogcategory" element={<BlogCategory/>}/>
-                <Route path="/allblogposts" element={<AllBlogPosts/>}/>
-                <Route path="/post" element={<PostDetail/>}/>
-                <Route path="/contact" element={<Contact/>}/>
-            </Routes>:
-            <Routes>
-                <Route exact  path="/" element={<Login/>} />
-            </Routes>
-            }
-            <ScrollUp/>
-            {/*{user &&<Footer/>}*/}
+            {/*    The blog post */}
+            <Route path="/blog" exact element={<BlogIndex/>}/>
+            <Route path="/about" element={<BlogAbout/>}/>
+            <Route path="/author" element={<Author/>}/>
+            <Route path="/blogrid" element={<BlogGrid/>}/>
+            <Route path="/bloglist" element={<BlogList/>}/>
+            <Route path="/blogcategory" element={<BlogCategory/>}/>
+            <Route path="/allblogposts" element={<AllBlogPosts/>}/>
+            <Route path="/post" element={<PostDetail/>}/>
+            <Route path="/contact" element={<Contact/>}/>
+        </Routes>:
+        <Routes>
+            <Route exact  path="/" element={<Login/>} />
+        </Routes>
+        }
+        <ScrollUp/>
+
+            {user &&<Footer/>}
         </div>
     );
 }

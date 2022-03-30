@@ -67,11 +67,11 @@ const Footer = ()=>
                         <div className="footer-bottom-wrapper">
                             <div className="footer-bottom-primary pb-60">
                                 <div className="row">
-                                    <div className="col-xl-5 col-lg-5 col-md-9">
+                                    <div className="col-xl-5 col-lg-5  col-md-9">
                                         <div className="footer-item has-desc">
-                                            <div className="footer-logo mb-25">
+                                            <section className="footer-logo mb-25">
                                                 <img src="../assets/img/logo/logo2.png" width={120} height={31} alt="" />
-                                            </div>
+                                            </section>
                                             <div className="footer-desc">
                                                 <p className="mb-10">Mazia store is a premium theme with advanced admin module. It’s
                                                     extremely customizable, easy to use and fully responsive and retina ready.

@@ -10,7 +10,8 @@ const Home = ()=>
     <div>
         <Owl/>
         <Category/>
-        <Banners/>
+        <Featured/>
+        {/*<Banners/>*/}
         <AllProducts/>
         <LargeBanner/>
         <Featured/>

@@ -110,8 +110,10 @@ const Navbar =()=>
                                                 <Link to={`/men`}><span >Men<i className="bi bi-chevron-down" /></span></Link>
                                                 <div className="submenu">
                                                     <div >
-                                                        {subcates.map((no, index)=>
-                                                            <SubCategories key={index} subcates={no}/>
+                                                        {subcates.map((item, index)=>
+                                                            <ul key={index}>
+                                                                <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                            </ul>
                                                         )}
                                                     </div>
                                                 </div>
@@ -119,8 +121,10 @@ const Navbar =()=>
                                             <li><Link to={`/women`}><span>Women<i className="bi bi-chevron-down" /></span></Link>
                                                 <div className="submenu">
                                                     <div>
-                                                        {subcates.map((no, index)=>
-                                                            <SubCategories key={index} subcates={no}/>
+                                                        {subcates.map((item, index)=>
+                                                            <ul key={index}>
+                                                                <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                            </ul>
                                                         )}
                                                     </div>
                                                 </div>
@@ -128,8 +132,10 @@ const Navbar =()=>
                                             <li><Link to={`/home kits`}><span>Home Kits<i className="bi bi-chevron-down" /></span></Link>
                                                 <div className="submenu">
                                                     <div>
-                                                        {subcates.map((no, index)=>
-                                                            <SubCategories key={index} subcates={no}/>
+                                                        {subcates.map((item, index)=>
+                                                            <ul key={index}>
+                                                            <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                            </ul>
                                                         )}
                                                     </div>
                                                 </div>
@@ -137,8 +143,10 @@ const Navbar =()=>
                                             <li><Link to={`/gifts`}><span>Gifts<i className="bi bi-chevron-down" /></span></Link>
                                                 <div className="submenu">
                                                     <div>
-                                                        {subcates.map((no, index)=>
-                                                            <SubCategories key={index} subcates={no}/>
+                                                        {subcates.map((item, index)=>
+                                                            <ul key={index}>
+                                                                <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                            </ul>
                                                         )}
                                                     </div>
                                                 </div>
@@ -146,8 +154,10 @@ const Navbar =()=>
                                             <li ><Link to={`/kids`}><span>Kids<i className="bi bi-chevron-down" /></span></Link>
                                                 <div className="submenu">
                                                     <div>
-                                                        {subcates.map((no, index)=>
-                                                            <SubCategories key={index} subcates={no}/>
+                                                        {subcates.map((item, index)=>
+                                                            <ul key={index}>
+                                                                <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                            </ul>
                                                         )}
                                                     </div>
                                                 </div>
@@ -175,7 +185,7 @@ const Navbar =()=>
                                 </div>
                             </div>
 
-                            <div className="col-xl-4  col-lg-4 col-6 col-md-6 col-sm-6 col-9">
+                            <div className="col-xl-4 float-right col-lg-4 col-6 col-md-6 col-sm-6 col-9">
                                 <div className="header-right">
                                     <ul className="text-right">
                                         <li>

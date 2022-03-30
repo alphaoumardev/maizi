@@ -1,9 +1,9 @@
 body {
-    color: #707070;
-    font-family: "Poppins", sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.814;
+    /*color: #707070;*/
+    /*font-family: "Poppins", sans-serif;*/
+    /*font-size: 14px;*/
+    /*font-weight: 400;*/
+    /*line-height: 1.814;*/
 }
 
 a,
@@ -2435,7 +2435,7 @@ svg {
 }
 
 /*--------------------------------------
-/*  [ 4.10 categoris CSS ]
+/*  [ 4.10 categories CSS ]
 ----------------------------------------*/
 .categries-section {
     background-color: #f3f3f3;

@@ -11,10 +11,10 @@ const Contact = ()=>
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-8 m-auto">
-                                <div className="categorie-title text-center">
+                                <div className=" text-center">
                                     <h3>Contact Us</h3>
                                     <small>
-                                        <Link to="index.html">Home</Link>
+                                        <Link to="/">Home > </Link>
                                         <span className="arrow_carrot-right" /> contact
                                     </small>
                                 </div>
@@ -23,7 +23,7 @@ const Contact = ()=>
                     </div>
                 </section>
                 {/*contact*/}
-                <section className="contact mb-70">
+                <section className="contact mb-70 ">
                     <div className="container">
                         <div className="row">
                             <div className="col-lg-5">
@@ -57,37 +57,35 @@ const Contact = ()=>
                                     <div className="item">
                                         <div className="icon">
                                             <i className="bi bi-share" />
-                                        </div>
-                                        <div className="social-icones">
-                                            <ul className="list-inline">
+                                            <ul className="d-flex m-3">
                                                 <li>
                                                     <Link to="#">
-                                                        <i className="bi bi-facebook" />
+                                                        <i className="bi bi-facebook in" />
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link to="#">
-                                                        <i className="bi bi-instagram" />
+                                                        <i className="bi bi-instagram in" />
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link to="#">
-                                                        <i className="bi bi-twitter" />
+                                                        <i className="bi bi-twitter in " />
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link to="#">
-                                                        <i className="bi bi-youtube" />
+                                                        <i className="bi bi-youtube in" />
                                                     </Link>
                                                 </li>
                                                 <li>
                                                     <Link to="#">
-                                                        <i className="bi bi-behance" />
+                                                        <i className="bi bi-behance in" />
                                                     </Link>
                                                 </li>
                                                 <li>
-                                                    <Link to="#">
-                                                        <i className="bi bi-dribbble" />
+                                                    <Link to="#" className="in">
+                                                        <i className="bi bi-dribbble in" />
                                                     </Link>
                                                 </li>
                                             </ul>

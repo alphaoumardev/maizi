@@ -1762,21 +1762,22 @@ ul {
     width: 30px;
     height: 30px;
     border-radius: 50%;
-    background-color: #f7f7f7;
     text-align: center;
     margin-right: 15px;
 }
 
 .contact-info .item .icon i {
     line-height: 30px;
-    font-size: 13px;
+    font-size: 20px;
     color: #6b6768;
+    background-color: white;
+
 }
 
 .contact-info .item p {
     margin-bottom: 0;
-}
 
+}
 
 /* ------------------------------
 		Footer
