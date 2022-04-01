@@ -1,5 +1,5 @@
 import Featured from "../components/Featured";
-import Owl from "../components/Owl";
+import Sliders from "../components/Sliders";
 import React from "react";
 import AllProducts from "../components/AllProducts";
 import {Link} from "react-router-dom";
@@ -10,7 +10,7 @@ const Products = () =>
 {
     return(
 <div>
-  <Owl/>
+  <Sliders/>
   {/* Banner section Start */}
   <div className="banner-section section-padding-bottom section-padding-top">
     <div className="container">

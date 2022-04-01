@@ -1,19 +1,23 @@
 import {useState, useEffect} from "react";
 import {TextField} from "@mui/material";
-import {Link, useLocation} from "react-router-dom";
+import {Link, useLocation, useParams} from "react-router-dom";
 import axios from "axios";
 import AllProductItem from "../items/AllProductItem";
-import NavbarItem from "../items/NavbarItem";
-import SubCategories from "../items/SubCates/SubCategories";
 
-const Navbar =()=>
+const Navbar =({match})=>
 {
-    const [input, setInput] = useState(null)
+    const location = useLocation();
     const [urls, setUrls] = useState([])
     const [isOpen, setIsOpen] = useState(false);
     const [isOp, setIsOp] = useState(false);
     const [searchButton, setSearchButton] = useState(false);
+    const [subcates, setSubcates] = useState([])
     const toggleSearchButton = () =>{setSearchButton(!searchButton)}
+    const [items, setItems] = useState([])
+    let genre = location.pathname.split('/')[1]
+    // let type = location.pathname.split('/')[2]
+    // let {genre} = useParams()
+    let {type} = useParams()
 
     const close = () =>
     {
@@ -24,97 +28,74 @@ const Navbar =()=>
     if(!isOpen || !isOp || !searchButton){setTimeout(close, 5000)}
     if(!searchButton){setInterval(closing, 20000)}
 
-    const getUrls = async ()=>
-    {
-        await axios.get('/catename/')
-            .then((res)=>
-            {
-                // console.log(res.data)
-                setUrls(res.data)
-            }, error =>{console.log(error)})
-    }
-    useEffect(() =>
-    {
-        getUrls()
-    }, []);
-
-
-    const location = useLocation();
-    const id = location.pathname.split("/")[1];
-    const [subcates, setSubcates] = useState([])
-    // const [genre, setGenre] = useState('')
-    // const getGenre = (e)=>
-    // {
-    //     // e.preventDefault()
-    //     const id = e.target.value
-    //     setGenre(id)
-    //     // console.log(id)
-    // }
-    // useEffect(()=>
-    // {
-    //     const getSubcateries = async ()=>
-    //     {
-    //         const res = await axios.get(`/bygenre/2`)
-    //         setSubcates(res.data)
-    //         console.log(res.data)
-    //     }
-    //     getSubcateries(id).then(()=>{})
-    // },[])
-
     useEffect(()=>
     {
-        const getSubcatery = async (id)=>
+        const getUrls = async ()=>
         {
-            const res = await axios.get(`/catename/${id}`)
+            await axios.get('/catename/')
+                .then((res)=>
+                {
+                    console.log(res.data)
+                    setUrls(res.data)
+                }, error =>{console.log(error)})
+        }
+        const getSubcatery = async (genre)=>
+        {
+            const res = await axios.get(`/catename/${genre}`)
             setSubcates(res.data)
             // console.log(res.data)
         }
-        getSubcatery(id).then(()=>{})
-        // console.log(genre)
-    },[id])
-
-    const [genre, setGenre] = useState([])
-    // useEffect(()=>
-    // {
-    //     const getsubs = async (id)=>
-    //     {
-    //         const res = await axios.get(`/bygenre/${id}`)
-    //         setGenre(res.data)
-    //         console.log(res.data)
-    //     }
-    //     getsubs(id).then(()=>{})
-    // },[id])
+        const getProductsBySubcategory = async (genre, type) =>
+        {
+            const res = await axios.get(`/catename/${genre}/${type}`)
+            // setSubcates(res.data)
+            console.log(res.data)
+        }
+        getUrls()
+        getSubcatery(genre).then(()=>{})
+        getProductsBySubcategory(genre, type).then(()=>{})
+    },[genre, type ])
     return(
         <div >
             {/* header section start */}
             <header className="header pt-10 pb-10  is-sticky header-static " >
-
                 <div className="container-fluid  " >
                     <div className="header-nav position-relative">
                         <div className="row align-items-center">
                             <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-3">
                                 <div className="logo" >
-                                    <Link to="/"><img src="../assets/../assets/img/logo/logo1.png" alt="" /></Link>
+                                    <Link to="/"><img src="https://res.cloudinary.com/diallo/image/upload/v1647154099/logo_wauws8.png" alt="" /></Link>
                                 </div>
                             </div>
                             <div className="col-xl-5 col-lg-6 hidden-md position-static">
                                 <div className="header-nav">
                                     <nav className="d-flex justify-content-around">
-
-                                            {/*{urls.map((no, index)=>*/}
-                                            {/*    <NavbarItem key={index} urls={no}/>*/}
-                                            {/*)}*/}
-
                                         <ul>
+                                            {/*{urls?.map((g, pk)=>*/}
+                                            {/*    <li key={pk}>*/}
+                                            {/*        <Link to={`/men`}><span >{g?.genre_name}<i className="bi bi-chevron-down" /></span></Link>*/}
+                                            {/*        <div className="submenu">*/}
+                                            {/*            <div >*/}
+                                            {/*                {subcates?.map((item, index)=>*/}
+                                            {/*                    <ul key={index}>*/}
+                                            {/*                        <li><Link to={`${g?.genre_name}/${item?.type?.type_name}`} >{item?.type?.type_name}</Link></li>*/}
+                                            {/*                    </ul>*/}
+                                            {/*                )}*/}
+                                            {/*            </div>*/}
+                                            {/*        </div>*/}
+                                            {/*    </li>*/}
+                                            {/*)}*/}
                                             <li>
                                                 <Link to={`/men`}><span >Men<i className="bi bi-chevron-down" /></span></Link>
                                                 <div className="submenu">
                                                     <div >
-                                                        {subcates.map((item, index)=>
+                                                        {/*{urls?.map((no, index)=>*/}
+                                                        {subcates?.map((item, index)=>
                                                             <ul key={index}>
-                                                                <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                                <li><Link to={`${genre}/${item?.type?.type_name}`} >{item?.type?.type_name}</Link></li>
                                                             </ul>
                                                         )}
+                                                        {/*)}*/}
                                                     </div>
                                                 </div>
                                             </li>
@@ -123,7 +104,7 @@ const Navbar =()=>
                                                     <div>
                                                         {subcates.map((item, index)=>
                                                             <ul key={index}>
-                                                                <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                                <li><Link to={`${genre}/${item?.type?.type_name}`} >{item?.type?.type_name}</Link></li>
                                                             </ul>
                                                         )}
                                                     </div>
@@ -134,7 +115,7 @@ const Navbar =()=>
                                                     <div>
                                                         {subcates.map((item, index)=>
                                                             <ul key={index}>
-                                                            <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                            <li><Link to={`${genre}/${item?.type?.type_name}`}>{item?.type?.type_name}</Link></li>
                                                             </ul>
                                                         )}
                                                     </div>
@@ -145,7 +126,7 @@ const Navbar =()=>
                                                     <div>
                                                         {subcates.map((item, index)=>
                                                             <ul key={index}>
-                                                                <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                                <li><Link to={`${genre}/${item?.type?.type_name}`}>{item?.type?.type_name}</Link></li>
                                                             </ul>
                                                         )}
                                                     </div>
@@ -156,7 +137,7 @@ const Navbar =()=>
                                                     <div>
                                                         {subcates.map((item, index)=>
                                                             <ul key={index}>
-                                                                <li><Link to="products">{item?.type?.type_name}</Link></li>
+                                                                <li><Link to={`${genre}/${item?.type?.type_name}`}>{item?.type?.type_name}</Link></li>
                                                             </ul>
                                                         )}
                                                     </div>
@@ -184,8 +165,7 @@ const Navbar =()=>
                                     </nav>
                                 </div>
                             </div>
-
-                            <div className="col-xl-4 float-right col-lg-4 col-6 col-md-6 col-sm-6 col-9">
+                            <div className="col-xl-4 col-lg-4 col-6 col-md-6 col-sm-6 col-9">
                                 <div className="header-right">
                                     <ul className="text-right">
                                         <li>

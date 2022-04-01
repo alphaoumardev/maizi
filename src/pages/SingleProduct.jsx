@@ -1,32 +1,21 @@
 import Crumb from "../little/Crumb";
 import Featured from "../components/Featured";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import StarRating from "react-star-rate";
 
 import {useEffect, useState} from "react";
 import {useLocation} from "react-router-dom";
 import axios from "axios";
-import Singles from "../items/SubCates/Singles";
+import Singles from "../items/Singles";
 
-const SingleProduct = () =>
+const SingleProduct = ({match}) =>
 {
 
   const location = useLocation();
   const [one, setArticle] = useState();
   const [variant, setVariant] = useState()
   const [images, setImages] = useState()
-
-  // let [path, setPath] = useState('')
-  // let id = path
-  let id = location.pathname.split("/")[2];
-  // let id = window.location.href.split('/')[4];
-
-  // if(location.pathname === `/single/1`)
-  // {
-  //   id = location.pathname.split("/")[2];
-  // }
-  // else
-  //   id = location.pathname.split("/")[3];
+  let {id} = useParams()
 
 
   useEffect(()=>
@@ -53,7 +42,6 @@ const SingleProduct = () =>
   },[id])
     return(
    <div>
-
   {/* single product start */}
   <section className="single-product mb-90">
     <div className="container-fluid">

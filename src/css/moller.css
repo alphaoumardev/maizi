@@ -483,8 +483,14 @@ svg {
     padding: 15px 0;
 }
 
-.logo {
+/*.logo {*/
+/*    width: 140px;*/
+/*}*/
+.logo img
+{
     width: 140px;
+    height: 40px;
+    object-fit: cover;
     margin-left: 100px;
 }
 

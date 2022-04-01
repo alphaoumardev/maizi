@@ -13,7 +13,7 @@ const ProductItem = ({article})=>
             <div className="product-category-links">
                 <Link to="#">Bowls, Gadgets &amp; Utensils</Link>, <Link to="#">Drinkware</Link>, <Link to="#">Storage</Link>, <Link to="#">Table Linens</Link>
             </div>
-            <h4><Link to="single" className="product-title">{article.name}</Link></h4>
+            <h4><Link to={`single/${article.id}`} className="product-title">{article.name}</Link></h4>
             <h5 className="product-price-list"><del className="old-price"> </del> <span className="new-price">${article.price}</span>
             </h5>
             <p>{article.description}</p>

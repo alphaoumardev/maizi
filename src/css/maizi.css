@@ -77,7 +77,19 @@
     text-align: center;
     align-items: center;
 }
-
+.article-img
+{
+    width: 360px;
+    height: 390px;
+    margin: 0 auto;
+    object-fit: contain;
+}
+.sliders
+{
+    width: 100%;
+    height: 700px;
+    object-fit: cover;
+}
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -195,16 +207,16 @@ a,
     transition: all 0.3s ease-out 0s;
 }
 
-Link:focus,
+a:focus,
 .button:focus {
     text-decoration: none;
     outline: none;
 }
 
-Link:focus,
-Link:hover,
-.portfolio-cat Link:hover,
-.footer-menu li Link:hover {
+a:focus,
+a:hover,
+.portfolio-cat a:hover,
+.footer-menu li a:hover {
     color: #10111e;
     text-decoration: none;
 }
@@ -485,7 +497,7 @@ label {
 }
 
 .owl-carousel .owl-nav div:hover {
-    background: #2b96cc;
+    background: #d5074c;
     color: #fff;
 }
 
@@ -637,8 +649,8 @@ a#scrollUp:hover i {
 /*}*/
 
 .header-nav.header-nav-2 {
-    max-width: 1430px;
-    margin: auto;
+    /*max-width: 1430px;*/
+    /*margin: auto;*/
 }
 
 header.header-static {
@@ -804,8 +816,9 @@ header.header ul li:first-child a {
     padding-left: 0;
 }
 
-header.header.bright-turquoise-content ul li Link:hover span {
+header.header.bright-turquoise-content ul li a:hover span {
     color: #12c1db !important;
+
 }
 
 header.header ul li a span {
@@ -820,8 +833,8 @@ header.header.bright-turquoise-content ul li:hover>a {
     color: #12c1db;
 }
 
-header.header ul li Link:hover {
-    color: #eb2323;
+header.header ul li a:hover {
+    color: #2b2727;
 }
 
 header.header ul li a span {
@@ -839,12 +852,14 @@ header.header ul li a span::after {
     left: 0;
     bottom: 0;
     height: 2px;
-    background-color: #eb2323;
+    background-color: #dc1717;
     content: "";
     width: 0;
     transition: all 0.5s;
 }
-
+header.header ul li a:hover span {
+    color: #e61212;
+}
 header.header.bright-turquoise-content ul li a span::after {
     background-color: #12c1db;
 }
@@ -874,11 +889,9 @@ header.header ul li:hover a span::after {
     visibility: visible;
 }
 
-header.header ul li Link:hover span {
-    color: #eb2323;
-}
 
-header.header.bright-turquoise-content ul li Link:hover span {
+
+header.header.bright-turquoise-content ul li a:hover span {
     color: #12c1db;
 }
 
@@ -907,7 +920,7 @@ header.header .header-right ul li i {
     font-weight: 400;
 }
 
-header.header .header-right ul li Link:hover i {
+header.header .header-right ul li a:hover i {
     color: #eb2323;
 }
 
@@ -950,7 +963,7 @@ header.header .submenu {
 }
 
 header.header .submenu li {
-    display: block !important;
+    display: inline !important;
 }
 
 header.header ul li:hover .submenu {
@@ -965,7 +978,7 @@ header.header .submenu li a {
     font-size: 16px;
     text-transform: capitalize;
     font-weight: 500;
-    line-height: 18px;
+    line-height: 10px;
 }
 
 header.header .submenu.bold-submenu li a {
@@ -1317,7 +1330,7 @@ header.header ul li .search-result-list ul li {
     color: #fff;
 }
 
-.single-slider-content.style-2 Link::after {
+.single-slider-content.style-2 a::after {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -1549,7 +1562,7 @@ header.header ul li .search-result-list ul li {
     margin-bottom: 7px;
 }
 
-.category-box .category-content Link:hover {
+.category-box .category-content a:hover {
     color: #eb2323;
 }
 
@@ -1749,11 +1762,11 @@ ul.nav.left-tab-link li:not(:last-child) {
     position: relative;
 }
 
-.banner-img.body-banner.style-2 .banner-content Link:hover {
+.banner-img.body-banner.style-2 .banner-content a:hover {
     text-decoration: none;
 }
 
-.banner-img.body-banner.style-2 .banner-content Link::after {
+.banner-img.body-banner.style-2 .banner-content a::after {
     position: absolute;
     left: 0;
     bottom: 0;
@@ -1764,7 +1777,7 @@ ul.nav.left-tab-link li:not(:last-child) {
     transition: all 0.5s;
 }
 
-.banner-img.body-banner.style-2 .banner-content Link:hover::after {
+.banner-img.body-banner.style-2 .banner-content a:hover::after {
     background-color: #eb2323;
 }
 
@@ -1783,7 +1796,7 @@ ul.nav.left-tab-link li:not(:last-child) {
     display: inline-block;
 }
 
-.banner-img.body-banner .banner-content Link:hover {
+.banner-img.body-banner .banner-content a:hover {
     color: #eb2323;
     text-decoration: underline;
 }
@@ -2032,7 +2045,7 @@ ul.nav.left-tab-link li:not(:last-child) {
     font-weight: 400;
 }
 
-.product-desc Link:hover {
+.product-desc a:hover {
     color: #eb2323;
 }
 
@@ -2102,7 +2115,7 @@ ul.nav.left-tab-link li:not(:last-child) {
     position: relative;
 }
 
-.categories Link:not(:last-child)::after {
+.categories a:not(:last-child)::after {
     position: absolute;
     right: -3px;
     bottom: 0;
@@ -2284,7 +2297,7 @@ a.load-more:hover {
     margin: 5px 0;
 }
 
-.product-2-desc h5 Link:hover {
+.product-2-desc h5 a:hover {
     color: #eb2323;
 }
 
@@ -2295,7 +2308,7 @@ ol.breadcrumb {
     background: transparent;
 }
 
-ol.breadcrumb li Link {
+ol.breadcrumb li a {
     font-size: 14px;
     line-height: 25px;
     font-weight: 400;
@@ -2303,7 +2316,7 @@ ol.breadcrumb li Link {
     opacity: 0.6;
 }
 
-ol.breadcrumb li Link.active {
+ol.breadcrumb li a.active {
     opacity: 1;
 }
 
@@ -2322,8 +2335,8 @@ ol.breadcrumb li Link.active {
     padding-left: 15px;
 }
 
-.widget .list Link:hover,
-.widget .sidebar-list ul li Link:hover {
+.widget .list a:hover,
+.widget .sidebar-list ul li a:hover {
     opacity: 1;
 }
 
@@ -2463,7 +2476,7 @@ ul.color-list li:hover {
     margin-right: 15px;
 }
 
-.widget .size-link Link:hover {
+.widget .size-link a:hover {
     color: #fff;
     background-color: #eb2323;
 }
@@ -2558,7 +2571,7 @@ ul.color-list li:hover {
     display: inline-block;
 }
 
-.widget .category-list ul li Link:hover {
+.widget .category-list ul li a:hover {
     color: #fff;
     background-color: #eb2323;
 }
@@ -2571,7 +2584,7 @@ ul.color-list li:hover {
     opacity: 1;
 }
 
-.widget.blog-list .list Link:hover {
+.widget.blog-list .list a:hover {
     color: #222;
 }
 
@@ -2785,9 +2798,9 @@ ul.color-list li:hover {
     font-weight: 400;
 }
 
-.single-product-action ul li Link:hover,
-.single-product-category ul li Link:hover,
-.single-product-tags ul li Link:hover {
+.single-product-action ul li a:hover,
+.single-product-category ul li a:hover,
+.single-product-tags ul li a:hover {
     color: #eb2323;
     text-decoration: underline;
 }
@@ -2901,14 +2914,14 @@ ul.color-list li:hover {
     text-transform: uppercase;
 }
 
-.single-product-tab-content table tr td ul li Link::after {
+.single-product-tab-content table tr td ul li a::after {
     position: absolute;
     right: -3px;
     top: -4px;
     content: ",";
 }
 
-.single-product-tab-content table tr td ul li:last-child Link::after {
+.single-product-tab-content table tr td ul li:last-child a::after {
     content: ";";
 }
 
@@ -2948,7 +2961,7 @@ ul.color-list li:hover {
     line-height: 27px;
 }
 
-.star-rating Link:hover i {
+.star-rating a:hover i {
     color: #eb2323;
 }
 
@@ -3083,7 +3096,7 @@ ul.color-list li:hover {
     margin-right: 10px;
 }
 
-.portfolio-desc-list Link:hover {
+.portfolio-desc-list a:hover {
     color: #eb2323;
 }
 
@@ -3294,7 +3307,7 @@ a.like-wishlist i span {
     margin-bottom: 30px;
 }
 
-.footer-menu ul li Link:hover {
+.footer-menu ul li a:hover {
     color: #eb2323;
 }
 
@@ -3353,7 +3366,7 @@ a.like-wishlist i span {
     padding-right: 10px;
 }
 
-.social-links ul li Link:hover {
+.social-links ul li a:hover {
     color: #fff;
     text-decoration: underline;
 }
@@ -3373,7 +3386,7 @@ a.like-wishlist i span {
     color: #848484;
 }
 
-.copyright Link:hover {
+.copyright a:hover {
     text-decoration: underline;
 }
 
@@ -3397,7 +3410,7 @@ a.like-wishlist i span {
     margin-bottom: 5px;
 }
 
-.social-icon.red-hover ul li Link:hover {
+.social-icon.red-hover ul li a:hover {
     color: #eb2323;
     border-color: #eb2323;
 }
@@ -3655,7 +3668,7 @@ p.simple-text {
     text-transform: capitalize;
 }
 
-.table-content table td.product-name Link:hover {
+.table-content table td.product-name a:hover {
     color: #fe4536;
 }
 
@@ -3892,7 +3905,7 @@ a.price-calculate:hover {
 }
 
 .coupon-accordion span:hover,
-p.lost-password Link:hover {
+p.lost-password a:hover {
     color: #FE4536;
 }
 

@@ -1,15 +1,18 @@
 import {useEffect, useState} from "react";
 import Crumb from "../little/Crumb";
-import {Link} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import StarRating from "react-star-rate";
 import ProductGrid from "../items/ProductGrid";
 import AllProductItem from "../items/AllProductItem";
 import AllProductTab2 from "../items/AllProductTab2";
 import AllProductGrid2 from "../items/AllProductGrid2";
 import AllProductList from "../items/AllProductList";
+import axios from "axios";
 const AllProducts = ()=>
 {
   const [isOpen, setIsOpen] = useState(false);
+  const [article, setArticle] = useState([])
+  const [variant, setVariant] = useState()
 
   const togglePopup = () =>{setIsOpen(!isOpen)}
   const close = ()=>{setIsOpen(false)}
@@ -17,21 +20,30 @@ const AllProducts = ()=>
   {
     setTimeout(close, 15000)
   }
-
-  const [article, setArticle] = useState([])
-
-  const getArticles = async ()=>
-  {
-    const response = await fetch("/all/")
-    const data = await response.json()
-    setArticle(data)
-    console.log(data)
-  }
+  let genre = location.pathname.split('/')[1]
+  // let type = location.pathname.split('/')[2]
+  // let {genre} = useParams()
+  let {type} = useParams()
   useEffect(()=>
   {
-    getArticles().then(()=>{})
+    const getArticles = async ()=>
+    {
+      if(type)
+      {
+        const response = await fetch(`/catename/${genre}/${type}`)
+        const data = await response.json()
+        setArticle(data)
+      }
+      else
+      {
+        const response = await fetch("/all/")
+        const data = await response.json()
+        setArticle(data)
+      }
+    }
+    getArticles(genre, type).then(()=>{})
 
-  },[])
+  },[genre, type])
 
     return(
     <div>

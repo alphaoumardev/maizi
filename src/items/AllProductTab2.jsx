@@ -7,10 +7,10 @@ const AllProductTab2 =({article})=>
             <div className="product-box mb-40">
                 <div className="product-box-wrapper">
                     <div className="product-img">
-                        <img src={article?.image} className="w-100" alt="" />
-                        <Link to="single" className="d-block">
+                        <img src={article?.image} className="article-img" alt="" />
+                        <Link to={`single/${article.id}`} className="d-block">
                             <div className="second-img">
-                                <img src={article?.image_hover} alt="" className="w-100" />
+                                <img src={article?.image_hover} alt="" className="article-img" />
                             </div>
                         </Link>
                         <Link to="" className="product-img-link quick-view-1 text-capitalize">Quick view</Link>

@@ -11,7 +11,7 @@ import SingleProduct from "./pages/SingleProduct";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import ProductsCategory from "./pages/ProductsCategory";
-import { Route, Routes } from 'react-router-dom';
+import {Route, Routes, useParams} from 'react-router-dom';
 import Login from "./pages/Login";
 import RelatedProduct from "./little/RelatedProduct";
 import ScrollUp from "./little/ScrollUp";
@@ -25,9 +25,11 @@ import AllBlogPosts from "./blog/AllBlogPosts";
 import PostDetail from "./blog/PostDetail";
 import Contact from "./blog/Contact";
 import AllProCrumb from "./pages/AllProCrumb";
-import Singles from "./items/SubCates/Singles";
+import Singles from "./items/Singles";
+import Page404 from "./pages/Page404";
 function App()
 {
+    let id = useParams()
     const user = true
     return (
         <div className="App">
@@ -40,21 +42,25 @@ function App()
         {user?
         <Routes>
             <Route exact path="/"   element={<Home/>}/>
-                <Route exact path="/:id"   element={<Home/>}/>
-                {/*<Route exact path="/aa"   element={<Singles/>}/>*/}
+                <Route exact path="/:genre"   element={<Home/>}/>
+                {/*<Route exact path="/:genre/:type"   element={<Home/>}/>*/}
 
 
-                <Route path="/category"   element={<ProductsCategory/>}/>
+            <Route path="*" element={<Page404/>} />
+            <Route path="/category"   element={<ProductsCategory/>}/>
             <Route path="/products" element={<Products/>}/>
             <Route path="/shop"    element={<Shop/>}/>
             <Route path="/big" element={<BigProducts/>}/>
                 <Route path="/single/:id" element={<SingleProduct/>}/>
-                <Route path="/:id/single/:id" element={<SingleProduct/>}/>
+                <Route path="/:genre/single/:id" element={<SingleProduct/>}/>
+                <Route path="/:genre/:type/single/:id" element={<SingleProduct/>}/>
 
 
-                <Route path="/cart" element={<Cart/>}/>
+            <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
             <Route path="/allproducts" element={<AllProCrumb/>}/>
+                <Route path="/:genre/:type" element={<AllProCrumb/>}/>
+
 
             {/*    The blog post */}
             <Route path="/blog" exact element={<BlogIndex/>}/>

@@ -1,5 +1,5 @@
-import {useEffect, useState} from "react";
-import './Navs.css'
+import {useEffect, useRef, useState} from "react";
+import '../css/Navs.css'
 import {Link, useLocation} from "react-router-dom";
 import axios from "axios";
 import StarRating from "react-star-rate";
@@ -7,30 +7,31 @@ const Singles = ({images, one, variant})=>
 {
     const [mainImg, setMainImg] = useState(true)
     let [n, setN] = useState(0)
-    const change1 = () =>{setN(n+1); setMainImg(mainImg);console.log(n)}
+    const [next, setNext] = useState([])
+    let po = useRef()
 
-    const allHoverImages = document.querySelectorAll('.hover-container div img');
-    const imgContainer = document.querySelector('.cover-img');
-    window.addEventListener('DOMContentLoaded', () =>
+    const change = () =>
     {
-        allHoverImages[0].parentElement.classList.add('actives');
-    });
-    allHoverImages.forEach((image) =>
-    {
-        image.addEventListener('mouseover', () =>
-        {
-            imgContainer.querySelector('img').src = image.src;
-            resetActiveImg();
-            image.parentElement.classList.add('actives');
-        });
-    });
-    function resetActiveImg()
-    {
-        allHoverImages.forEach((img) =>
-        {
-            img.parentElement.classList.remove('actives');
-        });
+        // setN(n+1)
+        // console.log(n)
+        // setNext(po.current)
     }
+    useEffect(()=>
+    {
+
+    // change()
+        const allHoverImages = document.querySelectorAll('.hover-container div img');
+        const imgContainer = document.querySelector('.cover-img');
+        window.addEventListener('DOMContentLoaded', () =>{})
+        allHoverImages.forEach((image) =>
+        {
+            image.addEventListener('mouseover', () =>
+            {
+                imgContainer.querySelector('img').src = image.src;
+                image.parentElement.classList.add('actives');
+            });
+        });
+    }, [])
     return(
     <div>
         <div className="">
@@ -39,21 +40,21 @@ const Singles = ({images, one, variant})=>
                     <div className="pro-left">
                         <div className="cover-img">
                             {mainImg ? <img src={one?.image} alt="watch"/>
-                                : images?.map((item, index) => <img key={index} src={item?.image_url} alt=""/>).at(n)
+                                : images?.map((item, index) => <img ref={po} key={index} src={item?.image_url} alt=""/>).at(n)
                             }
                         </div>
                         <div className="hover-container">
                             <div>
                                 <img className="hover" src={one?.image} alt="watch"/>
-                                {images?.map((item, index) => <img className="hover" onClick={change1} key={index} src={item?.image_url} alt=""/>)}
+                                {images?.map((item, index) => <img className="hover" onClick={change} key={index} src={item?.image_url} alt=""/>)}
                             </div>
                         </div>
                     </div>
                     <div className="pro-right">
                         <h2>{one?.name}
                             <div className="btn-groups">
-                                <button type="button" className="add-cart-btn"><i className="fas fa-shopping-cart" />add to cart</button>
-                                <button type="button" className="buy-now-btn"><i className="fas fa-wallet" />buy now</button>
+                                {/*<button type="submit" className="add-cart-btn"><i className="fas fa-shopping-cart" />add to cart</button>*/}
+                                {/*<button type="submit" className="buy-now-btn"><i className="fas fa-wallet" />buy now</button>*/}
                             </div>
                         </h2>
                         {/*<span className="product-name"></span>*/}
@@ -62,7 +63,7 @@ const Singles = ({images, one, variant})=>
                         <p className="product-description">{one?.description}</p>
                         <div className="single-product-action mt-35">
                             <ul>
-                                <li><Link to="wishlist"><i className="bi bi-heart" /> add to wishlist</Link></li>
+                                <li><Link to="/wishlist"><i className="bi bi-heart" /> add to wishlist</Link></li>
                                 <li><Link to="single"><i className="bi bi-cpu-fill" /> add to compare</Link></li>
                             </ul>
                         </div>
@@ -84,7 +85,7 @@ const Singles = ({images, one, variant})=>
                                 <li><Link to="/" data-toggle="tooltip" data-placement="top" title="Linkdin"><i className="bi bi-linkedin" /></Link></li>
                             </ul>
                         </div>
-                        <form action="#" method="POST">
+                        <form action="" method="POST">
                             <div className="single-product-component mt-15">
                                     <h6>Size</h6>
                                     {variant?.map((item, index)=>
@@ -105,8 +106,8 @@ const Singles = ({images, one, variant})=>
                                     ))}
                             </div>
                             <div className="btn-groups">
-                                {/*<button type="button" className="add-cart-btn"><i className="fas fa-shopping-cart" />add to cart</button>*/}
-                                {/*<button type="button" className="buy-now-btn"><i className="fas fa-wallet" />buy now</button>*/}
+                                <button type="submit" className="add-cart-btn"><i className="fas fa-shopping-cart" />add to cart</button>
+                                <button type="submit" className="buy-now-btn"><i className="fas fa-wallet" />buy now</button>
                             </div>
                         </form>
                     </div>

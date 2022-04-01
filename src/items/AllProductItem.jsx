@@ -1,18 +1,32 @@
 import {Link} from "react-router-dom";
 import StarRating from "react-star-rate";
+import {useEffect, useState} from "react";
+import axios from "axios";
 
 const AllProductItem = ({article})=>
 {
+    const [variant, setVariant] = useState()
+    useEffect(()=>
+    {
+        // const getVariant = async ()=>
+        // {
+        //     const res = await axios.get(`/variants/`)
+        //     setVariant(res.data)
+        //     console.log(res.data)
+        // }
+        // getVariant().then(()=>{})
+
+    },[])
     return(
     <>
         <div className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
                 <div className="product-box mb-40">
                     <div className="product-box-wrapper">
                         <div className="product-img">
-                            <img src={article.image} className="w-100" alt="" />
+                            <img src={article.image} className="article-img" alt="" />
                             <Link to={`single/${article.id}`} className="d-block">
                                 <div className="second-img">
-                                    <img src={article.image_hover} alt="" className="w-100" />
+                                    <img src={article.image_hover} alt="" className="article-img" />
                                 </div>
                             </Link>
                             <Link to="" className="product-img-link quick-view-1" data-bs-toggle="modal" data-bs-target="#product-modal">Quick view</Link>
@@ -25,7 +39,10 @@ const AllProductItem = ({article})=>
                                     <Link to="shop2" className="product-category"><span>Sneaker</span></Link>
                                 </div>
                                 <ul className="color-list">
-                                    <li style={{backgroundColor: article?.color}} />
+                                    {/*{variant?.map((item, index)=>(*/}
+                                    {/*    <li key={index} style={{backgroundColor: variant?.color?.color_name}} />*/}
+                                    {/*))}*/}
+                                    <li style={{backgroundColor: 'white'}} />
                                     <li style={{backgroundColor: '#1E73BE'}} />
                                     <li style={{backgroundColor: '#FFD700'}} />
                                     <li style={{backgroundColor: '#DD3333'}} />
