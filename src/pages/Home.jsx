@@ -11,7 +11,7 @@ const Home = ()=>
         <Sliders/>
         <Category/>
         <Featured/>
-        {/*<Banners/>*/}
+        <Banners/>
         <AllProducts/>
         <LargeBanner/>
         <Featured/>

@@ -1,4 +1,5 @@
 import '../css/page404.css'
+import {Link} from "react-router-dom";
 const Page404 = ()=>
 {
     var scene = document.getElementById('scene');
@@ -38,7 +39,7 @@ const Page404 = ()=>
                     <div className="text">
                         <article>
                             <p>Uh oh! Looks like you got lost. <br />Go back to the homepage if you dare!</p>
-                            <button>i dare!</button>
+                            <Link to={"/"}> <button>i dare!</button></Link>
                         </article>
                     </div>
                 </div>

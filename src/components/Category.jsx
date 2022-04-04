@@ -14,7 +14,7 @@ const Category = ()=>
                             <div className="category-box">
                                 <div className="category-wrapper">
                                     <div className="category-img">
-                                        <img src="https://res.cloudinary.com/diallo/image/upload/v1647154144/1_h1jrjf.jpg" className="cate-clothing" alt="" />
+                                        <img src="https://res.cloudinary.com/diallo/image/upload/v1647154166/slider3_fhf9dt.jpg" className="cate-clothing" alt="" />
                                     </div>
                                     <div className="category-content">
                                         <Link to="/women/clothing" className="title">Clothing</Link>

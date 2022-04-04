@@ -6,11 +6,9 @@ import Navbar from "./components/Navbar";
 import Products from "./pages/Products";
 import Shop from "./pages/Shop";
 import AllProducts from "./components/AllProducts";
-import BigProducts from "./components/BigProducts";
 import SingleProduct from "./pages/SingleProduct";
 import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
-import ProductsCategory from "./pages/ProductsCategory";
 import {Route, Routes, useParams} from 'react-router-dom';
 import Login from "./pages/Login";
 import RelatedProduct from "./little/RelatedProduct";
@@ -41,21 +39,20 @@ function App()
 
         {user?
         <Routes>
-            <Route exact path="/"   element={<Home/>}/>
-                <Route exact path="/:genre"   element={<Home/>}/>
+            <Route path="/" element={<Products/>}/>
+            <Route exact path="/home"   element={<Home/>}/>
+                <Route exact path="/:genre"   element={<Products/>}/>
                 {/*<Route exact path="/:genre/:type"   element={<Home/>}/>*/}
 
 
             <Route path="*" element={<Page404/>} />
-            <Route path="/category"   element={<ProductsCategory/>}/>
             <Route path="/products" element={<Products/>}/>
             <Route path="/shop"    element={<Shop/>}/>
-            <Route path="/big" element={<BigProducts/>}/>
                 <Route path="/single/:id" element={<SingleProduct/>}/>
                 <Route path="/:genre/single/:id" element={<SingleProduct/>}/>
                 <Route path="/:genre/:type/single/:id" element={<SingleProduct/>}/>
             <Route path="/allproducts" element={<AllProCrumb/>}/>
-                <Route path="/:genre/:type" element={<AllProCrumb/>}/>
+                <Route path="/:genre/:type" element={<Shop/>}/>
 
 
             <Route path="/cart" element={<Cart/>}/>

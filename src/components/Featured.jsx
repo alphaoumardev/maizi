@@ -4,10 +4,39 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Link} from "react-router-dom";
 import axios from "axios";
+import Modal from "../items/Modal";
 
 const Featured = () =>
 {
-  const [newproduct, setNewproduct] = useState([])
+  const [onsale, setOnsale] = useState([])
+  //For the product modal
+  const [id, setId] = useState(13)
+  const [one, setOne] = useState();
+  const [variant, setVariant] = useState()
+  const [images, setImages] = useState()
+  useEffect(()=>
+  {
+    const getOne = async ()=>
+    {
+      const res = await axios.get(`/one/`+id)
+      setOne(res.data)
+    }
+    const getVariant = async ()=>
+    {
+      const res = await axios.get(`/byvariant/`+id)
+      setVariant(res.data)
+      // console.log(res.data)
+    }
+    const getImages = async ()=>
+    {
+      await axios.get(`/images/`+id).then((res)=>{setImages(res.data);})
+    }
+    getImages(id)
+    getOne(id).then(()=>{})
+    getVariant(id).then(()=>{})
+
+  },[id])
+
   function NextArrow(props)
   {
     const { className,onClick } = props;
@@ -42,14 +71,15 @@ const Featured = () =>
 
   useEffect(async ()=>
   {
-    const res = await axios.get("/newproducts")
+    const res = await axios.get("/onsale")
     const data = res.data
-    setNewproduct(data)
+    setOnsale(data)
     // console.log(res.data)
   }, [])
 
     return (
      <div>
+       {/*<h1>You May like</h1>*/}
   {/* featured product start */}
   <div className="featured-product-section section-padding-bottom">
     <div className="container">
@@ -57,7 +87,7 @@ const Featured = () =>
         <div className="col-12">
           <div className="featured-product swiper-arrow arrow-position-center">
               <Slider {...settings}>
-                {newproduct?.map((item, index)=>
+                {onsale?.map((item, index)=>
                     <div key={index}>
                       <div  className="swiper-slide">
                         <div  className="product-list">
@@ -79,8 +109,8 @@ const Featured = () =>
                               <li className="action whish-list">
                                 <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
                               </li>
-                              <li className="action quick-view">
-                                <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
+                              <li className="action quick-view" >
+                                <button data-bs-toggle="modal" onClick={()=>setId(item?.id)} data-bs-target="#featured-modal"><i className="bi bi-eye" /></button>
                               </li>
                               <li className="action compare">
                                 <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
@@ -101,149 +131,17 @@ const Featured = () =>
 
 <div>
   {/* Modal */}
-  <div className="modal fade" id="product-modal">
+  <div className="modal fade" id="featured-modal">
     <div className="modal-dialog modal-dialog-centered product-modal-dialog">
       <div className="modal-content">
         <button type="button" className="btn-close" data-bs-dismiss="modal" />
-        <div className="modal-body">
-          <div className="row mb-n7">
-            <div className="col-xl-5 mb-10">
-              <div className="modal-gallery-slider">
-                <div className="product-modal-gallery">
-                  <div className="swiper-container">
-                    <div className="swiper-wrapper">
-                      <div className="swiper-slide product-modal-gallery-item">
-                        <img src="../assets/images/products/large/1.jpg" alt="image_not_found" />
-                      </div>
-                      <div className="swiper-slide product-modal-gallery-item">
-                        <img src="../assets/images/products/large/2.jpg" alt="image_not_found" />
-                      </div>
-                      <div className="swiper-slide product-modal-gallery-item">
-                        <img src="../assets/images/products/large/3.jpg" alt="image_not_found" />
-                      </div>
-                      <div className="swiper-slide product-modal-gallery-item">
-                        <img src="../assets/images/products/large/4.jpg" alt="image_not_found" />
-                      </div>
-                      <div className="swiper-slide product-modal-gallery-item">
-                        <img src="../assets/images/products/large/5.jpg" alt="image_not_found" />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div className="product-modal-gallery-thumbs">
-                  <div className="swiper-container">
-                    <div className="swiper-wrapper">
-                      <div className="swiper-slide product-modal-gallery-thumbs-item">
-                        <Link to="/">
-                          <img src="../assets/images/products/small/1.jpg" alt="image_not_found" />
-                        </Link>
-                      </div>
-                      <div className="swiper-slide product-modal-gallery-thumbs-item">
-                        <Link to="/"> <img src="../assets/images/products/small/2.jpg" alt="image_not_found" /></Link>
-                      </div>
-                      <div className="swiper-slide product-modal-gallery-thumbs-item">
-                        <Link to="/"> <img src="../assets/images/products/small/3.jpg" alt="image_not_found" /></Link>
-                      </div>
-                      <div className="swiper-slide product-modal-gallery-thumbs-item">
-                        <Link to="/"> <img src="../assets/images/products/small/4.jpg" alt="image_not_found" /></Link>
-                      </div>
-                      <div className="swiper-slide product-modal-gallery-thumbs-item">
-                        <Link to="/"> <img src="../assets/images/products/small/5.jpg" alt="image_not_found" /></Link>
-                      </div>
-                    </div>
-                  </div>
-                  {/* If we need pagination */}
-                  <div className="swiper-pagination" />
-                </div>
-              </div>
-            </div>
-            <div className="col-md-7 mb-7">
-              <div className="modal-product-des">
-                <h3 className="modal-product-title"><Link to="#">Tropical Juice Drink</Link></h3>
-                <div className="reviews">
-                  <span className="ion-star" />
-                  <span className="ion-star" />
-                  <span className="ion-star" />
-                  <span className="ion-star" />
-                  <span className="ion-star" />
-                </div>
-                <div className="product-price-wrapp-lg">
-                  <span className="product-regular-price-lg">€43.80</span>
-                  <span className="product-price-on-sale-lg">€39.42</span>
-                  <span className="badge badge-lg bg-dark">Save 8%</span>
-                </div>
-                <div className="product-description-short">
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco,Proin lectus ipsum, gravida et mattis vulputate, tristique ut lectus</p>
-                </div>
-                <div className="product-variants">
-                  <div className="product-variants-item">
-                    <span className="control-label">Size</span>
-                    <select className="form-control form-control-select" defaultValue={true}>
-                      <option defaultValue={1} title="S" >S</option>
-                      <option defaultValue={2} title="M">M</option>
-                      <option defaultValue={3} title="L">L</option>
-                      <option defaultValue={4} title="XL">XL</option>
-                    </select>
-                  </div>
-                  <div className="product-variants-item">
-                    <span className="control-label">color</span>
-                    <ul>
-                      <li className="input-container">
-                        <label>
-                          <input className="input-color" type="checkbox" />
-                          <span className="color" />
-                        </label>
-                      </li>
-                      <li className="input-container">
-                        <label>
-                          <input className="input-color" type="checkbox" defaultChecked="checked" />
-                          <span className="color" />
-                        </label>
-                      </li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="product-add-to-cart">
-                  <span className="control-label">Quantity</span>
-                  <div className="product-count style d-flex my-4">
-                    <div className="count d-flex">
-                      <input type="number" min={1} max={100} step={1} defaultValue={1} />
-                      <div className="button-group">
-                        <button className="count-btn increment">
-                          <span className="ion-chevron-up" />
-                        </button>
-                        <button className="count-btn decrement">
-                          <span className="ion-chevron-down" />
-                        </button>
-                      </div>
-                    </div>
-                    <div>
-                      <button data-bs-toggle="modal" data-bs-target="#add-to-cart" className="btn btn-dark">
-                        Add to cart
-                      </button>
-                    </div>
-                  </div>
-                  <div className="product-add-to-card">
-                    <Link className="product-add-to-card-item" to="#"><i className="bi bi-heart" /> Add to wishlist</Link>
-                    <Link className="product-add-to-card-item" to="#"><i className="bi bi-arrow-repeat" /> My wishlist</Link>
-                  </div>
-                  <div className="product-social-sharing">
-                    <span>Share</span>
-                    <ul>
-                      <li className="facebook"><Link to="#" target="_blank"><i className="bi bi-facebook" /></Link></li>
-                      <li className="twitter"><Link to="#" target="_blank"><i className="bi bi-twitter" /></Link></li>
-                      <li className="pinterest"><Link to="#" target="_blank"><i className="bi bi-pinterest" /></Link></li>
-                      <li className="google"><Link to="#" target="_blank"><i className="bi bi-google" /></Link></li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div className="d-flex align-items-center justify-content-center" style={{ marginLeft:-100, marginTop:-50}}>
+          <Modal images={images} variant={variant} one={one}/>
         </div>
       </div>
     </div>
   </div>
+
   {/* Modal */}
   <div className="modal fade" id="product-modal-compare">
     <div className="modal-dialog modal-dialog-centered compare-modal-dialog">

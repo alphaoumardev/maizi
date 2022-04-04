@@ -95,7 +95,7 @@ const Shop = ()=>
     }
     const getOnsale = async ()=>
     {
-      const res = await axios.get("/onsale")
+      const res = await axios.get("/newproducts")
       const data = res.data
       setOnsale(data)
     }
@@ -131,22 +131,27 @@ const Shop = ()=>
                   <div id="collapse-1" className="collapse show">
                     <div className="sidebar-list">
                       <ul>
-                        <li><Link to="shop">Camera 1</Link></li>
+                        <li><Link to="/shop">New</Link></li>
+                        <li><Link to="/shop">Discount</Link></li>
+                        <li><Link to="/men/accessories">Watch</Link></li>
+                        <li><Link to="/men/accessories">Belt</Link></li>
+                        <li><Link to="/men/accessories">Digit</Link></li>
                       </ul>
                     </div>
                   </div>
                 </div>
                 <div className="list">
-                  <Link to=" ">Char &amp; Table <span>(10)</span></Link>
+                  <Link to=" ">Home &amp; kits <span>(10)</span></Link>
                   <button className="float-right text-right" type="button" data-toggle="collapse" data-target="#collapse-2">
                     <span className="float-right"><i className="bi bi-chevron-right" /></span>
                   </button>
                   <div id="collapse-2" className="collapse">
                     <div className="sidebar-list">
                       <ul>
-                        <li><Link to="shop">Chair <span>(30)</span></Link></li>
-                        <li><Link to="shop4">Clothing <span>(45)</span></Link></li>
-                        <li><Link to="shop4">Decore <span>(20)</span></Link></li>
+                        <li><Link to="/home kits/living room">Chair <span>(30)</span></Link></li>
+                        <li><Link to="/home kits/bedroom">Bedroom <span>(45)</span></Link></li>
+                        <li><Link to="/home kits/bathroom">Bathroom <span>(45)</span></Link></li>
+                        <li><Link to="/home kits/decore">Decore <span>(20)</span></Link></li>
                       </ul>
                     </div>
                   </div>
@@ -159,8 +164,8 @@ const Shop = ()=>
                   <div id="collapse-3" className="collapse">
                     <div className="sidebar-list">
                       <ul>
-                        <li><Link to="shop4">Camerass <span>(1)</span></Link></li>
-                        <li><Link to="shop4">Gift Cards <span>(5)</span></Link></li>
+                        <li><Link to="/men/hand bags">Men bags <span>(1)</span></Link></li>
+                        <li><Link to="/women/hand bags">Women bags <span>(5)</span></Link></li>
                       </ul>
                     </div>
                   </div>
@@ -173,10 +178,10 @@ const Shop = ()=>
                   <div id="collapse-4" className="collapse">
                     <div className="sidebar-list">
                       <ul>
-                        <li><Link to="/shop">Lightings <span>(1)</span></Link></li>
-                        <li><Link to="/shop">Managed <span>(5)</span></Link></li>
-                        <li><Link to="/shop">Printers <span>(32)</span></Link></li>
-                        <li><Link to="/shop">Shoes <span>(32)</span></Link></li>
+                        <li><Link to="/kids/clothing">Clothing <span>(1)</span></Link></li>
+                        <li><Link to="/kids/gift">Gift <span>(5)</span></Link></li>
+                        <li><Link to="/kids/travel">Travel <span>(32)</span></Link></li>
+                        <li><Link to="/kids/shoes">Shoes <span>(32)</span></Link></li>
                       </ul>
                     </div>
                   </div>
@@ -327,7 +332,7 @@ const Shop = ()=>
                                       value={value}
                                       onChange={handleChange}
                                       valueLabelDisplay="auto"
-                                      max={2000}
+                                      max={1000}
                                       min={12}
                                       defaultValue={100}
                                       name="price"
@@ -337,7 +342,6 @@ const Shop = ()=>
                                 </Box>
                                 <div className="filter-form-submit mt-35">
                                   <button type="submit">Filter</button>
-                                  <div className="filter-price d-inline-block pl-20">Price: <input type="button" id="amount" defaultValue="$75 - $300" /></div>
                                 </div>
                               </div>
                             </form>
@@ -452,7 +456,7 @@ const Shop = ()=>
                                     <div className="list-product-img">
                                       <div className="product-img">
                                         <img src={item?.image} alt="" style={{width:345, height:410, objectFit:"contain"}}/>
-                                        <Link to="single" className="d-block">
+                                        <Link to={`/single/${item?.id}`} className="d-block">
                                           <div className="second-img">
                                             <img src={item?.image_hover} alt="" style={{width:345, height:410, objectFit:"contain"}}/>
                                           </div>

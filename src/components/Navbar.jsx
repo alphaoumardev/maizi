@@ -2,8 +2,6 @@ import {useState, useEffect} from "react";
 import {TextField} from "@mui/material";
 import {Link, useLocation, useParams} from "react-router-dom";
 import axios from "axios";
-import AllProductItem from "../items/AllProductItem";
-import Banners from "./Banners";
 
 const Navbar =({match})=>
 {
@@ -255,38 +253,38 @@ const Navbar =({match})=>
                         </div>
                     </div>
                     {/*Mobbile*/}
-                    <div className="mobile-menu visible-sm">
-                        <div id="mobile-menu">
-                            <ul>
-                                <li><Link className="pl-3" to="">Home</Link>
-                                    <ul className="pl-4">
-                                        <li><Link to="index">Products</Link></li>
-                                        <li><Link to="index2">Fashion</Link></li>
-                                    </ul>
-                                </li>
-                                <li><Link className="pl-3" to="">Shop</Link>
-                                    <ul>
-                                        <li><Link to="shop">Shop Layout</Link></li>
-                                        <li><Link to="shop4">Masonry – Grid</Link></li>
-                                    </ul>
-                                </li>
-                                <li><Link to="">Blog</Link>
-                                    <ul>
-                                        <li><Link to="blog">Grid layout</Link></li>
-                                        <li><Link to="blog2">Large image</Link></li>
+                    {/*<div className="mobile-menu visible-sm">*/}
+                    {/*    <div id="mobile-menu">*/}
+                    {/*        <ul>*/}
+                    {/*            <li><Link className="pl-3" to="">Home</Link>*/}
+                    {/*                <ul className="pl-4">*/}
+                    {/*                    <li><Link to="index">Products</Link></li>*/}
+                    {/*                    <li><Link to="index2">Fashion</Link></li>*/}
+                    {/*                </ul>*/}
+                    {/*            </li>*/}
+                    {/*            <li><Link className="pl-3" to="">Shop</Link>*/}
+                    {/*                <ul>*/}
+                    {/*                    <li><Link to="shop">Shop Layout</Link></li>*/}
+                    {/*                    <li><Link to="shop4">Masonry – Grid</Link></li>*/}
+                    {/*                </ul>*/}
+                    {/*            </li>*/}
+                    {/*            <li><Link to="">Blog</Link>*/}
+                    {/*                <ul>*/}
+                    {/*                    <li><Link to="blog">Grid layout</Link></li>*/}
+                    {/*                    <li><Link to="blog2">Large image</Link></li>*/}
 
-                                    </ul>
-                                </li>
-                                <li><Link to="">Portfolio</Link>
-                                    <ul>
-                                        <li><Link to="portfolio">Single project</Link></li>
-                                        <li><Link to="portfolio3">Three Columns</Link></li>
-                                    </ul>
-                                </li>
-                                <li><Link to="contact">Contact</Link></li>
-                            </ul>
-                        </div>
-                    </div>
+                    {/*                </ul>*/}
+                    {/*            </li>*/}
+                    {/*            <li><Link to="">Portfolio</Link>*/}
+                    {/*                <ul>*/}
+                    {/*                    <li><Link to="portfolio">Single project</Link></li>*/}
+                    {/*                    <li><Link to="portfolio3">Three Columns</Link></li>*/}
+                    {/*                </ul>*/}
+                    {/*            </li>*/}
+                    {/*            <li><Link to="contact">Contact</Link></li>*/}
+                    {/*        </ul>*/}
+                    {/*    </div>*/}
+                    {/*</div>*/}
                     {/* /. mobile nav */}
                 </div>
             </header>

@@ -41,16 +41,11 @@ const  Sliders = ()=>
                     />
                     <Carousel.Caption bsPrefix='carousel-caption'>
                         <div className="hero-slide-content animated">
-                            <p className="text text-white animated">
-                                new collection
-                            </p>
+                            <p className="text text-white animated"> new collection</p>
                             <br/>
-                            <h2 className="title text-dark delay1 animated">
-                                {item?.product?.name}
-                            </h2>
+                            <h2 className="title text-dark delay1 animated">{item?.product?.name}</h2>
                             <br/>
-                            <Link to="allproducts"
-                                  className="generic-btn mt-70 red-hover-btn text-uppercase roundedAnimation ">Discover Now</Link>
+                            <Link to="/shop"  className="generic-btn mt-70 red-hover-btn text-uppercase roundedAnimation ">Discover Now</Link>
                         </div>
                     </Carousel.Caption>
                 </Carousel.Item>
