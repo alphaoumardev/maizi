@@ -12,7 +12,7 @@ const Banners = ()=>
                             <div className="banner">
                                 {/*/!*<!-- thumb-nail start -->*!/*/}
                                 <Link to="#" className="thumb-nail">
-                                    <img src="../assets/images/banner/banner1.jpg" alt="image_not_found"/>
+                                    <img src="https://res.cloudinary.com/diallo/image/upload/v1647154151/3_oc2jko.jpg" alt="image_not_found"/>
                                 </Link>
                                 {/*/!*<!-- thumb-nail end -->*!/*/}
                                 <div className="banner-content banner-position-top-left">
@@ -28,7 +28,7 @@ const Banners = ()=>
                             <div className="banner">
                                 {/* <!-- thumb-nail start -->*/}
                                 <Link to="#" className="thumb-nail">
-                                    <img src="../assets/images/banner/banner2.jpg" alt="image_not_found"/>
+                                    <img src="https://res.cloudinary.com/diallo/image/upload/v1647154151/3_oc2jko.jpg" alt="image_not_found"/>
                                 </Link>
                                 {/*// <!-- thumb-nail end -->*/}
                                 <div className="banner-content banner-position-bottom-left">

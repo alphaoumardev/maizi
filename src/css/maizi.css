@@ -90,6 +90,12 @@
     height: 700px;
     object-fit: cover;
 }
+.cate-clothing
+{
+    width: 735px;
+    height: 685px;
+    object-fit: cover;
+}
 @-webkit-keyframes spin {
     0% {
         -webkit-transform: rotate(0deg);
@@ -618,36 +624,6 @@ a#scrollUp:hover i {
 
 /* -------------------------- 2. header ----------------------------- */
 
-
-/*.header {*/
-
-
-/*  background-color: transparent;*/
-
-
-/*  position: absolute;*/
-
-
-/*  left: 0;*/
-
-
-/*  top: 0;*/
-
-
-/*  transition: all 0.5s;*/
-
-
-/*  width: 100%;*/
-
-
-/*  z-index: 9;*/
-
-
-/*  height: auto;*/
-
-
-/*}*/
-
 .header-nav.header-nav-2 {
     /*max-width: 1430px;*/
     /*margin: auto;*/
@@ -657,7 +633,9 @@ header.header-static {
     transition: all 0.5s;
 }
 
-
+.product-modal-dialog {
+    min-width: 53%;
+}
 /* top left search form */
 
 .close-search-popup i {

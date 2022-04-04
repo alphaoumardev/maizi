@@ -14,10 +14,10 @@ const Category = ()=>
                             <div className="category-box">
                                 <div className="category-wrapper">
                                     <div className="category-img">
-                                        <img src="../assets/img/banner/categorie_1.jpg" className="w-100" alt="" />
+                                        <img src="https://res.cloudinary.com/diallo/image/upload/v1647154144/1_h1jrjf.jpg" className="cate-clothing" alt="" />
                                     </div>
                                     <div className="category-content">
-                                        <Link to="shop" className="title">Clothing</Link>
+                                        <Link to="/women/clothing" className="title">Clothing</Link>
                                         <p className="category-item">(<span>8</span> items)</p>
                                     </div>
                                 </div>
@@ -31,10 +31,10 @@ const Category = ()=>
                                             <div className="category-box">
                                                 <div className="category-wrapper">
                                                     <div className="category-img">
-                                                        <img src="../assets/img/banner/categorie_2.jpg" className="w-100" alt="" />
+                                                        <img src="https://res.cloudinary.com/diallo/image/upload/v1647154146/14_tuq1wl.jpg" style={{width:355, height:335, objectFit:"cover"}} alt="" />
                                                     </div>
                                                     <div className="category-content">
-                                                        <Link to="shop" className="title">Handbag</Link>
+                                                        <Link to="/men/hand bags" className="title">Handbag</Link>
                                                         <p className="category-item">(<span>20</span> items)</p>
                                                     </div>
                                                 </div>
@@ -44,10 +44,10 @@ const Category = ()=>
                                             <div className="category-box">
                                                 <div className="category-wrapper">
                                                     <div className="category-img">
-                                                        <img src="../assets/img/banner/categorie_3.jpg" className="w-100" alt="" />
+                                                        <img src="https://res.cloudinary.com/diallo/image/upload/v1647154116/categorie_3_zupylo.jpg" className="w-100" style={{width:355, height:327}} alt="" />
                                                     </div>
                                                     <div className="category-content">
-                                                        <Link to="shop" className="title">Sneaker</Link>
+                                                        <Link to="/men/shoes" className="title">Sneaker</Link>
                                                         <p className="category-item">(<span>11</span> items)</p>
                                                     </div>
                                                 </div>
@@ -59,10 +59,10 @@ const Category = ()=>
                                     <div className="category-box">
                                         <div className="category-wrapper">
                                             <div className="category-img">
-                                                <img src="../assets/img/banner/categorie_4.jpg" className="w-100" alt="" />
+                                                <img src="https://res.cloudinary.com/diallo/image/upload/v1647154117/categorie_4_vunyul.jpg" className="w-100" style={{width:355, height:685}} alt="" />
                                             </div>
                                             <div className="category-content">
-                                                <Link to="shop" className="title">Women</Link>
+                                                <Link to="/men/clothing" className="title">Men</Link>
                                                 <p className="category-item">(<span>17</span> items)</p>
                                             </div>
                                         </div>

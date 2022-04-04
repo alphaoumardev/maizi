@@ -1,11 +1,13 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import {Link} from "react-router-dom";
+import axios from "axios";
 
 const Featured = () =>
 {
+  const [newproduct, setNewproduct] = useState([])
   function NextArrow(props)
   {
     const { className,onClick } = props;
@@ -13,7 +15,6 @@ const Featured = () =>
       <i className="bi bi-chevron-right"></i>
     </div> );
   }
-
   function PrevArrow(props)
   {
     const {className, onClick } = props;
@@ -39,6 +40,13 @@ const Featured = () =>
     prevArrow: <PrevArrow/>,
   };
 
+  useEffect(async ()=>
+  {
+    const res = await axios.get("/newproducts")
+    const data = res.data
+    setNewproduct(data)
+    // console.log(res.data)
+  }, [])
 
     return (
      <div>
@@ -49,246 +57,40 @@ const Featured = () =>
         <div className="col-12">
           <div className="featured-product swiper-arrow arrow-position-center">
               <Slider {...settings}>
-                  <div>
-                    <div  className="swiper-slide">
-                      <div  className="product-list">
-                        <div  className="product-card">
-                          <Link to="shop-grid-left-sidebar.html" className="product-thumb">
-                            <span className="onsale bg-warning">hot</span>
-                            <img src="../assets/images/products/product7.jpg" alt="image_not_found" />
-                          </Link>
-                          {/* thumb end */}
-                          <div className="product-content">
-                            <h4><Link to="shop-grid-left-sidebar.html" className="product-title">Gold Metal Fox Design Trinket Tray</Link></h4>
-                            <div className="product-group">
-                              <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                              <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
+                {newproduct?.map((item, index)=>
+                    <div key={index}>
+                      <div  className="swiper-slide">
+                        <div  className="product-list">
+                          <div  className="product-card">
+                            <Link to={`/single/${item?.id}`} className="product-thumb">
+                              <span className="onsale bg-warning">{item?.onsale}</span>
+                              <img src={item?.image} alt="image_not_found" style={{width:250, height:300, objectFit:"contain"}}/>
+                            </Link>
+                            {/* thumb end */}
+                            <div className="product-content">
+                              <h4><Link to="shop-grid-left-sidebar.html" className="product-title">{item?.name}</Link></h4>
+                              <div className="product-group">
+                                <h5 className="product-price"><span className="new-price">{item?.price}</span></h5>
+                                <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
+                              </div>
                             </div>
+                            {/* actions  */}
+                            <ul className="actions actions-verticale">
+                              <li className="action whish-list">
+                                <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
+                              </li>
+                              <li className="action quick-view">
+                                <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
+                              </li>
+                              <li className="action compare">
+                                <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
+                              </li>
+                            </ul>
                           </div>
-                          {/* actions  */}
-                          <ul className="actions actions-verticale">
-                            <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                            </li>
-                            <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                            </li>
-                            <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                            </li>
-                          </ul>
                         </div>
                       </div>
-                      {/* product list end */}
                     </div>
-                    {/* swiper-slide end */}
-                  </div>
-                  <div>
-                    <div className="swiper-slide">
-                      <div className="product-list">
-                        <div className="product-card">
-                          <Link to="shop-grid-left-sidebar.html" className="product-thumb">
-                            <span className="onsale bg-danger">sale!</span>
-                            <img src="../assets/images/products/product1.jpg" alt="image_not_found" />
-                          </Link>
-                          {/* thumb end */}
-                          <div className="product-content">
-                            <h4><Link to="shop-grid-left-sidebar.html" className="product-title">3 Tier Wood With Metal Shelf</Link></h4>
-                            <div className="product-group">
-                              <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                              <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                            </div>
-                          </div>
-                          {/* actions  */}
-                          <ul className="actions actions-verticale">
-                            <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                            </li>
-                            <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                            </li>
-                            <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      {/* product list end */}
-                    </div>
-                    {/* swiper-slide end */}
-                  </div>
-                  <div>
-                    <div className="swiper-slide">
-                      <div className="product-list">
-                        <div className="product-card">
-                          <Link to="shop-grid-left-sidebar.html" className="product-thumb">
-                            <span className="onsale bg-danger">sale!</span>
-                            <img src="../assets/images/products/product3.jpg" alt="image_not_found" />
-                          </Link>
-                          {/* thumb end */}
-                          <div className="product-content">
-                            <h4><Link to="shop-grid-left-sidebar.html" className="product-title">68in. Bronze Metal Coat Rack</Link></h4>
-                            <div className="product-group">
-                              <h5 className="product-price">$85.00 - $60.00</h5>
-                              <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                            </div>
-                          </div>
-                          {/* actions  */}
-                          <ul className="actions actions-verticale">
-                            <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                            </li>
-                            <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                            </li>
-                            <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      {/* product list end */}
-                    </div>
-                    {/* swiper-slide end */}
-                  </div>
-                  <div>
-                    <div className="swiper-slide">
-                      <div className="product-list">
-                        <div className="product-card">
-                          <Link to="shop-grid-left-sidebar.html" className="product-thumb">
-                            <span className="onsale bg-warning">hot!</span>
-                            <img src="../assets/images/products/product5.jpg" alt="image_not_found" />
-                          </Link>
-                          {/* thumb end */}
-                          <div className="product-content">
-                            <h4><Link to="shop-grid-left-sidebar.html" className="product-title">Gold Circle Mirrored Shelf Bar Cart</Link></h4>
-                            <div className="product-group">
-                              <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                              <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                            </div>
-                          </div>
-                          {/* actions  */}
-                          <ul className="actions actions-verticale">
-                            <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                            </li>
-                            <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                            </li>
-                            <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      {/* product list end */}
-                    </div>
-                    {/* swiper-slide end */}
-                  </div>
-                  <div>
-                    <div className="swiper-slide">
-                      <div className="product-list">
-                        <div className="product-card">
-                          <Link to="shop-grid-left-sidebar.html" className="product-thumb">
-                            <span className="onsale bg-warning">hot</span>
-                            <img src="../assets/images/products/product7.jpg" alt="image_not_found" />
-                          </Link>
-                          {/* thumb end */}
-                          <div className="product-content">
-                            <h4><Link to="shop-grid-left-sidebar.html" className="product-title">Gold Metal Fox Design Trinket Tray</Link></h4>
-                            <div className="product-group">
-                              <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                              <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                            </div>
-                          </div>
-                          {/* actions  */}
-                          <ul className="actions actions-verticale">
-                            <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                            </li>
-                            <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                            </li>
-                            <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      {/* product list end */}
-                    </div>
-                    {/* swiper-slide end */}
-                  </div>
-                  <div>
-                    <div className="swiper-slide">
-                      <div className="product-list">
-                        <div className="product-card">
-                          <Link to="shop-grid-left-sidebar.html" className="product-thumb">
-                            <span className="onsale bg-success">new</span>
-                            <img src="../assets/images/products/product9.jpg" alt="image_not_found" />
-                          </Link>
-                          {/* thumb end */}
-                          <div className="product-content">
-                            <h4><Link to="shop-grid-left-sidebar.html" className="product-title">Parkview 5 Tier Metal &amp; Wood</Link>
-                            </h4>
-                            <div className="product-group">
-                              <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                              <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                            </div>
-                          </div>
-                          {/* actions  */}
-                          <ul className="actions actions-verticale">
-                            <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                            </li>
-                            <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                            </li>
-                            <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      {/* product list end */}
-                    </div>
-                    {/* swiper-slide end */}
-                  </div>
-                  <div>
-                    <div className="swiper-slide">
-                      <div className="product-list">
-                        <div className="product-card">
-                          <Link to="shop-grid-left-sidebar.html" className="product-thumb">
-                            <span className="onsale bg-danger">sale!</span>
-                            <img src="../assets/images/products/product1.jpg" alt="image_not_found" />
-                          </Link>
-                          {/* thumb end */}
-                          <div className="product-content">
-                            <h4><Link to="shop-grid-left-sidebar.html" className="product-title">3 Tier Wood With Metal Shelf</Link></h4>
-                            <div className="product-group">
-                              <h5 className="product-price"><del className="old-price">$85.00</del> <span className="new-price">$60.00</span></h5>
-                              <button data-bs-toggle="modal" data-bs-target="#addto-cart-modal" className="product-btn">Add to cart</button>
-                            </div>
-                          </div>
-                          {/* actions  */}
-                          <ul className="actions actions-verticale">
-                            <li className="action whish-list">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-wishlist"><i className="bi bi-heart" /></button>
-                            </li>
-                            <li className="action quick-view">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal"><i className="bi bi-eye" /></button>
-                            </li>
-                            <li className="action compare">
-                              <button data-bs-toggle="modal" data-bs-target="#product-modal-compare"><i className="bi bi-arrow-repeat" /></button>
-                            </li>
-                          </ul>
-                        </div>
-                      </div>
-                      {/* product list end */}
-                    </div>
-                    {/* swiper-slide end */}
-                  </div>
-
+                )}
                 </Slider>
           </div>
         </div>

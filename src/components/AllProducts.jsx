@@ -4,8 +4,6 @@ import {Link, useParams} from "react-router-dom";
 import StarRating from "react-star-rate";
 import ProductGrid from "../items/ProductGrid";
 import AllProductItem from "../items/AllProductItem";
-import AllProductTab2 from "../items/AllProductTab2";
-import AllProductGrid2 from "../items/AllProductGrid2";
 import AllProductList from "../items/AllProductList";
 import axios from "axios";
 const AllProducts = ()=>
@@ -21,7 +19,6 @@ const AllProducts = ()=>
     setTimeout(close, 15000)
   }
   let genre = location.pathname.split('/')[1]
-  // let type = location.pathname.split('/')[2]
   // let {genre} = useParams()
   let {type} = useParams()
   useEffect(()=>
@@ -64,16 +61,10 @@ const AllProducts = ()=>
                 </div>
                 <div className="col-xl-4 col-lg-4 col-md-4 col-12">
                   <div className="shop-filter-tab">
-                    <ul className="nav nav-pills">
+                    <ul className="nav nav-pills text-center d-flex justify-content-center">
                       <li><span>Views</span></li>
                       <li className="nav-item">
                         <a data-toggle="pill" href="#shop-tab-3" data-placement="top" title="4 grid" className="active "><i className="bi bi-grid-3x3-gap" /></a>
-                      </li>
-                      <li className="nav-item">
-                        <a data-toggle="pill" href="#shop-tab-2" data-placement="top" title="3 grid"><i className="bi bi-grid" /></a>
-                      </li>
-                      <li className="nav-item">
-                        <a data-toggle="pill" href="#shop-tab-1" data-placement="top" title="2 grid"><i className="bi bi-layout-split" /></a>
                       </li>
                       <li className="nav-item">
                         <a data-toggle="pill" href="#shop-tab-4" data-placement="top" title="list view"><i className="bi bi-list-stars" /></a>
@@ -92,7 +83,7 @@ const AllProducts = ()=>
                       <option value="default">Sort by price: high to low</option>
                     </select>
                   </div>
-                  {/* The filter*/}
+                  {/* The filter start*/}
                   <div className="filter">
                     <h6 className="d-inline-block filter-widget-toggle" onClick={togglePopup}>Filter <i className="bi bi-chevron-down"/></h6>
                     {isOpen && <div className="filter-popup">
@@ -185,31 +176,6 @@ const AllProducts = ()=>
                   </div>
                 </div>
                 {/*Tab one end*/}
-                {/*Second tab*/}
-                <div className="tab-pane fade" id="shop-tab-1">
-                  <div className="product-wrapper mt-55">
-                    <div className="row">
-
-                      {/********************/}
-                      {article.map((no, index)=>
-                          <AllProductTab2 key={index} article={no}/>
-                      )}
-                      {/********************/}
-                    </div>
-                  </div>
-                </div>
-                {/*second tab end*/}
-                <div className="tab-pane fade" id="shop-tab-2">
-                  <div className="product-wrapper mt-55">
-                    <div className="row">
-                      {/********************/}
-                      {article.map((no, index)=>
-                          <AllProductGrid2 key={index} article={no}/>
-                      )}
-                      {/********************/}
-                    </div>
-                  </div>
-                </div>
                 <div className="tab-pane fade" id="shop-tab-4">
                   {/********************/}
                   {article.map((no, index)=>

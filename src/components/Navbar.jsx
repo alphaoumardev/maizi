@@ -3,6 +3,7 @@ import {TextField} from "@mui/material";
 import {Link, useLocation, useParams} from "react-router-dom";
 import axios from "axios";
 import AllProductItem from "../items/AllProductItem";
+import Banners from "./Banners";
 
 const Navbar =({match})=>
 {
@@ -35,9 +36,9 @@ const Navbar =({match})=>
             await axios.get('/catename/')
                 .then((res)=>
                 {
-                    console.log(res.data)
+                    // console.log(res.data)
                     setUrls(res.data)
-                }, error =>{console.log(error)})
+                }, error =>{console.log()})
         }
         const getSubcatery = async (genre)=>
         {
@@ -48,8 +49,8 @@ const Navbar =({match})=>
         const getProductsBySubcategory = async (genre, type) =>
         {
             const res = await axios.get(`/catename/${genre}/${type}`)
-            // setSubcates(res.data)
-            console.log(res.data)
+            setSubcates(res.data)
+            // console.log(res.data)
         }
         getUrls()
         getSubcatery(genre).then(()=>{})
@@ -58,6 +59,7 @@ const Navbar =({match})=>
     return(
         <div >
             {/* header section start */}
+            {/*< genre={genre} type={type}/>*/}
             <header className="header pt-10 pb-10  is-sticky header-static " >
                 <div className="container-fluid  " >
                     <div className="header-nav position-relative">

@@ -4,7 +4,7 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 
 import Products from "./pages/Products";
-import Shop from "./components/Shop";
+import Shop from "./pages/Shop";
 import AllProducts from "./components/AllProducts";
 import BigProducts from "./components/BigProducts";
 import SingleProduct from "./pages/SingleProduct";
@@ -54,12 +54,12 @@ function App()
                 <Route path="/single/:id" element={<SingleProduct/>}/>
                 <Route path="/:genre/single/:id" element={<SingleProduct/>}/>
                 <Route path="/:genre/:type/single/:id" element={<SingleProduct/>}/>
+            <Route path="/allproducts" element={<AllProCrumb/>}/>
+                <Route path="/:genre/:type" element={<AllProCrumb/>}/>
 
 
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
-            <Route path="/allproducts" element={<AllProCrumb/>}/>
-                <Route path="/:genre/:type" element={<AllProCrumb/>}/>
 
 
             {/*    The blog post */}
@@ -78,8 +78,7 @@ function App()
         </Routes>
         }
         <ScrollUp/>
-
-            {user &&<Footer/>}
+        {user &&<Footer/>}
         </div>
     );
 }

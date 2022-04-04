@@ -411,6 +411,7 @@ const ProductsCategory = () =>
     </div>
   </div>
   <div className="modal fade" id="addto-cart-modal">
+
     <div className="modal-dialog modal-dialog-centered">
       <div className="modal-content">
         <div className="modal-header bg-dark border-bottom-0 justify-content-center">
@@ -455,7 +456,8 @@ const ProductsCategory = () =>
       </div>
     </div>
   </div>
-</div>
+
+    </div>
     )
 }
 export default ProductsCategory

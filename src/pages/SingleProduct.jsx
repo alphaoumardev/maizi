@@ -10,7 +10,6 @@ import Singles from "../items/Singles";
 
 const SingleProduct = ({match}) =>
 {
-
   const location = useLocation();
   const [one, setArticle] = useState();
   const [variant, setVariant] = useState()

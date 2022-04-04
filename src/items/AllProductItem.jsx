@@ -15,7 +15,6 @@ const AllProductItem = ({article})=>
         //     console.log(res.data)
         // }
         // getVariant().then(()=>{})
-
     },[])
     return(
     <>
@@ -24,7 +23,7 @@ const AllProductItem = ({article})=>
                     <div className="product-box-wrapper">
                         <div className="product-img">
                             <img src={article.image} className="article-img" alt="" />
-                            <Link to={`single/${article.id}`} className="d-block">
+                            <Link to={`/single/${article.id}`} className="d-block">
                                 <div className="second-img">
                                     <img src={article.image_hover} alt="" className="article-img" />
                                 </div>
@@ -35,8 +34,8 @@ const AllProductItem = ({article})=>
                         <div className="product-desc pb-20">
                             <div className="product-desc-top">
                                 <div className="categories">
-                                    <Link to="shop2" className="product-category"><span>Shoes</span></Link>
-                                    <Link to="shop2" className="product-category"><span>Sneaker</span></Link>
+                                    <Link to="/shop" className="product-category"><span>Shoes</span></Link>
+                                    <Link to="/shop" className="product-category"><span>Sneaker</span></Link>
                                 </div>
                                 <ul className="color-list">
                                     {/*{variant?.map((item, index)=>(*/}

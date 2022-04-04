@@ -17,7 +17,7 @@ const  Sliders = ()=>
         const res = await axios.get("/sliders/")
         const data = res.data
         setSlide(data)
-        console.log(data)
+        // console.log(data)
     }, [])
     return (
     <div>
