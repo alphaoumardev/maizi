@@ -15,8 +15,8 @@ const Checkout = ()=>
     {/* coupon-area start */}
     <section className="coupon-area pt-30 pb-30">
       <div className="container">
-        <div className="row">
-          <div className="col-md-6">
+        <div className="row d-flex justify-content-center">
+          <div className="col-lg-5">
             <div className="coupon-accordion">
               {/* ACCORDION START */}
               <h3>Returning customer? <span id="showlogin">Click here to login</span></h3>
@@ -24,7 +24,7 @@ const Checkout = ()=>
                 <div className="coupon-info">
                   <p className="coupon-text">Quisque gravida turpis sit amet nulla posuere lacinia. Cras sed est
                     sit amet ipsum luctus.</p>
-                  <form action="#">
+                  <form action="">
                     <p className="form-row-first">
                       <label>Username or email <span className="required">*</span></label>
                       <input type="text" />
@@ -49,13 +49,13 @@ const Checkout = ()=>
               {/* ACCORDION END */}
             </div>
           </div>
-          <div className="col-md-6">
+          <div className="col-lg-5">
             <div className="coupon-accordion">
               {/* ACCORDION START */}
               <h3>Have a coupon? <span id="showcoupon">Click here to enter your code</span></h3>
               <div id="checkout_coupon" className="coupon-checkout-content">
                 <div className="coupon-info">
-                  <form action="#">
+                  <form action=" ">
                     <p className="checkout-coupon">
                       <input type="text" placeholder="Coupon Code" />
                       <button className="btn theme-btn" type="submit">Apply Coupon</button>
@@ -74,8 +74,8 @@ const Checkout = ()=>
     <section className="checkout-area pb-70">
       <div className="container">
         <form action="#">
-          <div className="row">
-            <div className="col-lg-6">
+          <div className="row d-flex justify-content-center">
+            <div className="col-lg-5">
               <div className="checkbox-form">
                 <h3>Billing Details</h3>
                 <div className="row">
@@ -97,19 +97,19 @@ const Checkout = ()=>
                   <div className="col-md-6">
                     <div className="checkout-form-list">
                       <label>First Name <span className="required">*</span></label>
-                      <input type="text" placeholder />
+                      <input type="text" placeholder="" />
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="checkout-form-list">
                       <label>Last Name <span className="required">*</span></label>
-                      <input type="text" placeholder />
+                      <input type="text" placeholder="" />
                     </div>
                   </div>
                   <div className="col-md-12">
                     <div className="checkout-form-list">
                       <label>Company Name</label>
-                      <input type="text" placeholder />
+                      <input type="text" placeholder="" />
                     </div>
                   </div>
                   <div className="col-md-12">
@@ -132,7 +132,7 @@ const Checkout = ()=>
                   <div className="col-md-6">
                     <div className="checkout-form-list">
                       <label>State / County <span className="required">*</span></label>
-                      <input type="text" placeholder />
+                      <input type="text" placeholder="" />
                     </div>
                   </div>
                   <div className="col-md-6">
@@ -144,13 +144,13 @@ const Checkout = ()=>
                   <div className="col-md-6">
                     <div className="checkout-form-list">
                       <label>Email Address <span className="required">*</span></label>
-                      <input type="email" placeholder />
+                      <input type="email" placeholder="" required/>
                     </div>
                   </div>
                   <div className="col-md-6">
                     <div className="checkout-form-list">
                       <label>Phone <span className="required">*</span></label>
-                      <input type="text" placeholder="Postcode / Zip" />
+                      <input type="text" placeholder="Postcode / Zip" required/>
                     </div>
                   </div>
                   <div className="col-md-12">
@@ -162,7 +162,7 @@ const Checkout = ()=>
                       <p>Create an account by entering the information below. If you are a returning
                         customer please login at the top of the page.</p>
                       <label>Account password <span className="required">*</span></label>
-                      <input type="password" placeholder="password" />
+                      <input type="password" placeholder="password" required={true}/>
                     </div>
                   </div>
                 </div>
@@ -193,13 +193,13 @@ const Checkout = ()=>
                       <div className="col-md-6">
                         <div className="checkout-form-list">
                           <label>First Name <span className="required">*</span></label>
-                          <input type="text" placeholder />
+                          <input type="text" placeholder="" />
                         </div>
                       </div>
                       <div className="col-md-6">
                         <div className="checkout-form-list">
                           <label>Last Name <span className="required">*</span></label>
-                          <input type="text" placeholder />
+                          <input type="text" placeholder="" />
                         </div>
                       </div>
                       <div className="col-md-12">
@@ -228,7 +228,7 @@ const Checkout = ()=>
                       <div className="col-md-6">
                         <div className="checkout-form-list">
                           <label>State / County <span className="required">*</span></label>
-                          <input type="text" placeholder />
+                          <input type="text" placeholder="" />
                         </div>
                       </div>
                       <div className="col-md-6">
@@ -260,7 +260,7 @@ const Checkout = ()=>
                 </div>
               </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-5">
               <div className="your-order mb-30 ">
                 <h3>Your order</h3>
                 <div className="your-order-table table-responsive">
@@ -372,7 +372,7 @@ const Checkout = ()=>
                     </div>
                   </div>
                   <div className="order-button-payment mt-20">
-                    <button type="submit" className="btn theme-btn">Place order</button>
+                    <button type="submit" className="btn btn-outline-dark text-uppercase text-hide">Place order</button>
                   </div>
                 </div>
               </div>
@@ -395,34 +395,34 @@ const Checkout = ()=>
               <div className="tab-content" id="pills-tabContent">
                 <div className="tab-pane fade show active" id="product-popup-1">
                   <div className="product-popup-img">
-                    <img src="img/product/10.jpg" className="w-100" alt />
+                    <img src="img/product/10.jpg" className="w-100" alt="" />
                   </div>
                 </div>
                 <div className="tab-pane fade" id="product-popup-2">
                   <div className="product-popup-img">
-                    <img src="img/product/11.jpg" className="w-100" alt />
+                    <img src="img/product/11.jpg" className="w-100" alt="" />
                   </div>
                 </div>
                 <div className="tab-pane fade" id="product-popup-3">
                   <div className="product-popup-img">
-                    <img src="img/product/12.jpg" className="w-100" alt />
+                    <img src="img/product/12.jpg" className="w-100" alt="" />
                   </div>
                 </div>
               </div>
               <ul className="nav nav-pills justify-content-center mt-10" id="pills-tab" role="tablist">
                 <li className="nav-item">
                   <Link className="active" data-toggle="pill" to="#product-popup-1">
-                    <img src="img/product/10.jpg" className="w-100" alt />
+                    <img src="img/product/10.jpg" className="w-100" alt="" />
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className data-toggle="pill" to="#product-popup-2">
-                    <img src="img/product/11.jpg" className="w-100" alt />
+                  <Link className="" data-toggle="pill" to="#product-popup-2">
+                    <img src="img/product/11.jpg" className="w-100" alt="" />
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link className data-toggle="pill" to="#product-popup-3">
-                    <img src="img/product/12.jpg" className="w-100" alt />
+                  <Link className="" data-toggle="pill" to="#product-popup-3">
+                    <img src="img/product/12.jpg" className="w-100" alt="" />
                   </Link>
                 </li>
               </ul>

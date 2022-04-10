@@ -37,16 +37,16 @@ const Featured = () =>
 
   },[id])
 
-  function NextArrow(props)
+  function NextArrow(ne)
   {
-    const { className,onClick } = props;
+    const { className,onClick } = ne;
     return (<div className="swiper-button-next" onClick={onClick}>
       <i className="bi bi-chevron-right"></i>
     </div> );
   }
-  function PrevArrow(props)
+  function PrevArrow(ne)
   {
-    const {className, onClick } = props;
+    const {className, onClick } = ne;
     return (<div className="swiper-button-prev" onClick={onClick}>
       <i className="bi bi-chevron-left"></i>
     </div> );
@@ -58,9 +58,8 @@ const Featured = () =>
     centerPadding: "60px",
     slidesToShow: 5,
     swipeToSlide: true,
-    arrows:true,
     autoplay: true,
-    autoplaySpeed: 5000,
+    autoplaySpeed: 6000,
     accessibility:true,
     easing:'linear',
     focusOnSelect:true,
@@ -74,18 +73,17 @@ const Featured = () =>
     const res = await axios.get("/onsale")
     const data = res.data
     setOnsale(data)
-    // console.log(res.data)
   }, [])
 
-    return (
-     <div>
+  return (
+   <div>
        {/*<h1>You May like</h1>*/}
   {/* featured product start */}
   <div className="featured-product-section section-padding-bottom">
     <div className="container">
       <div className="row">
         <div className="col-12">
-          <div className="featured-product swiper-arrow arrow-position-center">
+          <div className="featured-product swiper-arrow arrow-position-center position-relative">
               <Slider {...settings}>
                 {onsale?.map((item, index)=>
                     <div key={index}>

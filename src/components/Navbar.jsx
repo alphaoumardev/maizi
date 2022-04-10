@@ -58,13 +58,13 @@ const Navbar =({match})=>
         <div >
             {/* header section start */}
             {/*< genre={genre} type={type}/>*/}
-            <header className="header pt-10 pb-10  is-sticky header-static " >
-                <div className="container-fluid  " >
+            <header className="header pt-10 pb-10  is-sticky header-static  " >
+                <div className="container-fluid" >
                     <div className="header-nav position-relative">
                         <div className="row align-items-center">
-                            <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-3">
-                                <div className="logo" >
-                                    <Link to="/"><img src="https://res.cloudinary.com/diallo/image/upload/v1647154099/logo_wauws8.png" alt="" /></Link>
+                            <div className="col-xl-3 col-lg-3 col-md-6 col-sm-6 col-3 ">
+                                <div className="logo-img" >
+                                    <Link to="/"><img src="https://res.cloudinary.com/diallo/image/upload/v1649320496/s_cyptzh.png" alt="" /></Link>
                                 </div>
                             </div>
                             <div className="col-xl-5 col-lg-6 hidden-md position-static">

@@ -1,37 +1,11 @@
-import {useEffect, useRef, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import '../css/Navs.css'
 import {Link, useLocation} from "react-router-dom";
 import axios from "axios";
 import StarRating from "react-star-rate";
 const Singles = ({images, one, variant})=>
 {
-    const [mainImg, setMainImg] = useState(true)
-    let [n, setN] = useState(0)
-    const [next, setNext] = useState([])
-    let po = useRef()
-
-    const change = () =>
-    {
-        // setN(n+1)
-        // console.log(n)
-        // setNext(po.current)
-    }
-    useEffect(()=>
-    {
-
-    // change()
-        const allHoverImages = document.querySelectorAll('.hover-container div img');
-        const imgContainer = document.querySelector('.cover-img');
-        window.addEventListener('DOMContentLoaded', () =>{})
-        allHoverImages.forEach((image) =>
-        {
-            image.addEventListener('mouseover', () =>
-            {
-                imgContainer.querySelector('img').src = image.src;
-                image.parentElement.classList.add('actives');
-            });
-        });
-    }, [])
+    const [currentImage, setCurrentImage] = useState(one?.image)
     return(
     <div>
         <div className="">
@@ -39,14 +13,12 @@ const Singles = ({images, one, variant})=>
                 <div className="pro">
                     <div className="pro-left">
                         <div className="cover-img">
-                            {mainImg ? <img src={one?.image} alt="watch"/>
-                                : images?.map((item, index) => <img ref={po} key={index} src={item?.image_url} alt=""/>).at(n)
-                            }
+                            {currentImage?<img  src={currentImage} alt=""/>:<img src={one?.image} alt="watch"/>}
                         </div>
                         <div className="hover-container">
                             <div>
-                                <img className="hover" src={one?.image} alt="watch"/>
-                                {images?.map((item, index) => <img className="hover" onClick={change} key={index} src={item?.image_url} alt=""/>)}
+                                <img className="hover" src={one?.image} onClick={(event => setCurrentImage(event.target.src))} alt="watch"/>
+                                {images?.map((item, index) => <img className="hover"  onClick={(event => setCurrentImage(event.target.src))} key={index} src={item?.image_url} alt=""/>)}
                             </div>
                         </div>
                     </div>
@@ -78,32 +50,37 @@ const Singles = ({images, one, variant})=>
                         </div>
                         <div className="share-product mt-20">
                             <ul>
-                                <li><Link to="/" className="title">Share this product</Link></li>
-                                <li><Link to="/" data-toggle="tooltip" data-placement="top" title="facebook"><i className="bi bi-facebook" /></Link></li>
-                                <li><Link to="/" data-toggle="tooltip" data-placement="top" title="twitter"><i className="bi bi-twitter" /></Link></li>
-                                <li><Link to="/" data-toggle="tooltip" data-placement="top" title="pinterest"><i className="bi bi-pinterest" /></Link></li>
-                                <li><Link to="/" data-toggle="tooltip" data-placement="top" title="Linkdin"><i className="bi bi-linkedin" /></Link></li>
+                                <li><Link to=" " className="title">Share this product</Link></li>
+                                <li><Link to=" " data-toggle="tooltip" data-placement="top" title="facebook"><i className="bi bi-facebook" /></Link></li>
+                                <li><Link to=" " data-toggle="tooltip" data-placement="top" title="twitter"><i className="bi bi-twitter" /></Link></li>
+                                <li><Link to=" " data-toggle="tooltip" data-placement="top" title="pinterest"><i className="bi bi-pinterest" /></Link></li>
+                                <li><Link to=" " data-toggle="tooltip" data-placement="top" title="Linkdin"><i className="bi bi-linkedin" /></Link></li>
                             </ul>
                         </div>
                         <form action="" method="POST">
                             <div className="single-product-component mt-15">
                                     <h6>Size</h6>
-                                    {variant?.map((item, index)=>
-                                    <div key={index} className="size d-inline">
-                                        <label  htmlFor="l">{item?.size?.size_name}</label>
-                                        <input type="radio" className="d-none" id="l" />
-                                    </div>
+                                    {variant?.map((item, index) =>
+                                        <div key={index} className="size d-inline">
+                                        {item?.size?.size_name &&
+                                            <>
+                                            <label htmlFor="l">{item?.size?.size_name}</label>
+                                            <input type="radio" className="d-none" id="l"/>
+                                            </>
+                                        }
+                                        </div>
                                     )}
-                            </div>
-                            <div className="single-product-component">
                                 <h6>Color</h6>
-                                    {variant?.map((item, index)=>(
+                                    {variant?.map((item, index)=>
                                         <div key={index} className="color-input">
+                                        {item?.color?.color_name &&
+                                            <>
                                             <label htmlFor="yellow" style={{backgroundColor: item?.color?.color_name}} />
                                             <input type="radio" className="d-none" id="yellow" />
-                                            <span>{item?.color?.color_name}</span>
+                                            </>
+                                        }
                                         </div>
-                                    ))}
+                                    )}
                             </div>
                             <div className="btn-groups">
                                 <button type="submit" className="add-cart-btn"><i className="fas fa-shopping-cart" />add to cart</button>

@@ -1,24 +1,15 @@
-.leaf
+.lea
 {
     float: left;
-    margin: 9%;
+    margin-left: 5%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-*:after :before{box-sizing:border-box;}
-.clearfix:after, .clearfix:before{content:'' ;display:table;}
-.clearfix:after{clear:both;display:block;}
-a{color:inherit;text-decoration:none;}
-
 .login-wrap{
-    width:100%;
-    max-width:525px;
-    min-height:640px;
     height: 100vh;
     float: right;
-    margin: auto 150px auto auto;
     position:relative;
 }
 .login-html{
@@ -27,11 +18,8 @@ a{color:inherit;text-decoration:none;}
     margin-top: 5%;
     position:absolute;
     padding:80px 70px 50px 70px;
-    background: transparent;
+    background: white;
     border-radius: 8px;
-    box-shadow:0 12px 15px 0 rgba(0,0,0,.24),0 17px 50px 0 rgba(0,0,0,.19);
-    /*background:url(https://source.unsplash.com/1600x900/?nature,photography,technology) no-repeat center;*/
-
 }
 .login-html .sign-in-htm,
 .login-html .sign-up-htm{
@@ -45,9 +33,7 @@ a{color:inherit;text-decoration:none;}
     transition:all .4s linear;
 
 }
-.login-html .sign-in,
-.login-html .sign-up,
-.login-form .group .check{
+.check{
     display:none;
 }
 .login-html .tab,
@@ -55,29 +41,20 @@ a{color:inherit;text-decoration:none;}
 .login-form .group .button{
     text-transform:uppercase;
 }
-.login-html .tab{
-    font-size:22px;
-    padding-bottom:5px;
-    margin: 0 15px 10px 0;
-    display:inline-block;
-    border-bottom:2px solid transparent;
-}
-.login-html .sign-in:checked + .tab,
-.login-html .sign-up:checked + .tab{
-    color: #070707;
-    border-color:#1161ee;
-}
-.login-html:hover .sign-in:checked + .tab:hover,
-.login-html:hover .sign-up:checked + .tab:hover{
-    color: #e4e0e0;
-    border-color:#1161ee;
-}
 .login-form{
-    min-height:345px;
     position:relative;
-    perspective:1000px;
-    transform-style:preserve-3d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 23%;
+    bottom: 27%;
 }
+.register-form{
+    position:relative;
+    top: 15%;
+    bottom: 27%;
+}
+.sign{position:absolute;}
 .login-form .group{
     margin-bottom:15px;
 }
@@ -110,57 +87,43 @@ a{color:inherit;text-decoration:none;}
 {
     background-color: #d1cece;
 }
-.login-form .group label .icon{
-    width:15px;
-    height:15px;
-    border-radius:2px;
-    position:relative;
-    display:inline-block;
-    background:rgba(255,255,255,.1);
-}
-.login-form .group label .icon:before,
-.login-form .group label .icon:after{
-    content:'';
-    width:10px;
-    height:2px;
-    background:#fff;
-    position:absolute;
-    transition:all .2s ease-in-out 0s;
-}
-.login-form .group label .icon:before{
-    left:3px;
-    width:5px;
-    bottom:6px;
-    transform:scale(0) rotate(0);
-}
-.login-form .group label .icon:after{
-    top:6px;
-    right:0;
-    transform:scale(0) rotate(0);
-}
-.login-form .group .check:checked + label{
-    color: #231f1f;
-}
-.login-form .group .check:checked + label .icon{
-    background:#1161ee;
-}
-.login-form .group .check:checked + label .icon:before{
-    transform:scale(1) rotate(45deg);
-}
-.login-form .group .check:checked + label .icon:after{
-    transform:scale(1) rotate(-45deg);
-}
-.login-html .sign-in:checked + .tab + .sign-up + .tab + .login-form .sign-in-htm{
-    transform:rotate(0);
-}
-.login-html .sign-up:checked + .tab + .login-form .sign-up-htm{
-    transform:rotate(0);
-}
 
+.register-form .group{
+    margin-bottom:15px;
+}
+.register-form .group .label,
+.register-form .group .input,
+.register-form .group .button{
+    width:100%;
+    color: #0d0c0c;
+    display:block;
+}
+.register-form .group .input,
+.register-form .group .button{
+    border:none;
+    padding:15px 20px;
+    border-radius:25px;
+    background: #e7f6f9;
+}
+.register-form .group input[data-type="password"]{
+    text-security:circle;
+    -webkit-text-security:circle;
+}
+.register-form .group .label{
+    color: #1d1c1c;
+    font-size:12px;
+}
+.register-form .group .button{
+    background: #1959c0;
+}
+.register-form .group .button:hover
+{
+    background-color: #d1cece;
+}
 .hr{
     height:2px;
     margin:60px 0 50px 0;
-    background: rgba(11, 11, 11, 0.2);
+    background: rgba(247, 244, 244, 0.2);
 }
 .foot-lnk{
     text-align:center;
@@ -174,51 +137,3 @@ a{color:inherit;text-decoration:none;}
 }
 
 
-
-/* The scroll up button */
-
-.top-to-btm{
-    position: relative;
-}
-.icon-position{
-    position: fixed;
-    bottom: 40px;
-    right: 25px;
-    z-index: 20;
-    justify-content: center;
-    display: flex;
-    align-items: center;
-    font-size: 25px;
-}
-.icon-style{
-    background-color: #f50c0c;
-    border: 2px solid #fff;
-    border-radius: 50%;
-    height: 50px;
-    width: 50px;
-    color: #fff;
-    cursor: pointer;
-    animation: movebtn 3s ease-in-out infinite;
-    transition: all .5s ease-in-out;
-}
-.icon-style:hover{
-    animation: none;
-    background: #000000;
-}
-@keyframes movebtn {
-    0%{
-        transform: translateY(0px);
-    }
-    25%{
-        transform: translateY(20px);
-    }
-    50%{
-        transform: translateY(0px);
-    }
-    75%{
-        transform: translateY(-20px);
-    }
-    100%{
-        transform: translateY(0px);
-    }
-}

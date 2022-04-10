@@ -7,10 +7,13 @@ import axios from "axios";
 import Modal from "../items/Modal";
 import Box from "@mui/material/Box";
 import Slider from "@mui/material/Slider";
+import Typography from '@mui/material/Typography';
+import Pagination from '@mui/material/Pagination';
+import Stack from '@mui/material/Stack';
 const AllProducts = ()=>
 {
   const [isOpen, setIsOpen] = useState(false);
-  const [article, setArticle] = useState([])
+  const [pro, setArticle] = useState([])
 
   //For the product modal
   const [id, setId] = useState(14)
@@ -22,6 +25,10 @@ const AllProducts = ()=>
   const [sizes, setSizes] = useState([])
   const [tags, setTags] = useState([])
 
+  const [page, setPage] = useState(1)
+  const [numberOfPages, setNumberOfPages] = useState(10)
+
+  let article= Array.from(pro)
   useEffect(()=>
   {
     const getOne = async ()=>
@@ -54,32 +61,6 @@ const AllProducts = ()=>
   let genre = location.pathname.split('/')[1]
   // let {genre} = useParams()
   let {type} = useParams()
-  // useEffect(()=>
-  // {
-  //   const getArticles = async ()=>
-  //   {
-  //     if(type)
-  //     {
-  //       const response = await fetch(`/catename/${genre}/${type}`)
-  //       const data = await response.json()
-  //       setArticle(data)
-  //     }
-  //     else
-  //     {
-  //       const response = await fetch("/all/")
-  //       const data = await response.json()
-  //       setArticle(data)
-  //     }
-  //   }
-  //   const getOnsale = async ()=>
-  //   {
-  //     const res = await axios.get("/newproducts")
-  //     const data = res.data
-  //     setOnsale(data)
-  //   }
-  //   getArticles(genre, type).then(()=>{})
-  //   getOnsale()
-  // },[genre, type])
 
   useEffect(async ()=>
   {
@@ -95,10 +76,9 @@ const AllProducts = ()=>
       }
       else
       {
-        const response = await fetch("/all/")
-        const data = await response.json()
-        setArticle(data)
-        // console.log(data)
+        const res = await axios.get(`/products/?page=${page}`)
+        setArticle(res.data?.results)
+        setNumberOfPages(res?.data?.total_pages)
       }
     }
     const getColors = async ()=>
@@ -127,7 +107,7 @@ const AllProducts = ()=>
     getSizes()
     getTags()
     getOnsale()
-  },[genre, type])
+  },[genre, type, page])
   const [value, setValue] = useState([100, 500]);
   const handleChange = (event, newValue) =>
   {
@@ -256,7 +236,7 @@ const AllProducts = ()=>
                     <div className="row">
 
                       {/********************/}
-                      {article.map((item, index)=>
+                      {article?.map((item, index)=>
                           <div key={index} className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
                             <div className="product-box mb-40">
                               <div className="product-box-wrapper">
@@ -307,7 +287,7 @@ const AllProducts = ()=>
                     <div className="row ">
                       <div className="col-xl-8 col-lg-6 col-md-6 col-sm-12 col-12 left-category mt-5">
                       {/********************/}
-                      {article.map((item, index)=>
+                      {article?.map((item, index)=>
                           <div key={index} className="product-wrapper   ">
                             <div className="product-box mb-40">
                               <div className="product-box-wrapper">
@@ -385,28 +365,12 @@ const AllProducts = ()=>
               </div>
             </div>
             {/* /. filter content end */}
-            <div className="text-center mt-20">
-              <Link to="shop" className="load-more">LOAD MORE...</Link>
-            </div>
             {/* pagination */}
-            <div className="col-12 mb-5 mt-60">
-              <nav aria-label="Page navigation">
-                <ul className="pagination justify-content-center">
-                  <li className="page-item active">
-                    <Link className="page-link" to="#">
-                      <span className="bi bi-caret-left-fill" title="Back" />
-                    </Link>
-                  </li>
-                  <li className="page-item"><Link className="page-link" to="#">1</Link></li>
-                  <li className="page-item"><Link className="page-link" to="#">2</Link></li>
-                  <li className="page-item"><Link className="page-link" to="#">3</Link></li>
-                  <li className="page-item">
-                    <Link className="page-link" to="#">
-                      <span className="bi bi-caret-right-fill" title="Next" />
-                    </Link>
-                  </li>
-                </ul>
-              </nav>
+            <div className="col-12 mb-5 mt-60 d-flex justify-content-center">
+            <Stack spacing={2}>
+              <Pagination color="primary" variant="text" count={numberOfPages} page={page}
+                          onChange={(e,value)=>setPage(value)}/>
+            </Stack>
             </div>
           </div>
           {/* /. shop products */}

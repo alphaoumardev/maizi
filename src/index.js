@@ -9,17 +9,19 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.min.js';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-// import
 import './css/moller.css'
 import './css/maizi.css'
 import './css/blogpost.css'
 import './css/responsive.css'
+import {ContextProvider} from "./context/Context";
 
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <App/>
+            <ContextProvider>
+                <App/>
+            </ContextProvider>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')

@@ -11,6 +11,7 @@ import Cart from "./pages/Cart";
 import Checkout from "./pages/Checkout";
 import {Route, Routes, useParams} from 'react-router-dom';
 import Login from "./pages/Login";
+import Register from "./pages/Register";
 import RelatedProduct from "./little/RelatedProduct";
 import ScrollUp from "./little/ScrollUp";
 import BlogIndex from "./blog/BlogIndex";
@@ -25,22 +26,29 @@ import Contact from "./blog/Contact";
 import AllProCrumb from "./pages/AllProCrumb";
 import Singles from "./items/Singles";
 import Page404 from "./pages/Page404";
+import ToTop from "./Top";
+import {useContext} from "react";
+import {Context} from "./context/Context";
 function App()
 {
     let id = useParams()
-    const user = true
+    const {user} = useContext(Context)
+    console.log(user)
     return (
         <div className="App">
-         {/*preloader*/}
+        <ToTop>
+        {/* preloader*/}
         {/*<div id="loader-wrapper">*/}
         {/*    <div id="loader" />*/}
         {/*</div>*/}
-        {user &&<Navbar />}
+        <Navbar />
 
-        {user?
         <Routes>
             <Route path="/" element={<Products/>}/>
             <Route exact path="/home"   element={<Home/>}/>
+        </Routes>
+        {user?
+            <Routes>
                 <Route exact path="/:genre"   element={<Products/>}/>
                 {/*<Route exact path="/:genre/:type"   element={<Home/>}/>*/}
 
@@ -58,7 +66,6 @@ function App()
             <Route path="/cart" element={<Cart/>}/>
             <Route path="/checkout" element={<Checkout/>}/>
 
-
             {/*    The blog post */}
             <Route path="/blog" exact element={<BlogIndex/>}/>
             <Route path="/about" element={<BlogAbout/>}/>
@@ -71,11 +78,13 @@ function App()
             <Route path="/contact" element={<Contact/>}/>
         </Routes>:
         <Routes>
-            <Route exact  path="/" element={<Login/>} />
+            <Route exact  path="/login" element={<Login/>} />
+            <Route exact  path="/register" element={<Register/>} />
         </Routes>
         }
         <ScrollUp/>
-        {user &&<Footer/>}
+        <Footer/>
+        </ToTop>
         </div>
     );
 }

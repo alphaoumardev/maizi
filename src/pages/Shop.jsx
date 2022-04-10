@@ -22,7 +22,8 @@ const Shop = ()=>
   const [colors, setColors] = useState([])
   const [sizes, setSizes] = useState([])
   const [tags, setTags] = useState([])
-
+  const [loadmore, setLoadmore] = useState(12)
+  const [more, setMore] = useState(5);
 
   useEffect(()=>
   {
@@ -107,6 +108,14 @@ const Shop = ()=>
   },[genre, type])
 
   const [value, setValue] = useState([100, 500]);
+  const handleLoadMore = ()=>
+  {
+    setLoadmore(loadmore => loadmore+3)
+  }
+  const handleMore = ()=>
+  {
+    setMore(more => more+2)
+  }
   const handleChange = (event, newValue) =>
   {
     setValue(newValue);
@@ -164,8 +173,8 @@ const Shop = ()=>
                   <div id="collapse-3" className="collapse">
                     <div className="sidebar-list">
                       <ul>
-                        <li><Link to="/men/hand bags">Men bags <span>(1)</span></Link></li>
-                        <li><Link to="/women/hand bags">Women bags <span>(5)</span></Link></li>
+                        <li><Link to="/men/hand%bags">Men bags <span>(1)</span></Link></li>
+                        <li><Link to="/women/hand%bags">Women bags <span>(5)</span></Link></li>
                       </ul>
                     </div>
                   </div>
@@ -233,7 +242,7 @@ const Shop = ()=>
               <h4 className="mb-30">Featured</h4>
               <div className="post-box">
                 <ul>
-                  {onsale?.map((item, index)=>
+                  {onsale?.slice(0, more)?.map((item, index)=>
                       <li key={index}>
                         <div className="post-img">
                           <img src={item?.image} className="w-100" alt="" />
@@ -245,6 +254,8 @@ const Shop = ()=>
                         </div>
                       </li>
                   )}
+                  <Link to="" className="load-more text-center ml-5" onClick={handleMore}>MORE...</Link>
+
                 </ul>
               </div>
             </div>
@@ -371,15 +382,15 @@ const Shop = ()=>
                 <div className="tab-pane fade show active" id="shop-tab-2">
                   <div className="product-wrapper mt-55">
                     <div className="row">
-                      {article?.map((item, index)=>
+                      {article?.slice(0, loadmore)?.map((item, index)=>
                           <div key={index} className="col-xl-4 col-md-4 col-6">
                             <div className="product-box mb-40">
                               <div className="product-box-wrapper">
                                 <div className="product-img">
-                                  <img src={item?.image}  alt="" style={{width:345, height:410, objectFit:"contain"}} />
+                                  <img src={item?.image}  alt="" style={{maxWidth:345, maxHeight:410, width:345, height:410, objectFit:"cover"}} />
                                   <Link to={`/single/${item.id}`} className="d-block">
                                     <div className="second-img">
-                                      <img src={item?.image_hover} alt="" style={{width:345, height:410, objectFit:"contain"}} />
+                                      <img src={item?.image_hover} alt="" style={{width:345, height:410, objectFit:"cover"}} />
                                     </div>
                                   </Link>
                                   <Link to={item?.id} id="product-popup-1" className="product-img-link quick-view-1">
@@ -409,7 +420,7 @@ const Shop = ()=>
                 <div className="tab-pane fade" id="shop-tab-3">
                   <div className="product-wrapper mt-55">
                     <div className="row">
-                      {article?.map((item, index)=>
+                      {article?.slice(0, loadmore)?.map((item, index)=>
                           <div key={index} className="col-xl-3 col-lg-3 col-md-4 col-sm-6 col-12">
                             <div className="product-box mb-40">
                               <div className="product-box-wrapper">
@@ -446,7 +457,7 @@ const Shop = ()=>
                 </div>
                 <div className="tab-pane fade" id="shop-tab-4">
                   <div className="product-wrapper mt-55">
-                    {article?.map((item, index)=>
+                    {article?.slice(0, loadmore)?.map((item, index)=>
                         <div key={index} className="product-box mb-40">
                           <div className="product-box-wrapper">
                             <div className="list-product mb-50">
@@ -499,7 +510,7 @@ const Shop = ()=>
                   </div>
                 </div>
                 <div className="text-center mt-20">
-                  <Link to="shop" className="load-more">LOAD MORE...</Link>
+                  <button type="button" className="btn btn-outline-dark " onClick={handleLoadMore}>SEE MORE...</button>
                 </div>
               </div>
             </div>

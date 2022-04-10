@@ -39,7 +39,6 @@ const RelatedProduct = ()=>
         const res = await axios.get("/onsale")
         const data = res.data
         setOnsale(data)
-        // console.log(res.data)
     }, [])
     function NextArrow(props)
     {
@@ -48,7 +47,6 @@ const RelatedProduct = ()=>
             <i className="bi bi-caret-right-fill"></i>
         </div> );
     }
-
     function PrevArrow(props)
     {
         const {className, onClick } = props;
@@ -76,9 +74,8 @@ const RelatedProduct = ()=>
             <div className="generic-title text-center pt-4">
                 <h2 className="mb-20">Related Product</h2>
             </div>
-                <div className="row pr">
+                <div className="row pr featured-product swiper-arrow arrow-position-center position-relative">
             <Slider {...settings}>
-
                 {onsale?.map((item, index)=>
                     <div key={index} className="col-12 ">
                         <div className="product-box">
@@ -110,7 +107,6 @@ const RelatedProduct = ()=>
                         </div>
                     </div>
                 )}
-
             </Slider>
                 </div>
             {/* Modal */}

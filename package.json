@@ -25,6 +25,7 @@
     "react-spectrum": "^1.2.3",
     "react-star-rate": "^0.2.0",
     "slick-carousel": "^1.8.1",
+    "swiper": "^8.0.7",
     "web-vitals": "^2.1.4",
     "webpack": "^5.69.1"
   },
