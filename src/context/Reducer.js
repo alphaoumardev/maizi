@@ -1,43 +1,44 @@
+import {LoginStart, LoginFailure, LoginSuccess, UpdateFailure, Logout, UpdateStart, UpdateSuccess} from "./Actions";
 const Reducer=(state, action)=>
 {
     switch (action.type)
     {
-        case "LOGIN_START":
+        case LoginStart:
             return{
                 user:null,
                 isFetching:true,
                 errors:false
             }
-        case "LOGIN_SUCCESS":
+        case LoginSuccess:
             return{
                 user:action.payload,
                 isFetching:false,
                 errors:false
             }
-        case "LOGIN_FAILURE":
+        case LoginFailure:
             return{
                 user:null,
                 isFetching:false,
                 errors:true
             }
-        case "UPDATE_START":
+        case UpdateStart:
             return{
                 ...state,
                 isFetching:true,
             }
-        case "UPDATE_SUCCESS":
+        case UpdateSuccess:
             return{
                 user:action.payload,
                 isFetching:false,
                 errors:false
             }
-        case "UPDATE_FAILURE":
+        case UpdateFailure:
             return{
                 user:state.user,
                 isFetching:false,
                 errors:true
             }
-        case "LOGOUT":
+        case Logout:
             return{
                 user:null,
                 isFetching:false,

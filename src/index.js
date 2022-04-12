@@ -13,15 +13,13 @@ import './css/moller.css'
 import './css/maizi.css'
 import './css/blogpost.css'
 import './css/responsive.css'
-import {ContextProvider} from "./context/Context";
+// import {ContextProvider} from "./context/Context";
 
 
 ReactDOM.render(
     <React.StrictMode>
         <BrowserRouter>
-            <ContextProvider>
                 <App/>
-            </ContextProvider>
         </BrowserRouter>
     </React.StrictMode>,
     document.getElementById('root')
